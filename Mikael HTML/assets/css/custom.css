@@ -1,0 +1,435 @@
+.vlt-custom--8131 {
+  bottom: -250px;
+  left: -200px;
+  max-width: 550px;
+}
+
+.vlt-custom--1451 {
+  top: -25px;
+  left: -30px;
+  width: 256px;
+  height: 208px;
+}
+
+@media only screen and (max-width: 575px) {
+  .vlt-custom--1451 {
+    top: -100px;
+    left: -100px;
+  }
+}
+
+.vlt-custom--1512 {
+  bottom: -28vw;
+  left: 50vw;
+  width: 75vw;
+  height: 75vw;
+  background-size: cover;
+}
+
+.vlt-custom--4124 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 45vw;
+  height: 100%;
+  background-position: top left;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 991px) {
+  .vlt-custom--4124 {
+    right: 0;
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .vlt-custom--4124 {
+    right: -50vw;
+    width: 100vw;
+  }
+}
+
+.vlt-custom--1259 {
+  top: -20px;
+  right: -5px;
+  width: 256px;
+  height: 208px;
+}
+
+.vlt-custom--2355 {
+  bottom: -250px;
+  left: 0;
+  width: 389px;
+  height: 550px;
+}
+
+.kr {
+  font-family: "Pretendard Variable", Pretendard, "Elice DX Neolli",
+    -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  letter-spacing: -0.06rem;
+}
+.en {
+  letter-spacing: 0;
+  font-family: "Manrope", sans-serif;
+}
+.ls-0 {
+  letter-spacing: -0.015rem;
+}
+.ls-02 {
+  letter-spacing: -0.2rem;
+}
+/* font  */
+.fw-100 {
+  font-weight: 100;
+}
+.fw-200 {
+  font-weight: 200;
+}
+.fw-300 {
+  font-weight: 300;
+}
+.fw-400 {
+  font-weight: 400;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.fw-700 {
+  font-weight: 700;
+}
+.fw-800 {
+  font-weight: 800;
+}
+.fw-900 {
+  font-weight: 900;
+}
+
+.fsi-1 {
+  font-size: 1rem;
+}
+.fsi-11 {
+  font-size: 1.1rem;
+}
+.fsi-12 {
+  font-size: 1.2rem;
+}
+.fsi-13 {
+  font-size: 1.3rem;
+}
+.fsi-15 {
+  font-size: 1.5rem;
+}
+.fsi-17 {
+  font-size: 1.7rem;
+}
+.fsi-2 {
+  font-size: 2rem;
+}
+.fsi-3 {
+  font-size: 3rem;
+}
+.fsi-4 {
+  font-size: 4rem;
+}
+.fsi-5 {
+  font-size: 5rem;
+}
+.fsi-6 {
+  font-size: 6rem;
+}
+.fsi-065 {
+  font-size: 0.65rem;
+}
+.fsi-075 {
+  font-size: 0.75rem;
+}
+.fsi-085 {
+  font-size: 0.85rem;
+}
+.fsi-095 {
+  font-size: 0.95rem;
+}
+
+.opacity-0 {
+  opacity: 0%;
+}
+.opacity-10 {
+  opacity: 10%;
+}
+.opacity-20 {
+  opacity: 20%;
+}
+.opacity-30 {
+  opacity: 30%;
+}
+.opacity-40 {
+  opacity: 40%;
+}
+.opacity-50 {
+  opacity: 50%;
+}
+.opacity-60 {
+  opacity: 60%;
+}
+.opacity-70 {
+  opacity: 70%;
+}
+.opacity-80 {
+  opacity: 80%;
+}
+.opacity-90 {
+  opacity: 90%;
+}
+.opacity-100 {
+  opacity: 100% !important;
+}
+
+.elice-light {
+  font-family: "Elice DX Neolli", sans-serif;
+  font-weight: 300;
+}
+.elice-regular {
+  font-family: "Elice DX Neolli", sans-serif;
+  font-weight: 500;
+}
+.elice-bold {
+  font-family: "Elice DX Neolli", sans-serif;
+  font-weight: 700;
+}
+.table {
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  letter-spacing: -0.05rem;
+  color: blue;
+}
+a:hover {
+  color: rgb(95, 3, 255);
+  letter-spacing: -0.05rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+.hashtag-text,
+.btn {
+  font-family: "Pretendard Variable", Pretendard, "Elice DX Neolli",
+    -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  letter-spacing: -0.05rem;
+}
+p {
+  letter-spacing: -0.05rem;
+  font-family: "Pretendard Variable", Pretendard, "Elice DX Neolli",
+    -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  letter-spacing: -0.05rem;
+}
+strong {
+  font-weight: 700;
+}
+.vlt-fixed-socials a,
+.vlt-menu-burger svg,
+.vlt-navbar-contacts li a {
+  color: white;
+  opacity: 25%;
+}
+.vlt-offcanvas-menu__navigation .sf-menu > li.active > a,
+.vlt-offcanvas-menu__navigation .sf-menu > li:hover > a {
+  color: #e20051;
+}
+:root {
+  --p1: #e20051;
+  --pf: Inter;
+}
+.vlt-offcanvas-menu__socials a {
+  color: #e20051;
+}
+p {
+  font-size: 1.25rem;
+  letter-spacing: -0.06rem;
+}
+.vlt-gap-40 {
+  height: 1.25rem;
+}
+.vlt-services__title a {
+  color: rgb(93, 92, 92);
+  font-size: 2.2rem;
+}
+.vlt-offcanvas-menu__copyright p,
+.vlt-footer-copyright p {
+  font-size: 0.8rem;
+}
+/* 유튜브  */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  width: 95%; /* Set the width to 95% */
+  max-width: 95%; /* Ensure it doesn't exceed 95% */
+  background: #000;
+  margin: auto; /* Center the video */
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.vlt-testimonial-item__avatar img {
+  width: 120px;
+  border-radius: 4px;
+}
+
+.vlt-project-showcase__item__category {
+  font-size: 1.1rem !important;
+  font-weight: 400 !important;
+}
+.vlt-project-showcase h3 {
+  font-weight: 900;
+}
+.vlt-project-showcase ul li h3 a {
+  color: white;
+}
+.vlt-fullpage-slider-numbers {
+  background-color: #4cd802;
+}
+.vlt-fixed-socials a i {
+  color: red;
+}
+.vlt-fixed-socials {
+  position: fixed;
+  z-index: 20;
+  right: 60px;
+  bottom: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: rotate(-90deg) translate3d(50%, 0, 0);
+  transform: rotate(-90deg) translate3d(50%, 0, 0);
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  color: #101010;
+}
+
+.vlt-fixed-socials a svg {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.vlt-footer-copyright p {
+  font-size: 0.65rem;
+}
+.next-btn {
+  padding: 0.2rem 0.9rem;
+  margin-top: 1.5rem;
+  background-color: #555555;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.572);
+  opacity: 85%;
+  border-radius: 20px;
+}
+
+/* 신규 캐러셀  */
+.swiper {
+  width: 700px;
+  height: 400px;
+}
+.swiper-box {
+  padding: 50px 120px;
+  color: rgb(125, 125, 125);
+}
+.swiper-box h1 {
+  color: white;
+  font-size: 4.5rem;
+  line-height: 110%;
+  font-weight: 900;
+}
+.swiper-box p {
+  color: rgba(255, 255, 255, 0.523);
+  font-size: 0.95rem;
+  margin-top: 0.15rem;
+}
+.vlt-post-thumbnail .badge {
+  background-color: #ff007d;
+}
+
+.box {
+  /* width: 70%;
+  height: 200px; */
+  background: #fff;
+  /* margin: 40px auto; */
+}
+.effect1 {
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+}
+.vlt-post-header .vlt-post-title a {
+  color: inherit;
+}
+.has-white-color a {
+  color: inherit;
+  opacity: 40%;
+}
+.has-white-color a:hover {
+  color: #e20051;
+  opacity: 100%;
+}
+.has-white-color h6 {
+  opacity: 40%;
+}
+.portfolio h1 {
+  font-size: 4rem;
+  font-weight: 900;
+}
+.vlt-work-header .vlt-work-title a {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.vlt-work-meta {
+  margin-bottom: 0;
+}
+.vlt-testimonial-item__avatar img {
+  width: 120px;
+  border-radius: 45px;
+}
+.vlt-testimonial-item__content p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.07rem;
+  opacity: 85%;
+}
+.vlt-testimonial-item__avatar {
+  margin-left: 1rem;
+}
+.vlt-testimonial-item::after {
+  background-image: url(../img/root/emblem.webp);
+  width: 120px; /* 가로를 120px로 줄임 */
+  height: 93px;
+  background-size: 120px auto; /* 가로 크기를 120px로 맞추고, 세로 크기를 비율에 맞게 조정 */
+  background-position: 0% 0%;
+  background-repeat: no-repeat; /* 이미지 반복을 막음 */
+  opacity: 0.25;
+  bottom: 1rem;
+}

@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html class="no-js vlt-is--custom-cursor" lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>박기제 · Kije Park · Front-end, MERN Stack Web Developer</title>
+    <meta
+      name="description"
+      content="박기제 Kije Park - JavaScript, TypeScript, NodeJS를 사랑하는 스타트업 풀스택 웹 개발자의 포트폴리오 사이트입니다. 현재 개발 중인 프로젝트와 프리랜서로 개발해 온 프로젝트 등을 보실 수 있습니다."
+    />
+    <meta
+      name="keywords"
+      content="javascript, nodejs, typescript, front-end, back-end, Fullstack, developer, 프리랜서, 웹개발자, 코딩, 프로그래밍, 소프트웨어, 개발자포트폴리오, 프로그래머, 웹개발자포트폴리오, 스타트업개발자, 프리랜서프로그래머, 프리랜서개발자, 병역특례"
+    />
+    <meta name="author" content="Kije Park" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="박기제 · JavaScript Fullstack Developer"
+    />
+    <meta
+      property="og:description"
+      content="풀스택 JS 개발자 박기제의 블로그에 오신 것을 환영합니다. 스타트업 마인드, 성실한 태도, 긍정적이고 열린 가치관, 높은 목표에 끊임없이 도전하는 근성, 패션을 사랑하는 웹 개발자입니다."
+    />
+    <meta property="og:image" content="assets/img/kijepark.png" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
+    <!--Framework-->
+    <link rel="stylesheet" href="assets/css/framework/bootstrap.min.css" />
+    <!--Fonts-->
+    <link rel="stylesheet" href="assets/fonts/Inter/style.css" />
+    <!--Plugins-->
+    <link rel="stylesheet" href="assets/css/vlt-plugins.min.css" />
+    <!--Style-->
+    <link rel="stylesheet" href="assets/css/vlt-main.min.css" />
+    <!--Custom-->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin=""
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body class="animsition">
+    <!--Header-->
+    <header class="vlt-header">
+      <div class="vlt-navbar vlt-navbar--main vlt-navbar--fixed">
+        <div class="vlt-navbar-background"></div>
+        <div class="vlt-navbar-inner">
+          <div class="vlt-navbar-inner--left">
+            <!--Logo--><a class="vlt-navbar-logo" href="index.html"
+              ><img
+                class="black"
+                src="assets/img/root/logo-black.png"
+                alt="Mikael" /><img
+                class="white"
+                src="assets/img/root/logo-white.png"
+                alt="Mikael"
+            /></a>
+            <!--Contacts-->
+            <nav class="vlt-navbar-contacts d-none d-md-block">
+              <ul>
+                <li>
+                  <a href="tel:+821076883321" class="en">+82 10 7688 3321</a>
+                </li>
+                <li class="sep">/</li>
+                <li>
+                  <a href="mailto:kijepark@kijeslab.com" class="en"
+                    >kijepark@kijeslab.com</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="vlt-navbar-inner--right">
+            <div class="d-flex align-items-center">
+              <!--Menu Burger--><a
+                class="vlt-menu-burger js-offcanvas-menu-open"
+                href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="square"
+                  stroke-linejoin="round"
+                >
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="18" x2="21" y2="18" /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--Offcanvas Menu-->
+    <div class="vlt-offcanvas-menu">
+      <div class="vlt-offcanvas-menu__header">
+        <!--Locales-->
+        <nav class="vlt-offcanvas-menu__locales">
+          <a class="active" href="#">Kor</a>
+          <!-- <a href="#">Eng</a> -->
+        </nav>
+        <!--Menu Burger--><a
+          class="vlt-menu-burger vlt-menu-burger--opened js-offcanvas-menu-close"
+          href="#"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" /></svg
+        ></a>
+      </div>
+      <nav class="vlt-offcanvas-menu__navigation">
+        <!--Navigation-->
+        <ul class="sf-menu">
+          <li data-menuanchor="Home"><a href="#Home">Home</a></li>
+          <li data-menuanchor="Intro"><a href="#Intro">Intro</a></li>
+          <li data-menuanchor="Experience">
+            <a href="#Experience">Experience</a>
+          </li>
+          <li data-menuanchor="Tech Skills">
+            <a href="#TechSkills">Tech Skills</a>
+          </li>
+          <li data-menuanchor="Portfolio">
+            <a href="#Portfolio">Portfolio</a>
+          </li>
+          <li data-menuanchor="Movie"><a href="#Movie">Movie</a></li>
+          <li data-menuanchor="Testimonials">
+            <a href="#Testimonials">Testimonials</a>
+          </li>
+          <li data-menuanchor="My Blog"><a href="#MyBlog">My Blog</a></li>
+          <li data-menuanchor="Contact"><a href="#Contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="vlt-offcanvas-menu__footer">
+        <!--Socials-->
+        <div class="vlt-offcanvas-menu__socials">
+          <a href="https://www.linkedin.com/in/kijepark/" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-linkedin"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+              ></path>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/kijeparkofficial" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-facebook"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.youtube.com/@growyourself-mz-youth"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-youtube"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+              ></path>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/kijepark " target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-instagram"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <!--Copyright-->
+        <div class="vlt-offcanvas-menu__copyright">
+          <p class="en opacity-30">
+            &copy; 2020 Kije's LAB CO.<br />All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--Site Overlay-->
+    <div class="vlt-site-overlay"></div>
+    <!--Fixed Socials-->
+    <div class="vlt-fixed-socials">
+      <a href="https://www.instagram.com/kijepark " target="_blank">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-instagram"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+          />
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/@growyourself-mz-youth" target="_blank">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-youtube"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+          />
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/kijeparkofficial" target="_blank">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-facebook"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+          />
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/kijepark/" target="_blank">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-linkedin"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+          />
+        </svg>
+      </a>
+    </div>
+    <!--Main-->
+    <main class="vlt-main">
+      <!--Fullpage Slider-->
+      <div
+        class="vlt-fullpage-slider"
+        data-loop-top=""
+        data-loop-bottom=""
+        data-speed="800"
+      >
+        <!--Home-->
+        <!--Section-->
+        <div
+          class="vlt-section pp-scrollable"
+          data-anchor="Home"
+          data-brightness="dark"
+          style="background-image: url(assets/img/root/red-background.jpg)"
+        >
+          <div class="vlt-section__vertical-align">
+            <div class="vlt-section__content">
+              <!--Particles-->
+              <div class="vlt-section__particles">
+                <div
+                  class="vlt-particle vlt-fade-in-left vlt-custom--1451"
+                  style="
+                    background-image: url(assets/img/root/plus-dark-pattern.png);
+                    transition-duration: 1s;
+                  "
+                ></div>
+                <div
+                  class="vlt-particle d-none d-xl-block vlt-fade-in-right vlt-custom--1512"
+                  style="
+                    background-image: url(assets/img/root/elipse-home-slide.png);
+                    transition-duration: 1.5s;
+                    transition-delay: 300ms;
+                  "
+                ></div>
+                <div
+                  class="vlt-particle vlt-custom--4124"
+                  style="background-image: url(assets/img/kije/kije1.webp)"
+                ></div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-7 offset-lg-1">
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 0s; animation-duration: 700ms"
+                    >
+                      <h5 class="vlt-display-1 has-white-color">Kije Park</h5>
+                      <div class="vlt-gap-10"></div>
+                      <h1 class="vlt-large-heading has-white-color fw-900">
+                        I’m Frontend<br />Developer
+                      </h1>
+                      <div class="vlt-gap-40"></div>
+                      <div class="row">
+                        <div class="col-auto">
+                          <!--Counter Up Small-->
+                          <div
+                            class="vlt-counter-up-small"
+                            data-ending-number="12"
+                            data-animation-speed="1000"
+                            data-delimiter=""
+                          >
+                            <span class="counter">0</span>
+                            <h6 class="vlt-display-1 opacity-60">
+                              One-person<br />development project
+                            </h6>
+                          </div>
+                          <div class="vlt-gap-20--sm"></div>
+                        </div>
+                        <div class="col-auto">
+                          <!--Counter Up Small-->
+                          <!-- <div
+								class="vlt-counter-up-small"
+								data-ending-number="18"
+								data-animation-speed="1000"
+								data-delimiter=""
+							>
+								<span class="counter">0</span>
+								<h6 class="vlt-display-1">
+								Sutisfied<br />customers
+								</h6>
+							</div> -->
+                        </div>
+                      </div>
+                      <div class="vlt-gap-40"></div>
+                      <a
+                        class="vlt-link has-white-color opacity-40"
+                        href="https://www.yoroke.me/kijepark"
+                        target="_blank"
+                        >View Resume</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Intro-->
+        <!--Section-->
+        <div
+          class="vlt-section pp-scrollable"
+          data-anchor="Intro"
+          data-brightness="light"
+        >
+          <div class="vlt-section__vertical-align">
+            <div class="vlt-section__content">
+              <!--Particles-->
+              <div class="vlt-section__particles">
+                <div
+                  class="vlt-particle vlt-custom--1259 vlt-fade-in-right"
+                  style="
+                    background-image: url(assets/img/root/plus-light-pattern.png);
+                    animation-delay: 750ms;
+                  "
+                ></div>
+                <div
+                  class="vlt-particle vlt-custom--2355 vlt-fade-in-left"
+                  style="
+                    background-image: url(assets/img/root/elipse-light.png);
+                    animation-delay: 500ms;
+                  "
+                ></div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-2 offset-lg-1 d-none d-lg-block">
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 0s; animation-duration: 700ms"
+                    >
+                      <!--Counter Up-->
+                      <div
+                        class="vlt-counter-up"
+                        data-ending-number="5"
+                        data-animation-speed="1000"
+                        data-delimiter=""
+                      >
+                        <span class="counter">0</span><sup>+</sup>
+                      </div>
+                      <div class="vlt-gap-40"></div>
+                      <h6>Years <br />Experience <br />Working</h6>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-12">
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 100ms; animation-duration: 700ms"
+                    >
+                      <h4 class="kr fsi-3 fw-800">
+                        저는 Front-End,
+                        <span class="has-first-color">MERN Stack</span>
+                        개발자 박기제라고 합니다.
+                      </h4>
+                    </div>
+                    <div class="vlt-gap-70"></div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 200ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Services-->
+                          <div class="vlt-services">
+                            <h5 class="vlt-services__title">
+                              <a href="#">Why</a>
+                            </h5>
+                            <p class="vlt-services__text">
+                              복잡한 문제를 해결하고, 사용자에게 가치 있는
+                              솔루션을 제공하는 데서 큰 보람을 느낍니다.
+                            </p>
+                            <!-- <a
+                              class="vlt-services__link vlt-link-with-arrow"
+                              href="#"
+                              ><span class="vlt-link-with-arrow__text"
+                                >Discover more</span
+                              ><span class="vlt-link-with-arrow__icon"
+                                >🡒</span
+                              ></a
+                            > -->
+                          </div>
+                        </div>
+                        <div class="vlt-gap-40"></div>
+                      </div>
+                      <div class="col-md-6">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 300ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Services-->
+                          <div class="vlt-services">
+                            <h5 class="vlt-services__title">
+                              <a href="#">How</a>
+                            </h5>
+                            <p class="vlt-services__text">
+                              최신 프레임워크와 라이브러리 및 MERN 스택을
+                              사용하여 효율적이고 확장 가능한 애플리케이션을
+                              개발합니다.
+                            </p>
+                            <!-- <a
+                              class="vlt-services__link vlt-link-with-arrow"
+                              href="#"
+                              ><span class="vlt-link-with-arrow__text"
+                                >Discover more</span
+                              ><span class="vlt-link-with-arrow__icon"
+                                >🡒</span
+                              ></a
+                            > -->
+                          </div>
+                        </div>
+                        <div class="vlt-gap-40"></div>
+                      </div>
+                      <div class="col-md-6">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 400ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Services-->
+                          <div class="vlt-services">
+                            <h5 class="vlt-services__title">
+                              <a href="#">What</a>
+                            </h5>
+                            <p class="vlt-services__text">
+                              사용자에게 가치와 편의를 제공하는 다양한 웹
+                              애플리케이션을 개발합니다.
+                            </p>
+                            <!-- <a
+                              class="vlt-services__link vlt-link-with-arrow"
+                              href="#"
+                              ><span class="vlt-link-with-arrow__text"
+                                >Discover more</span
+                              ><span class="vlt-link-with-arrow__icon"
+                                >🡒</span
+                              ></a
+                            > -->
+                          </div>
+                        </div>
+                        <div class="vlt-gap-40--sm"></div>
+                      </div>
+                      <div class="col-md-6">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 500ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Services-->
+                          <div class="vlt-services">
+                            <h5 class="vlt-services__title">
+                              <a href="#">Goal</a>
+                            </h5>
+                            <p class="vlt-services__text">
+                              좋은 태도와 습관으로 좋은 개발자가 되고 좋은
+                              리더가 되고 좋은 창업가가 되고 싶습니다.
+                            </p>
+                            <!-- <a
+                              class="vlt-services__link vlt-link-with-arrow"
+                              href="#"
+                              ><span class="vlt-link-with-arrow__text"
+                                >Discover more</span
+                              ><span class="vlt-link-with-arrow__icon"
+                                >🡒</span
+                              ></a
+                            > -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Experience-->
+        <!--Section-->
+        <div
+          class="vlt-section pp-scrollable"
+          data-anchor="Experience"
+          data-brightness="dark"
+        >
+          <div class="vlt-section__vertical-align">
+            <div class="vlt-section__content">
+              <!--Ken Burn Effect-->
+              <div class="vlt-section__ken-burn-background">
+                <img src="assets/img/attachment-02.webp" alt="" />
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 offset-lg-1">
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 0s; animation-duration: 700ms"
+                    >
+                      <div
+                        class="d-block d-md-flex align-items-center justify-content-between"
+                      >
+                        <h1 class="has-white-color">Experience</h1>
+                        <div class="vlt-gap-30--sm"></div>
+                        <div class="vlt-timeline-slider-controls">
+                          <span class="prev">🡐</span
+                          ><span class="pagination"></span
+                          ><span class="next">🡒</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vlt-gap-50"></div>
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 100ms; animation-duration: 700ms"
+                    >
+                      <!--Timeline Slider-->
+                      <div class="vlt-timeline-slider">
+                        <div class="swiper-container">
+                          <div class="swiper-wrapper">
+                            <div>
+                              <!--Timeline Slider Item-->
+                              <div class="vlt-timeline-item">
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-3">
+                                    <span class="vlt-timeline-item__year"
+                                      >2023 ~ 현재</span
+                                    >
+                                  </div>
+                                  <div class="col-sm-12 col-md-3">
+                                    <h5 class="vlt-timeline-item__title">
+                                      Software Engineer,<br />HITS.
+                                    </h5>
+                                  </div>
+                                  <div class="col-sm-12 col-md-5 offset-md-1">
+                                    <p class="vlt-timeline-item__text">
+                                      현재 HITS 플랫폼 사업본부에서 프론트엔드
+                                      직무를 맡고 있으며, 신약 개발 플랫폼인
+                                      하이퍼랩 서비스의 프론트엔드 부문 전체를
+                                      담당하고 있습니다.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                              <!--Timeline Slider Item-->
+                              <div class="vlt-timeline-item">
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-3">
+                                    <span class="vlt-timeline-item__year"
+                                      >2020 ~ 현재
+                                    </span>
+                                  </div>
+                                  <div class="col-sm-12 col-md-3">
+                                    <h5 class="vlt-timeline-item__title">
+                                      Founder,<br />기제의실험실.
+                                    </h5>
+                                  </div>
+                                  <div class="col-sm-12 col-md-5 offset-md-1">
+                                    <p class="vlt-timeline-item__text">
+                                      여러 가지 실험적인 목표를 공부하거나
+                                      개발하기 위한 목적으로 회사 근무 시간 외에
+                                      다양한 프로젝트를 상용 서비스 수준을
+                                      목표로 개발하고 있습니다.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                              <!--Timeline Slider Item-->
+                              <div class="vlt-timeline-item">
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-3">
+                                    <span class="vlt-timeline-item__year"
+                                      >2022 ~ 2023
+                                    </span>
+                                  </div>
+                                  <div class="col-sm-12 col-md-3">
+                                    <h5 class="vlt-timeline-item__title">
+                                      Frontend Developer,<br />Meissa.
+                                    </h5>
+                                  </div>
+                                  <div class="col-sm-12 col-md-5 offset-md-1">
+                                    <p class="vlt-timeline-item__text">
+                                      프로덕트팀에서 프론트엔드 직무를
+                                      담당했으며 메이사 플랫폼 서비스의 노무자
+                                      안전관리 및 레이아웃 개선 등을 위주로
+                                      담당했습니다.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <!--Timeline Slider Item-->
+                              <div class="vlt-timeline-item">
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-3">
+                                    <span class="vlt-timeline-item__year"
+                                      >2017 ~ 2020</span
+                                    >
+                                  </div>
+                                  <div class="col-sm-12 col-md-3">
+                                    <h5 class="vlt-timeline-item__title">
+                                      Frontend Developer,<br />A0paper.inc
+                                    </h5>
+                                  </div>
+                                  <div class="col-sm-12 col-md-5 offset-md-1">
+                                    <p class="vlt-timeline-item__text">
+                                      개발자로 근무하면서 Scrollads 광고 SDK개발
+                                      및 광고 서버 개발을 진행했습니다.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vlt-gap-50"></div>
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 200ms; animation-duration: 700ms"
+                    >
+                      <!--Button--><a
+                        class="vlt-btn vlt-btn--primary"
+                        href="#"
+                        target="_self"
+                        ><span class="vlt-btn__text">View Resume</span
+                        ><span class="vlt-btn__icon vlt-btn__icon--right"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="square"
+                            stroke-linejoin="round"
+                          >
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <polyline
+                              points="19 12 12 19 5 12"
+                            ></polyline></svg></span
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Tech Skills-->
+        <!--Section-->
+        <div
+          class="vlt-section pp-scrollable"
+          data-anchor="TechSkills"
+          data-brightness="light"
+        >
+          <div class="vlt-section__vertical-align">
+            <div class="vlt-section__content">
+              <!--Particles-->
+              <div class="vlt-section__particles">
+                <div
+                  class="vlt-particle vlt-custom--1259 vlt-fade-in-right"
+                  style="
+                    background-image: url(assets/img/root/plus-light-pattern.png);
+                    animation-delay: 750ms;
+                  "
+                ></div>
+                <div
+                  class="vlt-particle vlt-custom--2355 vlt-fade-in-left"
+                  style="
+                    background-image: url(assets/img/root/elipse-light.png);
+                    animation-delay: 500ms;
+                  "
+                ></div>
+              </div>
+              <div class="container">
+                <div class="row align-items-center">
+                  <div class="col-lg-4 offset-lg-1">
+                    <div class="vlt-slide-photo">
+                      <div class="vlt-slide-photo__inside">
+                        <img src="assets/img/attachment-07.webp" alt="" />
+                      </div>
+                      <div
+                        class="vlt-slide-photo__particle vlt-fade-in-bottom--small has-border-radius"
+                        style="
+                          top: -50px;
+                          right: -40px;
+                          width: 160px;
+                          transition-delay: 300ms;
+                        "
+                      >
+                        <img src="assets/img/001.webp" alt="" />
+                      </div>
+                      <div
+                        class="vlt-slide-photo__particle vlt-fade-in-bottom--small has-border-radius"
+                        style="
+                          top: 40px;
+                          left: -50px;
+                          width: 70px;
+                          transition-delay: 600ms;
+                        "
+                      >
+                        <img src="assets/img/003.webp" alt="" />
+                      </div>
+                      <div
+                        class="vlt-slide-photo__particle vlt-fade-in-left--small has-border-radius"
+                        style="
+                          left: 10px;
+                          bottom: -80px;
+                          width: 140px;
+                          transition-delay: 900ms;
+                        "
+                      >
+                        <img src="assets/img/002.webp" alt="" />
+                      </div>
+                      <div
+                        class="vlt-slide-photo__particle vlt-fade-in-left--small negative-z-index"
+                        style="
+                          right: -40px;
+                          bottom: -30px;
+                          width: 290px;
+                          transition-delay: 1.2s;
+                        "
+                      >
+                        <img
+                          src="assets/img/root/plus-light-pattern.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="vlt-gap-100--md"></div>
+                  </div>
+                  <div class="col-lg-5 offset-lg-1">
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 100ms; animation-duration: 700ms"
+                    >
+                      <h4>
+                        <span class="has-first-color"
+                          >JavaScript full stack</span
+                        >
+                        그리고 온 정성을 다하는 코딩
+                      </h4>
+                      <div class="vlt-gap-20"></div>
+                      <p class="en">
+                        Next.js, React.js, TypeScript, JavaScript, NodeJS,
+                        Three.js, MongoDB, Git, Express.js, Amazon S3, Amazon
+                        EC2, 성실, 헌신, 몰입
+                      </p>
+                    </div>
+                    <div class="vlt-gap-50"></div>
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 200ms; animation-duration: 700ms"
+                    >
+                      <!--Progress Bar-->
+                      <div
+                        class="vlt-progress-bar"
+                        data-final-value="95"
+                        data-animation-speed="1000"
+                      >
+                        <h5 class="vlt-progress-bar__title">
+                          문제 해결 능력<span class="counter">0</span>
+                        </h5>
+                        <div class="vlt-progress-bar__bar"><span></span></div>
+                      </div>
+                    </div>
+                    <div class="vlt-gap-30"></div>
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 300ms; animation-duration: 700ms"
+                    >
+                      <!--Progress Bar-->
+                      <div
+                        class="vlt-progress-bar"
+                        data-final-value="92"
+                        data-animation-speed="1000"
+                      >
+                        <h5 class="vlt-progress-bar__title">
+                          의사소통 능력<span class="counter">0</span>
+                        </h5>
+                        <div class="vlt-progress-bar__bar"><span></span></div>
+                      </div>
+                    </div>
+                    <div class="vlt-gap-30"></div>
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 400ms; animation-duration: 700ms"
+                    >
+                      <!--Progress Bar-->
+                      <div
+                        class="vlt-progress-bar"
+                        data-final-value="89"
+                        data-animation-speed="1000"
+                      >
+                        <h5 class="vlt-progress-bar__title">
+                          개발자 패션<span class="counter">0</span>
+                        </h5>
+                        <div class="vlt-progress-bar__bar"><span></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Portfolio-->
+        <!--Section-->
+        <div
+          class="vlt-section pp-scrollable"
+          data-anchor="Portfolio"
+          data-brightness="dark"
+        >
+          <div class="vlt-section__vertical-align">
+            <div class="vlt-section__content">
+              <!--Ken Burn Effect-->
+              <div class="vlt-section__ken-burn-background">
+                <img src="assets/img/attachment-03.webp" alt="" />
+              </div>
+              <div class="vlt-project-showcase-slider d-block d-lg-none">
+                <div class="container">
+                  <div class="swiper-container">
+                    <div class="swiper-wrapper text-center">
+                      <!-- Youtube Sherpa -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img src="images/sum/sherpa.webp" alt="" /><a
+                              class="vlt-work-thumbnail__link"
+                              href="#"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2024. 05 ~ 현재 </span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="https://www.youtubesherpa.com/"
+                                  >Youtube Sherpa
+                                </a>
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- actionplan -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img src="images/sum/actionplan.webp" alt="" /><a
+                              class="vlt-work-thumbnail__link"
+                              href="#"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2024년 2월 ~ 4월</span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="https://www.actionplan.how/"
+                                  >Action Plan</a
+                                >
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- yoroke -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img src="images/sum/yoroke.webp" alt="" /><a
+                              class="vlt-work-thumbnail__link"
+                              href="#"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2024년 1월 ~ 4월 </span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="https://www.yoroke.me/">Yoroke</a>
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- winning resume -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img src="images/sum/winningresume.webp" alt="" /><a
+                              class="vlt-work-thumbnail__link"
+                              href="portfolio_winningresume.html"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2023년 6월 ~ 2024년 2월</span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="portfolio_winningresume.html"
+                                  >Winning Resume</a
+                                >
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Mock interview -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img src="images/sum/mockinterview.webp" alt="" /><a
+                              class="vlt-work-thumbnail__link"
+                              href="portfolio_mockinterview.html"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2023년 9월 ~ 12월 </span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="portfolio_mockinterview.html"
+                                  >Mock interview</a
+                                >
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Real developer -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img src="images/sum/realdeveloper.png" alt="" /><a
+                              class="vlt-work-thumbnail__link"
+                              href="portfolio_realdeveloper.html"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2021년 4월 ~ 2023년 9월 </span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="portfolio_realdeveloper.html"
+                                  >Real developer</a
+                                >
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- UXER -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img src="images/sum/UXER.png" alt="" /><a
+                              class="vlt-work-thumbnail__link"
+                              href="portfolio_uxer.html"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2022년 11월 ~ 2023년 9월 </span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="portfolio_uxer.html">UXER</a>
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- adserver -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img src="images/sum/adserver.png" alt="" /><a
+                              class="vlt-work-thumbnail__link"
+                              href="portfolio_adserver.html"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2020년 8월 ~ 9월 </span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="portfolio_adserver.html">AD Server</a>
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- retargetinginstore -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img
+                              src="images/sum/retargetinginstore.png"
+                              alt=""
+                            /><a
+                              class="vlt-work-thumbnail__link"
+                              href="portfolio_retargeting_in_store.html"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2020년 4월 ~ 2020년 8월</span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="portfolio_retargeting_in_store.html"
+                                  >Retargeting in Store</a
+                                >
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- supersocialproof -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img
+                              src="images/sum/supersocialproof.png"
+                              alt=""
+                            /><a
+                              class="vlt-work-thumbnail__link"
+                              href="portfolio_super_social_proof.html"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2019년 10월 ~ 2020년 4월 </span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="portfolio_super_social_proof.html"
+                                  >Super Socialproof</a
+                                >
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- doubleup -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img src="images/sum/doubleup.png" alt="" /><a
+                              class="vlt-work-thumbnail__link"
+                              href="portfolio_doubleup.html"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2019년 3월 ~ 2019년 6월 </span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="portfolio_doubleup.html">Double Up</a>
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- scrollads -->
+                      <div class="swiper-slide">
+                        <div class="vlt-work">
+                          <div class="vlt-work-thumbnail">
+                            <img src="images/sum/scrollads.png" alt="" /><a
+                              class="vlt-work-thumbnail__link"
+                              href="portfolio_scrollads.html"
+                            ></a>
+                          </div>
+                          <div class="vlt-work-content">
+                            <header class="vlt-work-header">
+                              <div class="vlt-work-meta">
+                                <span>2018년 5월 ~ 2018년 10월 </span>
+                              </div>
+                              <h3 class="vlt-work-title">
+                                <a href="portfolio_scrollads.html">Scrollads</a>
+                              </h3>
+                            </header>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 신규 캐러셀  -->
+
+              <!-- Slider main container -->
+              <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <!-- Youtube Sherpa -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>Youtube Sherpa</h1>
+                      <p>유튜브 크리에이터를 위한 콘텐츠 최적화 서비스</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="https://www.youtubesherpa.com/"
+                        target="_self"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Action Plan -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>Action Plan</h1>
+                      <p>고졸 23살 연봉 6천만원의 개발자 취업 이직 전자책</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_actionplan.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Yoroke -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>Yoroke</h1>
+                      <p>AI를 활용한 범용 이력서 서비스</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_yoroke.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Winning Resume -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>Winning Resume</h1>
+                      <p>
+                        개발자, 디자이너, 기획자, 마케터를 위한 IT 전문직 이력서
+                      </p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_winningresume.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Mock Interview -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>Mock Interview</h1>
+                      <p>IT 전문직 AI 모의 면접 서비스</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_mockinterview.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Real Developer -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>Real Developer</h1>
+                      <p>실력 있는 개발자를 위한 이력서 서비스</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_realdeveloper.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- UXER -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>UXER</h1>
+                      <p>디자이너 이력서 및 포트폴리오 서비스</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_uxer.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- 노무자 동선 추적 솔루션 -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>
+                        노무자 동선 <br />
+                        추적 솔루션
+                      </h1>
+                      <p>건설 현장 노무자의 위치를 지도 위에 매핑하는 솔루션</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="https://meissa.ai/"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- AD Server -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>AD Server</h1>
+                      <p>광고 서버 오픈소스 프로젝트</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_adserver.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Retargeting In Store -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>Retargeting In Store</h1>
+                      <p>리타겟팅 기술을 적용한 Shopify앱</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_retargeting_in_store.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Super Social Proof -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>Super Social Proof</h1>
+                      <p>상품 관련 콘텐츠 노출 기술을 적용한 Shopify앱</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_super_social_proof.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Double up -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>Double up</h1>
+                      <p>Scrollads 기술을 Cafe24에 적용한 Cafe24앱</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_doubleup.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Scrollads -->
+                  <div class="swiper-slide d-flex align-items-center">
+                    <div class="swiper-box">
+                      <h1>Scrollads</h1>
+                      <p>동적인 애니메이션을 통한 디스플레이 광고 플랫폼</p>
+                      <a
+                        class="vlt-btn vlt-btn--primary next-btn"
+                        href="portfolio_scrollads.html"
+                        target="_blank"
+                      >
+                        <span class="vlt-btn__text">자세히 보기 </span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Movie-->
+        <!--Section-->
+        <div
+          class="vlt-section pp-scrollable"
+          data-anchor="Movie"
+          data-brightness="light"
+        >
+          <div class="vlt-section__vertical-align">
+            <div class="vlt-section__content">
+              <!--Particles-->
+              <div class="vlt-section__particles">
+                <div
+                  class="vlt-particle vlt-custom--2355 vlt-fade-in-left"
+                  style="
+                    background-image: url(assets/img/root/elipse-light.png);
+                    animation-delay: 500ms;
+                  "
+                ></div>
+              </div>
+              <div class="container">
+                <div class="video-container">
+                  <iframe
+                    src="https://www.youtube.com/embed/vz54xv79HTY"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Testimonials-->
+        <!--Section-->
+        <div
+          class="vlt-section pp-scrollable"
+          data-anchor="Testimonials"
+          data-brightness="dark"
+        >
+          <div class="vlt-section__vertical-align">
+            <div class="vlt-section__content">
+              <!--Ken Burn Effect-->
+              <div class="vlt-section__ken-burn-background">
+                <img src="assets/img/attachment-04.webp" alt="" />
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 offset-lg-1">
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 0s; animation-duration: 700ms"
+                    >
+                      <div
+                        class="d-block d-md-flex align-items-center justify-content-between"
+                      >
+                        <h1 class="has-white-color">Testimonials</h1>
+                        <div class="vlt-gap-30--sm"></div>
+                        <div class="vlt-testimonial-slider-controls">
+                          <span class="prev">🡐</span
+                          ><span class="pagination"></span
+                          ><span class="next">🡒</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vlt-gap-50"></div>
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 100ms; animation-duration: 700ms"
+                    >
+                      <!--Testimonial Slider-->
+                      <div class="vlt-testimonial-slider">
+                        <div class="swiper-container">
+                          <div class="swiper-wrapper">
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="https://www.actionplan.how/assets/img/actionplan/photo/chaeyeon-yang.webp"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content kr">
+                                <p>
+                                  어디에서나 볼 수 있는 뻔한 말이 아닌. 전략적인
+                                  취업 접근 방법과 전략에 대해 키워드 별로
+                                  명확히 나눠져 있어서 직관적으로 다가왔습니다.
+                                  자신만의 강점을 만들어 낼 수 있는 이력서
+                                  작성법과 개인 브랜딩 전략에 대해 알 수 있어서
+                                  정말 좋았고, 다시 한번 나라는 사람은 어떤
+                                  개발자가 되고 싶은가에 대해 고민하고 생각해볼
+                                  수 있었습니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>양채연</h6>
+                                  <span
+                                    >명지대학교 융합소프트웨어학부
+                                    데이터테크놀러지 전공</span
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/gyueun.webp"
+                                  alt="Kien Hester"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  특히 서비스 업데이트/중단에 대한 기준과 어떻게
+                                  효율적인 개발에 집중해 빠른 속도로
+                                  완성해나가는지에 대한 부분이 인상적이었습니다.
+                                  그리고 하나부터 열까지 최대한 제 손으로 하려고
+                                  했던 생각을 바꿔 상용 서비스 개발을 왜하는지
+                                  그 본질을 다시 생각해보는 계기가 되었구요.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>김규은</h6>
+                                  <span>CoarSoft</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/Minyoung-Jeong.webp"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  어떻게 취업을 준비를 해야할 지, 어떻게
+                                  타겟팅을 해야할지, 팀프로젝트와 블로그가 꼭
+                                  필요한지에 대한 의문을 해결할 수 있어서
+                                  앞으로의 방향성을 명확하게 잡을 수 있는데 큰
+                                  도움이 되었습니다. 또한, 책을 읽으면서 스스로
+                                  돌아보게 되는 계기를 가질 수 있었는데, 저의
+                                  방향성이 잘 못되었다는 사실을 깨닫게 되는
+                                  중요한 전환점을 맞이 했던 것 같습니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>정민영</h6>
+                                  <span>취업준비생</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/moondaesung.webp"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  와 이런 전략도 있구나! <br />
+                                  제대로 이직준비를 하려면 꾸준히 코딩테스트를
+                                  공부해야하나 고민하고 있었습니다. 이때
+                                  기제님의 전략은 여타 채용 프로세스와는
+                                  달라보였는데요. 수많은 회사들이 기제님께 같이
+                                  합류의사를 표한것에 '와 이런 전략도 있구나'
+                                  라는걸 깨달았습니다. 기제님의 소중한 경험을
+                                  책에 담아주셔서 감사합니다
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>문대승</h6>
+                                  <span>서울대학교 졸업</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/Hyeonjin-Cho.webp"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  ‘개발 말고 안하기’ 페이지도 좋았습니다. 스스로
+                                  하나하나 다 할 줄 알아야 기업에서 뽑힌다
+                                  생각하는 사람들 에게 선택과 집중을 할 수
+                                  있도록 생각을 틔워주고 사용하능한 도구나 이미
+                                  만들어진 기능들을 이용해도 괜찮겠다라는 생각을
+                                  할 수 있게 된 부분이라고 생각됐습니다. 특히
+                                  프로젝트 초기 구성에 있어 ChatGPT를 사용하는
+                                  방법에 대한 안내도 좋았습니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>조현진</h6>
+                                  <span>현재 퇴사 후 취준 중</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/Kim-Joong-won.jpeg"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  스타트업이 어떤 인재를 원하는지 알 수 있고,
+                                  어떤 프로젝트를 어느 정도의 수준으로 어떻게
+                                  준비해야 할지 알 수 있는 책이었어요. 막연하게
+                                  재취업을 위해서 뭐라도 간단하게 만들어야지
+                                  했던 저의 생각을 부숴주는 책이었습니다.
+                                  객관적으로 봐도 제가 최근에 만든 프로젝트는 큰
+                                  매력이 없었거든요. 무엇이 문제였는지 알게 됐고
+                                  어떻게 준비해야 할지 방향성을 잡을 수 있게
+                                  되었습니다. 적당히 시간과 에너지를 투자하면
+                                  최대가 적당한 결과물이 나올 수 밖에 없다는
+                                  사실.. 다시 한 번 깨닫고 갑니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>김중원</h6>
+                                  <span>사전 구매 고객</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/Jeong-Min-ji.jpg"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  액션 플랜은 스타트업 취업을 위해 당장 실행해야
+                                  할 것들과 갖춰야 할 마인드에 대해 쉽게 이해할
+                                  수 있는 책입니다. 프로젝트 뿐만 아니라 개발에
+                                  관련된 유용한 정보들이 많으니, 취업 준비에
+                                  고민이 있거나 앞으로의 방향성을 잡고 싶으신
+                                  분들이 읽어보면 도움이 될 것 같아
+                                  추천드립니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>정민지</h6>
+                                  <span> 대덕소프트웨어마이스터고등학교 </span>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/Jang-Jun-woo.jpeg"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  기제님의 책은 스타트업의 입장에서부터 생각하는
+                                  것부터 시작하여, 취업을 위한 독학 시 헤맬 수도
+                                  있는 부분들을 정확히 짚어주십니다. 또한
+                                  스타트업의 특성 상 대기업과는 다르게 많은 지원
+                                  루트들이 있는데, 취준 시작 전에 이를 미리 알고
+                                  시작했으면 좋았을텐데... 라는 생각이 들 정도로
+                                  이 루트들을 어떻게 효율적으로 활용하여 취업에
+                                  성공할 수 있는지도 알려주시는 부분이 매우
+                                  인상깊었습니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>장준우</h6>
+                                  <span> 북경대학교 컴퓨터공학과 </span>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/Ki-Tae-wook.webp"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  가장 좋았던 점은 1인 개발과 상용 서비스의
+                                  중요성, 실행할 수 있는 가이드 라인을 제시해
+                                  주신 점이었습니다. 책을 다 읽고, 개인적으로
+                                  가장 중요한 단어 하나를 선정하면 ‘상용
+                                  서비스’이고, 저자께서 상용 서비스 개발을 위한
+                                  준비 단계부터 활용 방법까지 이야기를
+                                  이끌어갔다고 생각합니다. 무엇보다 몸소 겪고
+                                  증명한 과정이었기에 상당한 설득력이
+                                  있었습니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>기태욱</h6>
+                                  <span> 사전 구매 고객 </span>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/leedongchang.jpeg"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  1인 개발의 두려움 때문에 최고의 성장 기회를
+                                  포기하고, 부트캠프와 같이 "남들과 똑같은 길을
+                                  선택할까"를 고민중인 예비 개발자분들에게 많은
+                                  도움이 될 것 같아요. 확고하게 가이드라인을
+                                  제시해주며, 추후에 어떻게 보완해야 하는 지
+                                  알려주는, "액션 플랜"이라는 말이 딱 어울리는
+                                  책입니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>이동창</h6>
+                                  <span> 성균관대학교 시스템경영공학과</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/Heo-Tae-yoon.jpeg"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  비슷한 스펙과 교육을 받은 사람들이 쏟아지고
+                                  있는 IT 채용시장입니다. 비슷한 구직자들이
+                                  많다보니 수많은 정보와 데이터가 넘쳐나는
+                                  요즘에도 개발의 뱡향성을 잃고 방황하는
+                                  사람들이 많습니다. 이 책은 내가 지금 하는
+                                  개발이 단순히 취업만을 위해서 하고 있는게
+                                  아닌지 생각해보게 합니다. 내가 만들고 싶은
+                                  프로그램을 1인 개발을 통해 많이 만들고 이
+                                  경험으로 채용시장에서 매력적인 사람으로
+                                  어필하는 방법을 제시합니다. 또한 링크드인을
+                                  통한 퍼스널 브랜딩으로 취업 뿐만아닌 개인
+                                  사업으로 확장할 수 있는 가능성도 만들 수 있어
+                                  추천합니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>허태윤</h6>
+                                  <span> 앤츠네스트</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/Park-Seon-woo.jpeg"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  이 책을 통해, 바쁜 시기에 무엇을 우선으로
+                                  준비해야 할지에 대한 명확한 방향을 잡을 수
+                                  있었습니다. 전체적인 큰 그림을 그릴 수 있게
+                                  되어, 준비 과정에서 우선순위를 정하는 데 큰
+                                  도움이 되었습니다. 박기제님의 액션플랜은
+                                  단순히 취업 준비뿐만 아니라, 인생의 다양한
+                                  목표를 설정하고 나아가는데 있어서 중요한
+                                  역할을 한다고 생각합니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>박선우</h6>
+                                  <span> 경희대학교 컴퓨터공학과 4학년</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!--Testimonial Item-->
+                            <div
+                              class="vlt-testimonial-item"
+                              style="background: #e20051 url() repeat"
+                            >
+                              <div class="vlt-testimonial-item__avatar">
+                                <img
+                                  src="assets/img/Lee-Dong-wook.webp"
+                                  alt="Chanelle Reed"
+                                />
+                              </div>
+                              <div class="vlt-testimonial-item__content">
+                                <p>
+                                  기제님께서 지필하신 "개발자 취업 액션 플랜"
+                                  에는 IT 스타트업 취업 목표를 희망하는
+                                  독자들에게 준비해야 할 자세부터 프로젝트 주제
+                                  선정, 개발 방법, 이력서를 활용한 담당자와의
+                                  컨택 방법에 이르기까지의 정보를 자세히
+                                  제공합니다. 특히, 결정권자(CTO, 팀장 등)에게
+                                  직접 컨택하는 전략과 프로젝트를 강조하는
+                                  이력서의 작성법은 학력, 자격증 등 정량적인
+                                  지표에만 초점을 맞추고 일반적인 채용
+                                  프로세스에 도전하다 실패를 무릎쓰던 저와
+                                  비슷한 학부생들에게 새로운 관점을 제시하며
+                                  기술적 역량과 문제 해결 능력을 바탕으로
+                                  차별화된 가치를 강조하는 전략을 수립하도록
+                                  도와주었습니다.
+                                </p>
+                                <div class="vlt-testimonial-item__meta">
+                                  <h6>이동욱</h6>
+                                  <span> Hongik Univ. CE Student</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vlt-gap-70"></div>
+                    <div class="row justify-content-md-between">
+                      <div class="col-md-auto col-sm-4">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 200ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Partner Logo-->
+                          <div class="vlt-partner-logo" style="height: 75px">
+                            <img
+                              src="assets/img/root/client-2.png"
+                              alt="Handmade"
+                              style="height: 65px"
+                            />
+                          </div>
+                        </div>
+                        <div class="vlt-gap-40--sm"></div>
+                      </div>
+                      <div class="col-md-auto col-sm-4">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 200ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Partner Logo-->
+                          <div class="vlt-partner-logo" style="height: 75px">
+                            <img
+                              src="assets/img/root/client-1.png"
+                              alt="Mountain"
+                              style="height: 58px"
+                            />
+                          </div>
+                        </div>
+                        <div class="vlt-gap-40--sm"></div>
+                      </div>
+                      <div class="col-md-auto col-sm-4">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 200ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Partner Logo-->
+                          <div class="vlt-partner-logo" style="height: 75px">
+                            <img
+                              src="assets/img/root/client-3.png"
+                              alt="Collection"
+                              style="height: 72px"
+                            />
+                          </div>
+                        </div>
+                        <div class="vlt-gap-40--sm"></div>
+                      </div>
+                      <div class="col-md-auto col-sm-4">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 200ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Partner Logo-->
+                          <div class="vlt-partner-logo" style="height: 75px">
+                            <img
+                              src="assets/img/root/client-4.png"
+                              alt="Mountainbike"
+                              style="height: 72px"
+                            />
+                          </div>
+                        </div>
+                        <div class="vlt-gap-40--sm"></div>
+                      </div>
+                      <div class="col-md-auto col-sm-4">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 200ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Partner Logo-->
+                          <div class="vlt-partner-logo" style="height: 75px">
+                            <img
+                              src="assets/img/root/client-5.png"
+                              alt="Woody"
+                              style="height: 62px"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--My Blog-->
+        <!--Section-->
+        <div
+          class="vlt-section pp-scrollable"
+          data-anchor="MyBlog"
+          data-brightness="light"
+        >
+          <div class="vlt-section__vertical-align">
+            <div class="vlt-section__content">
+              <!--Particles-->
+              <div class="vlt-section__particles">
+                <div
+                  class="vlt-particle vlt-custom--1259 vlt-fade-in-right"
+                  style="
+                    background-image: url(assets/img/root/plus-light-pattern.png);
+                    animation-delay: 750ms;
+                  "
+                ></div>
+                <div
+                  class="vlt-particle vlt-custom--2355 vlt-fade-in-left"
+                  style="
+                    background-image: url(assets/img/root/elipse-light.png);
+                    animation-delay: 500ms;
+                  "
+                ></div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 offset-lg-1">
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 0s; animation-duration: 700ms"
+                    >
+                      <div
+                        class="d-block d-md-flex align-items-center justify-content-between"
+                      >
+                        <h1>My Blog</h1>
+                        <div class="vlt-gap-30--sm"></div>
+                        <a
+                          class="vlt-btn vlt-btn--primary"
+                          href="https://www.linkedin.com/in/kijepark/recent-activity/all/"
+                          target="_blank"
+                          ><span class="vlt-btn__text">View More Posts</span></a
+                        >
+                      </div>
+                    </div>
+                    <div class="vlt-gap-50"></div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 100ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Blog Post-->
+                          <article class="vlt-post">
+                            <div class="vlt-post-thumbnail box effect1">
+                              <img src="assets/img/blog1.webp" alt="" /><a
+                                class="vlt-post-thumbnail__link"
+                                href="https://www.actionplan.how/%EB%B0%95%EA%B8%B0%EC%A0%9C"
+                              ></a>
+                            </div>
+                            <div class="vlt-post-content">
+                              <header class="vlt-post-header">
+                                <div class="vlt-post-meta kr opacity-50">
+                                  ><span>2024년 3월 24일</span>
+                                </div>
+                                <h3 class="vlt-post-title">
+                                  <a
+                                    href="https://www.actionplan.how/%EB%B0%95%EA%B8%B0%EC%A0%9C"
+                                    target="_blank"
+                                    >안녕하세요. 박기제입니다 : 독학 취업 기록
+                                  </a>
+                                </h3>
+                              </header>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="vlt-gap-40--sm"></div>
+                      </div>
+                      <div class="col-md-4">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 200ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Blog Post-->
+                          <article class="vlt-post">
+                            <div class="vlt-post-thumbnail box effect1">
+                              <img src="assets/img/blog2.webp" alt="" /><a
+                                class="vlt-post-thumbnail__link"
+                                href="https://www.slideshare.net/slideshow/embed_code/key/C7pGNNxOLvBRQF"
+                              ></a>
+                              <div class="badge">
+                                <span class="fsi-075">PDF</span>
+                              </div>
+                            </div>
+                            <div class="vlt-post-content">
+                              <header class="vlt-post-header">
+                                <div class="vlt-post-meta kr opacity-50">
+                                  ><span>2023년 12월 8일</span>
+                                </div>
+                                <h3 class="vlt-post-title">
+                                  <a
+                                    href="https://www.slideshare.net/slideshow/embed_code/key/C7pGNNxOLvBRQF"
+                                    target="_blank"
+                                    >반복적 실패를 통한 성장 : 소주콘 발표 자료
+                                  </a>
+                                </h3>
+                              </header>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="vlt-gap-40--sm"></div>
+                      </div>
+                      <div class="col-md-4">
+                        <!--Animated Block-->
+                        <div
+                          class="vlt-animated-block"
+                          style="
+                            animation-delay: 300ms;
+                            animation-duration: 700ms;
+                          "
+                        >
+                          <!--Blog Post-->
+                          <article class="vlt-post">
+                            <div class="vlt-post-thumbnail box effect1">
+                              <img src="assets/img/blog3.webp" alt="" /><a
+                                class="vlt-post-thumbnail__link"
+                                href="https://velog.io/@kijepark/%EC%A7%84%EC%A7%9C-%EA%B0%9C%EB%B0%9C%EC%9E%90-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EB%A1%9D-ver1.0"
+                              ></a>
+                            </div>
+                            <div class="vlt-post-content">
+                              <header class="vlt-post-header">
+                                <div class="vlt-post-meta kr opacity-50">
+                                  ><span>2022년 3월 12일</span>
+                                </div>
+                                <h3 class="vlt-post-title">
+                                  <a
+                                    href="https://velog.io/@kijepark/%EC%A7%84%EC%A7%9C-%EA%B0%9C%EB%B0%9C%EC%9E%90-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EB%A1%9D-ver1.0"
+                                    >진짜 개발자 개발 기록 : 시간 순 기록
+                                  </a>
+                                </h3>
+                              </header>
+                              <!-- <footer class="vlt-post-footer">
+                                <a
+                                  class="vlt-post__link vlt-link-with-arrow"
+                                  href="#"
+                                  ><span class="vlt-link-with-arrow__text"
+                                    >Read more</span
+                                  ><span class="vlt-link-with-arrow__icon"
+                                    >🡒</span
+                                  ></a
+                                >
+                              </footer> -->
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Contact-->
+        <!--Section-->
+        <div
+          class="vlt-section pp-scrollable"
+          data-anchor="Contact"
+          data-brightness="dark"
+        >
+          <div class="vlt-section__vertical-align">
+            <div class="vlt-section__content">
+              <!--Ken Burn Effect-->
+              <div class="vlt-section__ken-burn-background">
+                <img src="assets/img/attachment-05.webp" alt="" />
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12 offset-lg-1">
+                    <!--Animated Block-->
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 0s; animation-duration: 700ms"
+                    >
+                      <h1 class="has-white-color">Contact</h1>
+                      <div class="vlt-gap-20"></div>
+                      <p class="has-gray-color">
+                        저는 언제나 의견과 조언을 듣고 배울 준비가 되어 있어요.
+                        어떤 말씀이건 제 가슴에 소중히 담겠습니다.
+                      </p>
+                      <div class="vlt-gap-50"></div>
+                      <div class="has-white-color">
+                        <h6 class="vlt-display-1 has-gray-color">Email:</h6>
+                        <div class="vlt-gap-5"></div>
+                        <a href="mailto:kijepark@kijeslab.com" class="en"
+                          >kijepark@kijeslab.com</a
+                        >
+                      </div>
+                      <div class="vlt-gap-30"></div>
+                      <div class="has-white-color">
+                        <h6 class="vlt-display-1 has-gray-color">Phone:</h6>
+                        <div class="vlt-gap-5"></div>
+                        <a href="tel:+821076883321" class="en"
+                          >+82 10 7688 3321</a
+                        >
+                      </div>
+                      <div class="vlt-gap-40"></div>
+
+                      <a
+                        href="https://form.typeform.com/to/sxem5d"
+                        class="vlt-btn vlt-btn--primary"
+                      >
+                        <span class="vlt-btn__text">Contact Me</span>
+                        <span class="vlt-btn__icon vlt-btn__icon--right"></span>
+                      </a>
+                      <div class="vlt-gap-20"></div>
+                      <h6
+                        class="vlt-display-1 has-gray-color fsi-065 opacity-50"
+                      >
+                        2024. 07. 04 update
+                      </h6>
+                    </div>
+                    <div class="vlt-gap-70--sm"></div>
+                  </div>
+
+                  <!-- <div class="col-lg-6">
+                    <div
+                      class="vlt-animated-block"
+                      style="animation-delay: 100ms; animation-duration: 700ms"
+                    >
+                      <h5 class="has-white-color">
+                        I am always looking for great collaborators. Let’s
+                        message me and make
+                        <span class="has-first-color">something together!</span>
+                      </h5>
+                      <div class="vlt-gap-40"></div>
+                      <form class="vlt-contact-form" novalidate="novalidate">
+                        <div class="vlt-form-row two-col">
+                          <div class="vlt-form-group">
+                            <label class="has-white-color" for="name"
+                              >Your name (required)</label
+                            >
+                            <input
+                              type="text"
+                              id="name"
+                              name="name"
+                              required="required"
+                              placeholder="Your Name"
+                            />
+                          </div>
+                          <div class="vlt-form-group">
+                            <label class="has-white-color" for="email"
+                              >Your email (required)</label
+                            >
+                            <input
+                              type="email"
+                              id="email"
+                              name="email"
+                              required="required"
+                              placeholder="Your Email"
+                            />
+                          </div>
+                        </div>
+                        <div class="vlt-form-row two-col">
+                          <div class="vlt-form-group">
+                            <label class="has-white-color" for="category"
+                              >Category (optional)</label
+                            >
+                            <input
+                              type="text"
+                              id="category"
+                              name="category"
+                              placeholder="Category"
+                            />
+                          </div>
+                          <div class="vlt-form-group">
+                            <label class="has-white-color" for="budget"
+                              >Choose a Budget (USD)</label
+                            >
+                            <select id="budget" name="budget">
+                              <option value="500-1000">$500 - $1000</option>
+                              <option value="1000-10000">
+                                $1000 - $10 000
+                              </option>
+                              <option value="10000+">$10 000 +</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="vlt-form-group">
+                          <label class="has-white-color" for="message"
+                            >Your Message</label
+                          >
+                          <textarea
+                            name="message"
+                            id="message"
+                            rows="3"
+                            placeholder="Message"
+                          ></textarea>
+                        </div>
+                        <div class="message success">
+                          Your message is successfully sent...
+                        </div>
+                        <div class="message danger">
+                          Sorry something went wrong!
+                        </div>
+                        <button class="vlt-btn vlt-btn--primary">
+                          <span class="vlt-btn__text">Contact Me</span
+                          ><span
+                            class="vlt-btn__icon vlt-btn__icon--right"
+                          ></span>
+                        </button>
+                      </form>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Progress Bar-->
+        <ul class="vlt-fullpage-slider-progress-bar">
+          <li data-menuanchor="Home"></li>
+          <li data-menuanchor="Intro"></li>
+          <li data-menuanchor="Experience"></li>
+          <li data-menuanchor="Tech Skills"></li>
+          <li data-menuanchor="Portfolio"></li>
+          <li data-menuanchor="Movie"></li>
+          <li data-menuanchor="Testimonials"></li>
+          <li data-menuanchor="My Blog"></li>
+          <li data-menuanchor="Contact"></li>
+        </ul>
+        <!--Numbers-->
+        <div class="vlt-fullpage-slider-numbers"></div>
+      </div>
+      <!--Footer-->
+      <footer class="vlt-footer vlt-footer--fixed">
+        <!--Copyright-->
+        <div class="vlt-footer-copyright">
+          <p class="en opacity-30">
+            &copy; 2020 KIJE'S LAB CO.<br />All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
+    <!--Libs-->
+    <!-- 신규 캐러셀  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+    </script>
+
+    <script src="assets/vendors/jquery-3.5.1.min.js"></script>
+    <script src="assets/scripts/vlt-plugins.min.js"></script>
+    <script src="assets/scripts/vlt-helpers.js"></script>
+    <script src="assets/scripts/vlt-controllers.min.js"></script>
+  </body>
+</html>
