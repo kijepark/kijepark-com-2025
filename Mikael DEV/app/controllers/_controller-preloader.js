@@ -22,4 +22,13 @@
 		VLTJS.window.trigger('vlt.preloader_done');
 		VLTJS.html.addClass('vlt-is-page-loaded');
 	});
+
+	// Fallback: Force preloader to finish after 3 seconds
+	setTimeout(function() {
+		if (!VLTJS.html.hasClass('vlt-is-page-loaded')) {
+			VLTJS.window.trigger('vlt.preloader_done');
+			VLTJS.html.addClass('vlt-is-page-loaded');
+			$('.animsition-loading-2').fadeOut();
+		}
+	}, 3000);
 })(jQuery);

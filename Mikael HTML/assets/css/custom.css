@@ -302,6 +302,10 @@ p {
   font-size: 1.1rem !important;
   font-weight: 400 !important;
 }
+
+.vlt-services__text {
+  font-size: 1rem !important;
+}
 .vlt-project-showcase h3 {
   font-weight: 900;
 }
@@ -432,4 +436,19 @@ p {
   background-repeat: no-repeat; /* 이미지 반복을 막음 */
   opacity: 0.25;
   bottom: 1rem;
+}
+
+/* Visual Adjustments for .is-dark theme (Pages 02, 04, 06, 07, 09) */
+/* Hamburger Menu & Fixed Socials & Navbar Contacts - Gray */
+.is-dark .vlt-menu-burger svg,
+.is-dark .vlt-fixed-socials a,
+.is-dark .vlt-navbar-contacts li a {
+  color: #999999 !important;
+  opacity: 1 !important;
+}
+
+/* Footer Copyright - Darker Gray */
+.is-dark .vlt-footer-copyright p {
+  color: #5c5c5c !important;
+  opacity: 1 !important;
 }
