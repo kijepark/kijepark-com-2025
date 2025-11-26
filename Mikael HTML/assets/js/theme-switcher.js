@@ -52,6 +52,17 @@
     }
   })
 
+  const changeGiscusTheme = (theme) => {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    const message = {
+      setConfig: {
+        theme: theme,
+      },
+    };
+    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+
   window.addEventListener('DOMContentLoaded', () => {
     showActiveTheme(getPreferredTheme())
 
@@ -62,6 +73,7 @@
           setStoredTheme(theme)
           setTheme(theme)
           showActiveTheme(theme, true)
+          changeGiscusTheme(theme)
         })
       })
   })
