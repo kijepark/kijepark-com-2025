@@ -230,13 +230,20 @@
     <!-- Page loading scripts -->
     <script>
       (function () {
-        window.onload = function () {
+        function removePreloader() {
           const preloader = document.querySelector(".page-loading");
-          preloader.classList.remove("active");
-          setTimeout(function () {
-            preloader.remove();
-          }, 1000);
-        };
+          if (preloader) {
+            preloader.classList.remove("active");
+            setTimeout(function () {
+              preloader.remove();
+            }, 1000);
+          }
+        }
+
+        window.onload = removePreloader;
+        
+        // Safety timeout: Remove preloader after 2 seconds even if resources are still loading
+        setTimeout(removePreloader, 2000);
       })();
     </script>
   </head>
