@@ -466,3 +466,10 @@ p {
   color: #5c5c5c !important;
   opacity: 1 !important;
 }
+
+/* Fix logo aspect ratio */
+.vlt-navbar-logo img {
+  height: 46px !important;
+  width: auto !important;
+  max-width: none !important;
+}
