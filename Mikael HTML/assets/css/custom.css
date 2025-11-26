@@ -354,12 +354,26 @@ p {
 
 /* 신규 캐러셀  */
 .swiper {
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
   height: 400px;
 }
 .swiper-box {
   padding: 50px 120px;
   color: rgb(125, 125, 125);
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    height: auto;
+    min-height: 400px;
+  }
+  .swiper-box {
+    padding: 30px 20px;
+  }
+  .swiper-box h1 {
+    font-size: 2.5rem;
+  }
 }
 .swiper-box h1 {
   color: white;
