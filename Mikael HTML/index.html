@@ -68,78 +68,56 @@
     <link rel="shortcut icon" href="assets/img/favicon.svg" />
     <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
 
-    <!-- Critical CSS: Inline for instant rendering -->
+    <!-- Critical CSS: Prevents white screen from animsition -->
     <style>
-      /* Prevent white screen on initial load */
+      /* Force immediate visibility - prevents animsition white screen */
       html,
-      body {
+      body,
+      .animsition {
         opacity: 1 !important;
         visibility: visible !important;
+      }
+
+      /* Basic layout - use min-height to preserve scrolling */
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100%;
         margin: 0;
         padding: 0;
       }
-
-      /* Override animsition hiding */
-      .animsition,
-      body.animsition {
-        opacity: 1 !important;
-        visibility: visible !important;
-      }
-
-      /* Prevent flash of unstyled content */
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        background-color: #fff;
-        color: #5c5c5c;
-      }
     </style>
 
-    <!--Framework - Critical: Load synchronously -->
-    <link rel="stylesheet" href="assets/css/framework/bootstrap.min.css" />
+    <!--Framework - Async Loading-->
+    <link rel="preload" href="assets/css/framework/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/framework/bootstrap.min.css"></noscript>
 
-    <!--Style - Critical: Load synchronously -->
-    <link rel="stylesheet" href="assets/css/vlt-main.min.css" />
-
-    <!--Custom - Critical: Load synchronously -->
-    <link rel="stylesheet" href="assets/css/custom.css" />
-
-    <!--Fonts - Non-critical: Load asynchronously -->
+    <!--Fonts - Async Loading-->
     <link rel="preload" href="assets/fonts/Inter/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="assets/fonts/Inter/style.css"></noscript>
 
-    <!--Plugins - Non-critical: Load asynchronously -->
+    <!--Plugins - Async Loading-->
     <link rel="preload" href="assets/css/vlt-plugins.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="assets/css/vlt-plugins.min.css"></noscript>
 
-    <!-- Pretendard Font - Non-critical: Load asynchronously -->
-    <link
-      rel="preload"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        crossorigin
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css"
-      />
-    </noscript>
+    <!--Style - Async Loading-->
+    <link rel="preload" href="assets/css/vlt-main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/vlt-main.min.css"></noscript>
 
-    <!-- Swiper - Non-critical: Load asynchronously -->
+    <!--Custom - Async Loading-->
+    <link rel="preload" href="assets/css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/custom.css"></noscript>
+
+
     <link
-      rel="preload"
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <noscript>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    </noscript>
   </head>
 
-  <body>
+  <body class="animsition">
     <!--Header-->
     <header class="vlt-header">
       <div class="vlt-navbar vlt-navbar--main vlt-navbar--fixed">
