@@ -578,3 +578,16 @@ html, body {
 .vlt-section[data-anchor="Attitude"] .vlt-gap-100--md {
   height: 3rem !important;
 }
+
+/* Force visibility to prevent white screen */
+html, body {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Override animsition just in case */
+.animsition,
+.animsition-overlay {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
