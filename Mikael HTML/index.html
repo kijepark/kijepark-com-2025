@@ -67,16 +67,48 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.svg" />
     <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
-    <!--Framework-->
-    <link rel="stylesheet" href="assets/css/framework/bootstrap.min.css" />
-    <!--Fonts-->
-    <link rel="stylesheet" href="assets/fonts/Inter/style.css" />
-    <!--Plugins-->
-    <link rel="stylesheet" href="assets/css/vlt-plugins.min.css" />
-    <!--Style-->
-    <link rel="stylesheet" href="assets/css/vlt-main.min.css" />
-    <!--Custom-->
-    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Critical CSS: Prevents white screen from animsition -->
+    <style>
+      /* Force immediate visibility - prevents animsition white screen */
+      html,
+      body,
+      .animsition {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      /* Basic layout - use min-height to preserve scrolling */
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    <!--Framework - Async Loading-->
+    <link rel="preload" href="assets/css/framework/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/framework/bootstrap.min.css"></noscript>
+
+    <!--Fonts - Async Loading-->
+    <link rel="preload" href="assets/fonts/Inter/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/fonts/Inter/style.css"></noscript>
+
+    <!--Plugins - Async Loading-->
+    <link rel="preload" href="assets/css/vlt-plugins.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/vlt-plugins.min.css"></noscript>
+
+    <!--Style - Async Loading-->
+    <link rel="preload" href="assets/css/vlt-main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/vlt-main.min.css"></noscript>
+
+    <!--Custom - Async Loading-->
+    <link rel="preload" href="assets/css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/custom.css"></noscript>
 
 
     <link
