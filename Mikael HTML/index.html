@@ -1481,10 +1481,10 @@
                 </div>
               
               
-                  <div class="video-container" onclick="loadVideo(this)" data-video-id="vz54xv79HTY" style="position: relative; max-width: 1000px; margin: 0 auto; aspect-ratio: 16 / 9; cursor: pointer; overflow: hidden;">
+                  <div class="video-container" onclick="loadVideo(this)" data-video-id="vz54xv79HTY" style="position: relative; max-width: 1000px; margin: 0 auto; aspect-ratio: 16 / 9; cursor: pointer; overflow: hidden; border-radius: 30px;">
                     <picture style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                       <source media="(max-width: 767px)" srcset="assets/img/kije/kijeyoutube500.avif">
-                      <img loading="lazy" src="assets/img/kije/kijeyoutube1500.avif" alt="Video Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+                      <img loading="lazy" src="assets/img/kije/kijeyoutube1500.avif" alt="Video Thumbnail" style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
                     </picture>
                     <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;">
                       <svg viewBox="0 0 68 48" style="width: 68px; height: 48px;">
@@ -1496,7 +1496,7 @@
                   <script>
                     function loadVideo(element) {
                       var videoId = element.getAttribute('data-video-id');
-                      element.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>';
+                      element.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border-radius: 30px;"></iframe>';
                     }
                   </script>
               </div>
