@@ -1,5 +1,9 @@
 /*
   Cache-Control: public, max-age=14400
+  Link: </assets/css/framework/bootstrap.min.css>; rel=preload; as=style
+  Link: </assets/css/vlt-main.min.css>; rel=preload; as=style
+  Link: </assets/css/custom.css>; rel=preload; as=style
+  Link: </assets/img/root/red-background.jpg>; rel=preload; as=image
 
 /assets/*
   Cache-Control: public, max-age=31536000

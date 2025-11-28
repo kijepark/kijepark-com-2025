@@ -90,25 +90,22 @@
       }
     </style>
 
-    <!--Framework - Async Loading-->
-    <link rel="preload" href="assets/css/framework/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/framework/bootstrap.min.css"></noscript>
+    <!--Framework - Synchronous (Required for FCP)-->
+    <link rel="stylesheet" href="assets/css/framework/bootstrap.min.css">
 
-    <!--Fonts - Async Loading-->
-    <link rel="preload" href="assets/fonts/Inter/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/fonts/Inter/style.css"></noscript>
+    <!--Style - Synchronous (Required for FCP)-->
+    <link rel="stylesheet" href="assets/css/vlt-main.min.css">
 
-    <!--Plugins - Async Loading-->
+    <!--Custom - Synchronous (Required for FCP)-->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!--Plugins - Deferred (Non-critical)-->
     <link rel="preload" href="assets/css/vlt-plugins.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="assets/css/vlt-plugins.min.css"></noscript>
 
-    <!--Style - Async Loading-->
-    <link rel="preload" href="assets/css/vlt-main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/vlt-main.min.css"></noscript>
-
-    <!--Custom - Async Loading-->
-    <link rel="preload" href="assets/css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/custom.css"></noscript>
+    <!--Fonts - Deferred (Non-critical)-->
+    <link rel="preload" href="assets/fonts/Inter/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/fonts/Inter/style.css"></noscript>
 
 
     <link
