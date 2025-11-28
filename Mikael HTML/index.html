@@ -146,9 +146,8 @@
     <link rel="preload" href="assets/css/vlt-plugins.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="assets/css/vlt-plugins.min.css"></noscript>
 
-    <!--Fonts - Deferred (Non-critical)-->
-    <link rel="preload" href="assets/fonts/Inter/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/fonts/Inter/style.css"></noscript>
+    <!--Fonts - Critical for FCP (text rendering blocked without fonts)-->
+    <link rel="stylesheet" href="assets/fonts/Inter/style.css">
 
 
     <link
