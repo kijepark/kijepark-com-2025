@@ -1,4 +1,19 @@
+/* ============================================
+   CRITICAL FIX: Force Initial Visibility
+   Prevents white screen caused by animsition
+   ============================================ */
+html,
+body,
+.animsition {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 
+/* Override animsition loading state */
+body.animsition,
+body.animsition-overlay {
+  opacity: 1 !important;
+}
 
 .vlt-custom--8131 {
   bottom: -250px;

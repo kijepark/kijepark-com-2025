@@ -67,33 +67,76 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.svg" />
     <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
-    <!--Framework-->
+
+    <!-- Critical CSS: Inline for instant rendering -->
+    <style>
+      /* Prevent white screen on initial load */
+      html,
+      body {
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Override animsition hiding */
+      .animsition,
+      body.animsition {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      /* Prevent flash of unstyled content */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: #fff;
+        color: #5c5c5c;
+      }
+    </style>
+
+    <!--Framework - Critical: Load synchronously -->
     <link rel="stylesheet" href="assets/css/framework/bootstrap.min.css" />
-    <!--Fonts-->
-    <link rel="stylesheet" href="assets/fonts/Inter/style.css" />
-    <!--Plugins-->
-    <link rel="stylesheet" href="assets/css/vlt-plugins.min.css" />
-    <!--Style-->
+
+    <!--Style - Critical: Load synchronously -->
     <link rel="stylesheet" href="assets/css/vlt-main.min.css" />
-    <!--Custom-->
+
+    <!--Custom - Critical: Load synchronously -->
     <link rel="stylesheet" href="assets/css/custom.css" />
 
+    <!--Fonts - Non-critical: Load asynchronously -->
+    <link rel="preload" href="assets/fonts/Inter/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/fonts/Inter/style.css"></noscript>
+
+    <!--Plugins - Non-critical: Load asynchronously -->
+    <link rel="preload" href="assets/css/vlt-plugins.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/vlt-plugins.min.css"></noscript>
+
+    <!-- Pretendard Font - Non-critical: Load asynchronously -->
     <link
-      rel="stylesheet"
-      as="style"
-      crossorigin=""
+      rel="preload"
+      crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css"
-    />
-    <link
-      rel="stylesheet"
       as="style"
-      crossorigin=""
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css"
+      />
+    </noscript>
+
+    <!-- Swiper - Non-critical: Load asynchronously -->
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    </noscript>
   </head>
 
   <body>
