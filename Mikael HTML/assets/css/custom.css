@@ -309,14 +309,7 @@ p {
 }
 /* 유튜브  */
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  width: 95%; /* Set the width to 95% */
-  max-width: 95%; /* Ensure it doesn't exceed 95% */
-  background: #000;
-  margin: auto; /* Center the video */
+  /* Removed old padding-bottom method - now using aspect-ratio in inline styles */
 }
 .video-container iframe {
   position: absolute;
