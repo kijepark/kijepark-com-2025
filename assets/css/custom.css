@@ -349,6 +349,7 @@ p {
   border: 0;
 }
 
+/* OLD - keeping for backward compatibility */
 .play-button {
   position: absolute;
   top: 50%;
@@ -356,6 +357,64 @@ p {
   transform: translate(-50%, -50%);
   z-index: 10;
   transition: all 0.2s ease;
+}
+
+/* NEW YouTube video styles with fresh ID */
+#kije-yt-video {
+  position: relative;
+  width: 1000px;
+  height: 563px;
+  margin: 0 auto;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 30px;
+  background-color: #000;
+  z-index: 1;
+}
+
+/* Responsive: maintain 1000:563 ratio on smaller screens */
+@media only screen and (max-width: 1029px) {
+  #kije-yt-video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1000 / 563;
+  }
+}
+
+#kije-yt-thumb {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+#kije-yt-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  display: block;
+}
+
+#kije-yt-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+#kije-yt-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 30px;
 }
 
 .video-container:hover .play-button-bg {
