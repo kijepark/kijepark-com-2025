@@ -1,4 +1,46 @@
-/*	Font Default
+/*	Font Default - Pretendard Variable
 ----------------------------------------------------- */
 
-@import "font.pt.less";
+// Main Variables
+@import "../Variables.less";
+
+// Font Variables - Pretendard Variable
+@font-main:						'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+@font-secondary:				'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+@font-navigation:				@font-secondary;
+@font-marker: 					'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+@font-headline-date: 			@font-navigation;
+
+@base-font-size: 				16px;
+@base-font-weight: 				400;
+
+// Blockquote
+@font-blockquote: 				@font-main;
+@font-blockquote-weight: 		400;
+@font-blockquote-style: 		normal;
+
+// Headings
+@font-size-headings: 			46px;
+@font-headings-lineheight: 		@font-size-headings;
+@font-headings-text-transform: 	none;
+@font-size-headings-small: 		24px;
+@font-headings-weight: 			700;
+@font-size-headline-title: 		58px;
+
+// Marker
+@font-marker-text-transform: 	none;
+
+// Navigation
+@font-navigation-text-transform: 	none;
+
+@import "_font.base.less";
+
+.tl-timeline {
+	font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+	.tl-timenav-slider {
+		.tl-timeaxis {
+			font-weight: normal;
+		}
+	}
+}
