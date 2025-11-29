@@ -366,14 +366,15 @@ p {
 
 #kije-yt-play {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 10;
   pointer-events: none;
-  /* DEBUG: Visual confirmation of centering */
-  /* background: rgba(255, 0, 0, 0.5); */
-  /* padding: 20px; */
 }
 
 #kije-yt-video iframe {
