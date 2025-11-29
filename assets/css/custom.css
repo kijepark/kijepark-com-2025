@@ -310,8 +310,27 @@ p {
 /* 유튜브  */
 .video-container {
   /* Force 1000:563 aspect ratio - override any theme CSS */
+  position: relative !important;
+  width: 1000px !important;
+  max-width: 100% !important;
   aspect-ratio: 1000 / 563 !important;
   height: auto !important;
+}
+
+/* Fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 1 / 1) {
+  .video-container {
+    height: 0 !important;
+    padding-bottom: 56.3% !important; /* 563/1000 = 56.3% */
+  }
+  .video-container picture,
+  .video-container iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
 .video-container iframe {
   position: absolute;
