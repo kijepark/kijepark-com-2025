@@ -1484,10 +1484,10 @@
                 </div>
 
 
-                  <div class="video-container" onclick="loadVideo(this)" data-video-id="vz54xv79HTY" style="position: relative; display: block; width: min(100%, 1000px); height: auto !important; margin: 0 auto; cursor: pointer; border-radius: 30px; overflow: hidden;">
-                    <picture style="display: block; width: 100%;">
+                  <div class="video-container" onclick="loadVideo(this)" data-video-id="vz54xv79HTY" style="position: relative; display: block; width: min(100%, 1000px); aspect-ratio: 1000 / 563 !important; margin: 0 auto; cursor: pointer; border-radius: 30px; overflow: hidden;">
+                    <picture style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                       <source media="(max-width: 767px)" srcset="assets/img/kije/kijeyoutube500.webp">
-                      <img loading="lazy" src="assets/img/kije/kijeyoutube1000.webp" alt="Video Thumbnail" style="width: 100%; height: auto; display: block; border-radius: 30px;">
+                      <img loading="lazy" src="assets/img/kije/kijeyoutube1000.webp" alt="Video Thumbnail" style="width: 100%; height: 100%; display: block; object-fit: contain; border-radius: 30px;">
                     </picture>
                     <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;">
                       <svg viewBox="0 0 68 48" style="width: 68px; height: 48px;">
@@ -1499,9 +1499,7 @@
                   <script>
                     function loadVideo(element) {
                       var videoId = element.getAttribute('data-video-id');
-                      var img = element.querySelector('img');
-                      var imgHeight = img.offsetHeight;
-                      element.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: ' + imgHeight + 'px; border-radius: 30px;"></iframe>';
+                      element.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 30px;"></iframe>';
                     }
                   </script>
               </div>
