@@ -4,114 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>박기제 개발 타임라인 (Portfolio)</title>
-    
-    <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
-    
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+    <link title="timeline-styles" rel="stylesheet" href="./TimelineJS3/dist/css/timeline.css">
 
     <style>
-        /* =========================================
-           [스타일 설정]
-           1. 폰트 및 기본 레이아웃
-           ========================================= */
-        body { 
-            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
-            margin: 0; 
-            padding: 0; 
-            background-color: #fff;
-            color: #000;
+        body {
+            margin: 0;
+            padding: 0;
         }
-
-        /* TimelineJS 내부 텍스트 폰트 강제 적용 */
-        .tl-headline,
-        .tl-headline-date,
-        .tl-text-content,
-        .tl-text-content p,
-        .tl-caption,
-        .tl-credit,
-        h3.tl-headline-date,
-        .tl-timeaxis-tick-text,
-        .tl-slidenav-title,
-        .tl-slidenav-description,
-        .tl-timegroup-message,
-        .tl-timeline ul {
-            font-family: "Pretendard Variable", Pretendard, sans-serif !important;
-            color: #000 !important;
-        }
-
-        /* 본문 텍스트 가독성 조정 */
-        .tl-text-content p {
-            font-size: 16px !important;
-            line-height: 1.6 !important;
-            margin-bottom: 10px !important;
-            font-weight: 400 !important;
-        }
-
-        /* 리스트 스타일 조정 */
-        .tl-text-content ul {
-            margin: 10px 0 !important;
-            padding-left: 20px !important;
-            list-style-type: disc !important;
-        }
-
-        .tl-text-content li {
-            font-size: 16px !important;
-            line-height: 1.15 !important;
-            margin-bottom: 5px !important;
-            letter-spacing: -0.02em !important;
-            font-weight: 300 !important;
-        }
-
-        /* 강조 텍스트 스타일 */
-        .tl-text-content strong {
-            font-weight: 700 !important;
-            color: #2c3e50 !important;
-        }
-
-        /* 제목 스타일 */
-        .tl-headline {
-            font-weight: 500 !important;
-        }
-        .tl-text-headline-container>.tl-headline {
-            font-weight: 900 !important;
-        }
-
-        /* 전체 컨테이너 크기 */
-        #timeline-embed { 
-            width: 100%; 
+        #timeline-embed {
+            width: 100%;
             height: 100vh;
-        }
-        
-        /* =========================================
-           2. [핵심] 최신순(역순) 정렬을 위한 CSS 반전 트릭
-           TimelineJS는 기본적으로 과거->미래 순이므로,
-           CSS transform을 이용해 시각적으로 뒤집어 보여줍니다.
-           ========================================= */
-        
-        /* (1) 타임라인 전체를 좌우 반전 */
-        .tl-timeline {
-            transform: scaleX(-1); 
-        }
-
-        /* (2) 텍스트와 아이콘이 거꾸로 보이지 않도록 내부 요소들 다시 반전 */
-        .tl-storyslider,          /* 메인 슬라이더 (텍스트 내용) */
-        .tl-timemarker-content,   /* 하단 타임라인 마커 텍스트 */
-        .tl-timegroup-message,    /* 하단 연도 표시 */
-        .tl-timeaxis-tick-text,   /* 하단 월/일 표시 */
-        .tl-slidenav-icon,        /* 좌우 화살표 아이콘 */
-        .tl-menubar,              /* 하단 메뉴바 */
-        .tl-message               /* 로딩 메시지 */
-        {
-            transform: scaleX(-1);
-        }
-
-        /* (3) 화살표 위치 보정 (반전되었으므로 좌우 위치를 바꿔줌) */
-        .tl-slidenav-next { left: 0; right: auto; }
-        .tl-slidenav-previous { right: 0; left: auto; }
-
-        /* (4) 하단 배경색 미세 조정 */
-        .tl-timegroup {
-            background-color: rgba(0, 0, 0, 0.03) !important;
         }
     </style>
 </head>
@@ -119,18 +22,13 @@
 
     <div id="timeline-embed"></div>
 
-    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+    <script src="./TimelineJS3/dist/js/timeline.js"></script>
 
     <script>
-        // =========================================
-        //  [데이터 정의]
-        //  스타트업 맞춤형 텍스트로 리라이팅 완료된 데이터
-        //  날짜 오류 수정 완료 (Meissa, Purple Dog 등)
-        // =========================================
         var timelineData = {
             "title": {
                 "media": {
-                    "url": "https://kijepark.com/assets/img/kijepark.png", // 실제 프로필 이미지 경로로 변경 권장
+                    "url": "https://kijepark.com/assets/img/kijepark.png",
                     "caption": "Product Maker",
                     "credit": "Ki-je Park"
                 },
@@ -140,9 +38,7 @@
                 }
             },
             "events": [
-                /* [0] 현재 진행 중인 프로젝트
-                   - 종료일(end_date)을 제거하여 '진행 중' 상태(깃발)로 표시 
-                */
+                // #1 - 2024-10 (최신)
                 {
                     "start_date": { "year": "2024", "month": "10" },
                     "end_date": { "year": "2025", "month": "6" },
@@ -152,8 +48,7 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [1] YouTube Sherpa */
+                // #2 - 2024-05
                 {
                     "start_date": { "year": "2024", "month": "05" },
                     "end_date": { "year": "2024", "month": "10" },
@@ -163,8 +58,7 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [2] 이력서는 요로케 */
+                // #3 - 2024-01
                 {
                     "start_date": { "year": "2024", "month": "01" },
                     "end_date": { "year": "2024", "month": "04" },
@@ -174,19 +68,7 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [3] HITS (Career) */
-                {
-                    "start_date": { "year": "2023", "month": "03" },
-                    "end_date": { "year": "2024", "month": "10" },
-                    "text": {
-                        "headline": "HITS: 신약 개발 플랫폼(HyperLab) FE 개발",
-                        "text": "연구원을 위한 신약 개발 플랫폼의 프론트엔드를 전담하여 복잡한 분자 데이터 시각화 및 성능 최적화 주도.<br><ul><li><strong>Architecture:</strong> Next.js App Router 및 FSD(Feature-Sliced Design) 아키텍처를 도입해 코드 확장성과 유지보수성 확보.</li><li><strong>Performance:</strong> TanStack Virtual/Table을 활용해 대규모 분자 리스트 및 데이터 병합 기능을 지연 없이 렌더링하도록 최적화.</li><li><strong>Efficiency:</strong> OpenAPI Generator로 API 연동 자동화 및 Zustand/Jotai를 복합 사용하여 복잡한 비동기 상태 관리 효율화.</li></ul>"
-                    },
-                    "group": "Career"
-                },
-
-                /* [4] AI Mock Interview */
+                // #4 - 2023-09
                 {
                     "start_date": { "year": "2023", "month": "09" },
                     "end_date": { "year": "2023", "month": "12" },
@@ -196,8 +78,17 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [5] UXER */
+                // #5 - 2023-03
+                {
+                    "start_date": { "year": "2023", "month": "03" },
+                    "end_date": { "year": "2024", "month": "10" },
+                    "text": {
+                        "headline": "HITS: 신약 개발 플랫폼(HyperLab) FE 개발",
+                        "text": "연구원을 위한 신약 개발 플랫폼의 프론트엔드를 전담하여 복잡한 분자 데이터 시각화 및 성능 최적화 주도.<br><ul><li><strong>Architecture:</strong> Next.js App Router 및 FSD(Feature-Sliced Design) 아키텍처를 도입해 코드 확장성과 유지보수성 확보.</li><li><strong>Performance:</strong> TanStack Virtual/Table을 활용해 대규모 분자 리스트 및 데이터 병합 기능을 지연 없이 렌더링하도록 최적화.</li><li><strong>Efficiency:</strong> OpenAPI Generator로 API 연동 자동화 및 Zustand/Jotai를 복합 사용하여 복잡한 비동기 상태 관리 효율화.</li></ul>"
+                    },
+                    "group": "Career"
+                },
+                // #6 - 2022-11
                 {
                     "start_date": { "year": "2022", "month": "11" },
                     "end_date": { "year": "2023", "month": "09" },
@@ -207,11 +98,7 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [6] Meissa (Career) 
-                   - [중요 수정] 프로젝트 기간(2개월)이 아닌 실제 재직 기간(1년 1개월)으로 수정함
-                   - 2022.03 ~ 2023.03
-                */
+                // #7 - 2022-03
                 {
                     "start_date": { "year": "2022", "month": "03" },
                     "end_date": { "year": "2023", "month": "03" },
@@ -221,19 +108,7 @@
                     },
                     "group": "Career"
                 },
-
-                /* [7] Real Developer */
-                {
-                    "start_date": { "year": "2021", "month": "04" },
-                    "end_date": { "year": "2023", "month": "09" },
-                    "text": {
-                        "headline": "Real Developer: 개발자 특화 채용/이력서 플랫폼",
-                        "text": "구직자와 채용 담당자를 연결하는 올인원 커리어 플랫폼 개발.<br><ul><li><strong>Platform Engineering:</strong> 구직자(이력서 작성)와 리크루터(공고 관리/제안)의 양면 시장(Two-sided Market) 기능을 모두 지원하는 유저 시나리오 및 DB 스키마 설계.</li><li><strong>Interactive Features:</strong> 이력서 방문자 추적(Tracking) 시스템 및 사용자 간 실시간 채팅 기능을 구현하여 채용 프로세스의 투명성 확보.</li><li><strong>Utility:</strong> Google Sheets 데이터를 이력서로 자동 변환하는 기능을 개발하여 사용자 진입 장벽을 낮추고, WYSIWYG 에디터로 자유로운 편집 환경 제공.</li></ul>"
-                    },
-                    "group": "Personal Project"
-                },
-
-                /* [8] GitHub HR Profile */
+                // #8 - 2021-09
                 {
                     "start_date": { "year": "2021", "month": "09" },
                     "end_date": { "year": "2021", "month": "10" },
@@ -243,10 +118,17 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [9] Purple Dog (Personal Project)
-                   - 기존 코드에서 누락되었던 항목 추가함
-                */
+                // #9 - 2021-04
+                {
+                    "start_date": { "year": "2021", "month": "04" },
+                    "end_date": { "year": "2023", "month": "09" },
+                    "text": {
+                        "headline": "Real Developer: 개발자 특화 채용/이력서 플랫폼",
+                        "text": "구직자와 채용 담당자를 연결하는 올인원 커리어 플랫폼 개발.<br><ul><li><strong>Platform Engineering:</strong> 구직자(이력서 작성)와 리크루터(공고 관리/제안)의 양면 시장(Two-sided Market) 기능을 모두 지원하는 유저 시나리오 및 DB 스키마 설계.</li><li><strong>Interactive Features:</strong> 이력서 방문자 추적(Tracking) 시스템 및 사용자 간 실시간 채팅 기능을 구현하여 채용 프로세스의 투명성 확보.</li><li><strong>Utility:</strong> Google Sheets 데이터를 이력서로 자동 변환하는 기능을 개발하여 사용자 진입 장벽을 낮추고, WYSIWYG 에디터로 자유로운 편집 환경 제공.</li></ul>"
+                    },
+                    "group": "Personal Project"
+                },
+                // #10 - 2020-10
                 {
                     "start_date": { "year": "2020", "month": "10" },
                     "end_date": { "year": "2021", "month": "03" },
@@ -256,8 +138,7 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [10] Ad Server Tutorial */
+                // #11 - 2020-08
                 {
                     "start_date": { "year": "2020", "month": "08" },
                     "end_date": { "year": "2020", "month": "09" },
@@ -267,8 +148,7 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [11] Retargeting In Store */
+                // #12 - 2020-04
                 {
                     "start_date": { "year": "2020", "month": "04" },
                     "end_date": { "year": "2020", "month": "08" },
@@ -278,8 +158,7 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [12] Super Social Proof */
+                // #13 - 2019-10
                 {
                     "start_date": { "year": "2019", "month": "10" },
                     "end_date": { "year": "2020", "month": "04" },
@@ -289,19 +168,7 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [13] A0Paper (Career) */
-                {
-                    "start_date": { "year": "2017", "month": "12" },
-                    "end_date": { "year": "2020", "month": "01" },
-                    "text": {
-                        "headline": "A0Paper: 모바일 웹 광고 SDK 개발",
-                        "text": "매체사 사이트에 삽입되는 경량화된 모바일 광고 SDK 개발 및 유지보수.<br><ul><li><strong>SDK Engineering:</strong> 프레임워크 의존성 없이 Vanilla JavaScript로 외부 삽입용 광고 스크립트를 개발하여 호스트 사이트와의 충돌 방지.</li><li><strong>Optimization:</strong> Webpack을 활용한 코드 난독화 및 번들링 최적화로 빠른 로딩 속도 구현.</li><li><strong>Compatibility:</strong> 다양한 모바일 브라우저 및 인앱 웹뷰 환경에서의 크로스 브라우징 이슈 해결.</li></ul>"
-                    },
-                    "group": "Career"
-                },
-
-                /* [14] Double Up */
+                // #14 - 2019-03
                 {
                     "start_date": { "year": "2019", "month": "03" },
                     "end_date": { "year": "2019", "month": "06" },
@@ -311,8 +178,7 @@
                     },
                     "group": "Personal Project"
                 },
-
-                /* [15] ScrollAds */
+                // #15 - 2018-05
                 {
                     "start_date": { "year": "2018", "month": "05" },
                     "end_date": { "year": "2018", "month": "10" },
@@ -321,27 +187,28 @@
                         "text": "매체사 웹사이트에 탑재되는 고성능 광고 스크립트(SDK) 개발.<br><ul><li><strong>Vanilla JS Engineering:</strong> React 등 프레임워크 없이 순수 JavaScript로 개발하여 SDK 용량을 경량화하고, 호스트 사이트와의 라이브러리 충돌 방지.</li><li><strong>Dynamic Overlay:</strong> 매체사마다 상이한 모바일 웹 환경(DOM 구조)을 분석해, 콘텐츠 흐름을 방해하지 않는 최적의 위치에 배너를 오버레이하는 렌더링 로직 구현.</li><li><strong>Build Optimization:</strong> Webpack을 통한 코드 번들링 및 난독화(Obfuscation) 적용으로 네트워크 리소스 최적화 및 보안성 강화.</li></ul>"
                     },
                     "group": "Career"
+                },
+                // #16 - 2017-12 (가장 오래됨)
+                {
+                    "start_date": { "year": "2017", "month": "12" },
+                    "end_date": { "year": "2020", "month": "01" },
+                    "text": {
+                        "headline": "A0Paper: 모바일 웹 광고 SDK 개발",
+                        "text": "매체사 사이트에 삽입되는 경량화된 모바일 광고 SDK 개발 및 유지보수.<br><ul><li><strong>SDK Engineering:</strong> 프레임워크 의존성 없이 Vanilla JavaScript로 외부 삽입용 광고 스크립트를 개발하여 호스트 사이트와의 충돌 방지.</li><li><strong>Optimization:</strong> Webpack을 활용한 코드 난독화 및 번들링 최적화로 빠른 로딩 속도 구현.</li><li><strong>Compatibility:</strong> 다양한 모바일 브라우저 및 인앱 웹뷰 환경에서의 크로스 브라우징 이슈 해결.</li></ul>"
+                    },
+                    "group": "Career"
                 }
             ]
         };
 
-        // =========================================
-        //  [타임라인 초기화 옵션]
-        // =========================================
         var options = {
-            group_order: "Career", // Career 그룹을 상단에, Personal Project를 하단에 배치
-            marker_height_min: 30, // 마커 최소 높이
-            scale_factor: 1,       // 시간 간격 배율
-            timenav_height_percentage: 30, // 하단 타임라인 영역 비율 (30%)
-            
-            // [중요 설정] start_at_end: true
-            // CSS로 타임라인을 좌우 반전시켰기 때문에,
-            // 논리적으로 '끝(가장 최근)'이 시각적으로는 '왼쪽(시작점)'에 위치하게 됩니다.
-            // 따라서 '끝에서 시작' 옵션을 켜야 사용자가 접속했을 때 가장 최신 경력부터 보게 됩니다.
-            start_at_end: true 
+            group_order: "Career",
+            marker_height_min: 30,
+            scale_factor: 1,
+            timenav_height_percentage: 30,
+            start_at_slide: 0
         };
 
-        // 타임라인 인스턴스 생성
         window.timeline = new TL.Timeline('timeline-embed', timelineData, options);
     </script>
 </body>
