@@ -122,7 +122,8 @@ export class StorySlider {
     }
 
     _createSlides(array) {
-        for (var i = 0; i < array.length; i++) {
+        // [REVERSE CHRONOLOGICAL] 배열을 역순으로 순회하여 최신→과거 순서로 슬라이드 생성
+        for (var i = array.length - 1; i >= 0; i--) {
             if (array[i].unique_id == "") {
                 array[i].unique_id = unique_ID(6, "tl-slide");
             }
@@ -476,7 +477,9 @@ export class StorySlider {
     }
 
     _onNavigation(e) {
-
+        // [REVERSE CHRONOLOGICAL] 슬라이드 배열이 최신→과거 순서로 되어 있으므로
+        // next(우측) 클릭 → next() 호출 ([0]→[1]→[2]... 최신→과거)
+        // previous(좌측) 클릭 → previous() 호출 ([2]→[1]→[0]... 과거→최신)
         if (e.direction == "next" || e.direction == "left") {
             this.next();
         } else if (e.direction == "previous" || e.direction == "right") {
