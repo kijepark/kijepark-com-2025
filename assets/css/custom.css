@@ -362,24 +362,14 @@ p {
 /* NEW YouTube video styles with fresh ID */
 #kije-yt-video {
   position: relative;
+  display: inline-block;
   width: 1000px;
   height: 563px;
-  margin: 0 auto;
   cursor: pointer;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 30px !important;
   background-color: #000;
   z-index: 1;
-}
-
-/* Center align at 1200px+ screens */
-@media only screen and (min-width: 1200px) {
-  #kije-yt-video {
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-  }
 }
 
 /* Responsive: maintain 1000:563 ratio on smaller screens */
@@ -388,6 +378,7 @@ p {
     width: 100%;
     height: auto;
     aspect-ratio: 1000 / 563;
+    display: block;
   }
 }
 
@@ -399,15 +390,15 @@ p {
   width: 100%;
   height: 100%;
   z-index: 2;
-  border-radius: 30px;
+  border-radius: 30px !important;
   overflow: hidden;
 }
 
 #kije-yt-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 30px;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 30px !important;
   display: block;
 }
 
