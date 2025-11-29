@@ -1501,7 +1501,9 @@
                 <script>
                   function loadVideo(element) {
                     var videoId = element.getAttribute('data-video-id');
-                    element.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border-radius: 30px;"></iframe>';
+                    // Get the current height before replacing content
+                    var currentHeight = element.offsetHeight;
+                    element.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: ' + currentHeight + 'px; position: absolute; top: 0; left: 0; border-radius: 30px;"></iframe>';
                   }
                 </script>
               </div>
