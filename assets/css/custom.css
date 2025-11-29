@@ -312,9 +312,17 @@ p {
   /* Force 1000:563 aspect ratio - override any theme CSS */
   position: relative !important;
   width: 1000px !important;
-  max-width: 100% !important;
   aspect-ratio: 1000 / 563 !important;
   height: auto !important;
+  /* Prevent container padding from affecting width */
+  max-width: calc(100vw - 30px) !important; /* Account for body margins if any */
+}
+
+/* At larger screens, cap at 1000px */
+@media only screen and (min-width: 1030px) {
+  .video-container {
+    max-width: 1000px !important;
+  }
 }
 
 /* Fallback for browsers that don't support aspect-ratio */
