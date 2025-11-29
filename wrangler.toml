@@ -1,0 +1,15 @@
+name = "kijepark-com-2025-v2"
+compatibility_date = "2025-11-29"
+
+[site]
+bucket = "./"
+
+[[headers]]
+name = "Content-Type"
+value = "font/woff2"
+pattern = "*.woff2"
+
+[[headers]]
+name = "Content-Type"
+value = "font/woff"
+pattern = "*.woff"
