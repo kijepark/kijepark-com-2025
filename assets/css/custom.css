@@ -372,6 +372,16 @@ p {
   z-index: 1;
 }
 
+/* Center align at 1200px+ screens */
+@media only screen and (min-width: 1200px) {
+  #kije-yt-video {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+}
+
 /* Responsive: maintain 1000:563 ratio on smaller screens */
 @media only screen and (max-width: 1029px) {
   #kije-yt-video {
@@ -389,6 +399,8 @@ p {
   width: 100%;
   height: 100%;
   z-index: 2;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 #kije-yt-thumb img {
