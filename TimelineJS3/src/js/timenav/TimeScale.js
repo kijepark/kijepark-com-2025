@@ -110,7 +110,8 @@ export class TimeScale {
         // however, we're moving to make the arg to this whatever value
         // comes from TLDate.getTime() which could be made smart about that --
         // so it may just be about the naming.
-        return (time_in_millis - this._earliest) * this._pixels_per_milli
+        // [REVERSE CHRONOLOGICAL] 위치 반전: 최신이 왼쪽, 과거가 오른쪽
+        return (this._latest - time_in_millis) * this._pixels_per_milli
     }
 
     getPositionInfo(idx) {
