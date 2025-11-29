@@ -1,7 +1,10 @@
+@pretendard-font: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
 .tl-timeline {
-	font-family: @font-main;
-	
+	font-family: @pretendard-font;
+
 	h1, h2, h3, h4, h5, h6 {
+		font-family: @pretendard-font;
 		color:@color-header-text;
 	}
 	
@@ -124,7 +127,7 @@
 		        hyphens: auto;
 	}
 	blockquote, blockquote p {
-		font-family: @font-serif;
+		font-family: @pretendard-font;
 		color: lighten(@color-dark, 60%);
 		font-size: @base-font-size-large;
 		line-height:@base-font-size-large;
@@ -133,7 +136,7 @@
 		border:0px;
 		padding:0px;
 		cite {
-			font-family: @font-sanserif;
+			font-family: @pretendard-font;
 			font-size: @base-font-size-small;
 			color: lighten(@color-dark, 40%);
 			display:block;
@@ -175,7 +178,7 @@
 	/* VCard
 	================================================== */
 	.vcard {
-		font-family: @font-main;
+		font-family: @pretendard-font;
 		font-size: @base-font-size;
 		line-height:@base-font-size;
 
@@ -258,7 +261,7 @@
 
 	.tl-note {
 		display:block;
-		font-family: @font-main;
+		font-family: @pretendard-font;
 		font-style: italic;
 		background-color:@note-color-background;
 		font-size:@base-font-size;
