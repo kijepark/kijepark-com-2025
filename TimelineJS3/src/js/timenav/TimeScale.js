@@ -239,8 +239,11 @@ export class TimeScale {
 
             if (typeof(slides[i].end_date) != 'undefined') {
                 var end_pos = this.getPosition(slides[i].end_date.getTime());
-                pos_info.width = end_pos - pos_info.start;
+                // [REVERSE CHRONOLOGICAL] 역순에서는 end_date가 더 왼쪽(작은 값)이므로 절대값 사용
+                pos_info.width = Math.abs(end_pos - pos_info.start);
                 if (pos_info.width > default_marker_width) {
+                    // [REVERSE CHRONOLOGICAL] 역순에서는 end_pos가 start보다 작으므로 end_pos를 start로 사용
+                    pos_info.start = Math.min(pos_info.start, end_pos);
                     pos_info.end = pos_info.start + pos_info.width;
                 } else {
                     pos_info.end = pos_info.start + default_marker_width;
