@@ -310,58 +310,73 @@ p {
 /* 유튜브 - YouTube video styles */
 #kije-yt-video {
   position: relative;
+  display: inline-block;
   width: 1000px;
   max-width: 100%;
-  margin: 0 auto;
-
-  /* 비율 강제 고정 - aspect-ratio 사용 */
-  aspect-ratio: 1000 / 563 !important;
-
-  /* 테두리 둥글게 & 넘치는 것 자르기 */
-  border-radius: 30px !important;
-  overflow: hidden !important;
-
-  /* Safari 브라우저 버그 방지용 (border-radius) */
-  transform: translateZ(0);
-
-  background-color: #000;
   cursor: pointer;
+  overflow: hidden;
+  border-radius: 30px !important;
+  background-color: #000;
   z-index: 1;
 }
 
-/* 썸네일 이미지 - 꽉 채우기 */
-#kije-yt-video img {
+/* Use padding-bottom trick for reliable aspect ratio */
+#kije-yt-video::before {
+  content: "";
+  display: block;
+  padding-bottom: 56.3%; /* 563/1000 = 56.3% */
+}
+
+/* Responsive: full width on smaller screens */
+@media only screen and (max-width: 1029px) {
+  #kije-yt-video {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Content wrapper - covers the ::before area */
+#kije-yt-content {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+#kije-yt-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  border-radius: 30px !important;
+  overflow: hidden;
+}
+
+#kije-yt-thumb img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  border-radius: 30px !important;
   display: block;
-  z-index: 2;
+  border-radius: 30px !important;
 }
 
-/* 플레이 버튼 - 절대 좌표 정중앙 배치 */
 #kije-yt-play {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  /* 본인 크기의 절반만큼 되돌려서 정중앙을 맞춤 */
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 10;
   pointer-events: none;
-  width: 68px;
-  height: 48px;
 }
 
-#kije-yt-play svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* iframe */
 #kije-yt-video iframe {
   position: absolute;
   top: 0;
@@ -370,14 +385,12 @@ p {
   height: 100%;
   border: 0;
   border-radius: 30px !important;
-  z-index: 3;
 }
 
-/* 호버 효과 */
+/* Hover effect for play button */
 #kije-yt-video:hover .play-button-bg {
   fill: #f00;
   fill-opacity: 1;
-  transition: fill 0.1s cubic-bezier(0, 0, 0.2, 1);
 }
 .vlt-testimonial-item__avatar img {
   width: 120px;
