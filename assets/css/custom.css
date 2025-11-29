@@ -364,7 +364,8 @@ p {
   position: relative;
   display: inline-block;
   width: 1000px;
-  height: 563px;
+  max-width: 100%;
+  aspect-ratio: 1000 / 563;
   cursor: pointer;
   overflow: hidden;
   border-radius: 30px !important;
@@ -372,12 +373,10 @@ p {
   z-index: 1;
 }
 
-/* Responsive: maintain 1000:563 ratio on smaller screens */
+/* Responsive: full width on smaller screens */
 @media only screen and (max-width: 1029px) {
   #kije-yt-video {
     width: 100%;
-    height: auto;
-    aspect-ratio: 1000 / 563;
     display: block;
   }
 }
@@ -407,7 +406,8 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 10;
+  pointer-events: none;
 }
 
 #kije-yt-video iframe {
@@ -417,7 +417,7 @@ p {
   width: 100%;
   height: 100%;
   border: 0;
-  border-radius: 30px;
+  border-radius: 30px !important;
 }
 
 .video-container:hover .play-button-bg {
