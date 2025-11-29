@@ -263,7 +263,11 @@ export class TimeScale {
         }
 
         if (!(groups.length)) {
-            var result = this._computeRowInfo(this._positions, max_rows);
+            // [REVERSE CHRONOLOGICAL] start 위치 기준으로 정렬하여 row 계산
+            var sorted_positions = this._positions.slice().sort(function(a, b) {
+                return a.start - b.start;
+            });
+            var result = this._computeRowInfo(sorted_positions, max_rows);
             this._number_of_rows = result.n_rows;
         } else {
             if (empty_group) {
@@ -300,6 +304,13 @@ export class TimeScale {
             }
 
             var n_rows = groups.length; // start with 1 row per group
+
+            // [REVERSE CHRONOLOGICAL] 각 그룹의 positions를 start 기준으로 정렬
+            for (var i = 0; i < group_info.length; i++) {
+                group_info[i].positions.sort(function(a, b) {
+                    return a.start - b.start;
+                });
+            }
 
             while (true) {
                 // Count free rows available
