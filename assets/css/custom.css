@@ -309,7 +309,9 @@ p {
 }
 /* 유튜브  */
 .video-container {
-  /* Removed old padding-bottom method - now using aspect-ratio in inline styles */
+  /* Force 1000:563 aspect ratio - override any theme CSS */
+  aspect-ratio: 1000 / 563 !important;
+  height: auto !important;
 }
 .video-container iframe {
   position: absolute;
