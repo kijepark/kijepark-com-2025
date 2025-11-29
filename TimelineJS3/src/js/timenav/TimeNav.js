@@ -471,7 +471,8 @@ export class TimeNav {
         var self = this,
             _ease = this.options.ease,
             _duration = this.options.duration,
-            _n = (n < 0) ? 0 : n;
+            // [REVERSE CHRONOLOGICAL] title slide(n=-1)일 때 마지막 마커(최신 이벤트)로 이동
+            _n = (n < 0) ? this._markers.length - 1 : n;
 
         // Set Marker active state
         this._resetMarkersActive();
