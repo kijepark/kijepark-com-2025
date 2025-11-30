@@ -251,6 +251,13 @@ export class TimeNav {
     /*	Groups
     ================================================== */
     _createGroups() {
+        // Remove existing group DOM elements before creating new ones
+        if (this._groups && this._groups.length > 0) {
+            for (var i = 0; i < this._groups.length; i++) {
+                this._groups[i].removeFrom(this._el.container);
+            }
+        }
+
         this._groups = [];
         var group_labels = this.timescale.getGroupLabels();
 
