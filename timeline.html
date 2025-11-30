@@ -107,11 +107,84 @@
             height: 350px;
             width: 100%;
         }
+
+        /* 스켈레톤 UI 스타일 */
+        #skeleton-loader {
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            font-family: 'Pretendard Variable', sans-serif;
+            overflow: hidden;
+        }
+
+        /* 스켈레톤 내부 요소 */
+        .sk-nav { width: 100%; height: 100px; margin-bottom: 40px; border-radius: 4px; }
+        .sk-content { display: flex; gap: 40px; height: calc(100vh - 200px); }
+        .sk-media { flex: 1; height: 100%; border-radius: 6px; }
+        .sk-text-group { flex: 1; display: flex; flex-direction: column; gap: 15px; padding-top: 20px; }
+        .sk-headline { height: 40px; width: 60%; border-radius: 4px; margin-bottom: 10px; }
+        .sk-line { height: 16px; border-radius: 3px; }
+
+        /* 쉬머 애니메이션 */
+        .shimmer {
+            background: #f6f7f8;
+            background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 1000px 100%;
+            animation: shimmer 1.5s infinite linear forwards;
+        }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        /* 로딩 메시지 박스 */
+        #loading-msg-container {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 25px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+            border: 1px solid #eee;
+            z-index: 100;
+        }
+        #loading-spinner { animation: spin 2s infinite linear; display: inline-block; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
 
-    <div id="timeline-embed"></div>
+    <div id="skeleton-loader">
+        <div class="sk-nav shimmer"></div>
+        <div class="sk-content">
+            <div class="sk-media shimmer"></div>
+            <div class="sk-text-group">
+                <div class="sk-headline shimmer"></div>
+                <div class="sk-line shimmer" style="width: 90%"></div>
+                <div class="sk-line shimmer" style="width: 70%"></div>
+                <div class="sk-line shimmer" style="width: 80%"></div>
+            </div>
+        </div>
+        <div id="loading-msg-container">
+            <span id="loading-spinner">⏳</span>
+            <span id="loading-text">타임라인 데이터를 불러오는 중...</span>
+        </div>
+    </div>
+
+    <div id="timeline-embed" style="width: 100%; height: 100vh; display: none;"></div>
 
     <script src="./TimelineJS3/dist/js/timeline.js"></script>
 
@@ -297,11 +370,32 @@
             font: null  // CDN 폰트 로딩 방지 - HTML에서 직접 로드함
         };
 
-        window.timeline = new TL.Timeline('timeline-embed', timelineData, options);
+        // 로딩 메시지 애니메이션
+        const loadingMessages = [
+            "개발자의 지난 밤샘 기록을 발굴 중입니다... ⛏️",
+            "GitHub 커밋 로그를 분석하고 있습니다... 📊",
+            "카페인을 코드로 변환 중... ☕",
+            "과거와 미래를 연결하는 중... 🚀"
+        ];
+        let msgIndex = 0;
+        const msgElement = document.getElementById('loading-text');
+        const msgInterval = setInterval(() => {
+            msgIndex = (msgIndex + 1) % loadingMessages.length;
+            if(msgElement) msgElement.innerText = loadingMessages[msgIndex];
+        }, 800);
 
-        // Tech Stack Chart 렌더링
-        setTimeout(function() {
+        // Tech Stack Chart 렌더링 함수
+        function renderTechStackChart() {
             var container = document.getElementById('tech-stack-chart-container');
+
+            if (!container) {
+                console.warn("차트 컨테이너를 찾을 수 없습니다.");
+                return;
+            }
+
+            console.log("차트 렌더링 시작...");
+
+            // 기존 차트 HTML 구조
             if (container) {
                 container.innerHTML = `
                     <div class="tech-stack-container">
@@ -473,7 +567,38 @@
                     }
                 });
             }
-        }, 500);
+
+            console.log("차트 렌더링 완료!");
+        }
+
+        // TimelineJS 초기화
+        window.timeline = new TL.Timeline('timeline-embed', timelineData, options);
+
+        // Loaded 이벤트 핸들러
+        window.timeline.on('loaded', function() {
+            console.log("TimelineJS 'loaded' 이벤트 발생");
+
+            // 메시지 롤링 중단
+            clearInterval(msgInterval);
+
+            // 스켈레톤 페이드 아웃
+            const skeleton = document.getElementById('skeleton-loader');
+            const realTimeline = document.getElementById('timeline-embed');
+
+            if (skeleton && realTimeline) {
+                skeleton.style.transition = 'opacity 0.5s ease';
+                skeleton.style.opacity = '0';
+
+                // 0.5초 뒤 스켈레톤 제거 및 타임라인 표시
+                setTimeout(() => {
+                    skeleton.style.display = 'none';
+                    realTimeline.style.display = 'block';
+
+                    // 차트 렌더링
+                    renderTechStackChart();
+                }, 500);
+            }
+        });
     </script>
 
     <!-- 모든 CSS 로드 후 최종 폰트 강제 적용 -->
