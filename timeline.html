@@ -190,6 +190,25 @@
         }
         #loading-spinner { animation: spin 2s infinite linear; display: inline-block; }
         @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Project link icon styles */
+        .project-link-icon {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            margin-left: 8px;
+            margin-bottom: 8px;
+            vertical-align: middle;
+            filter: grayscale(100%) brightness(1.5);
+            opacity: 0.5;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .project-link-icon:hover {
+            filter: grayscale(0%) brightness(1);
+            opacity: 1;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -240,7 +259,7 @@
                     "end_date": { "year": "2024", "month": "10" },
                     "text": {
                         "headline": "YouTube Sherpa: AI 기반 유튜브 콘텐츠 최적화 솔루션",
-                        "text": "크리에이터를 위한 AI 분석 및 생성 자동화 도구 (Chrome Extension).<br><ul><li>LangChain과 FastAPI(Python)를 기반으로 영상의 오디오 추출(yt-dlp) 및 분석을 수행, 메타데이터(제목, 스크립트)를 자동 생성하는 AI 파이프라인 구축.</li><li>Manifest V3 환경에서 React + Vite를 활용해 유튜브 웹사이트 위에 오버레이되는 고성능 사이드 패널 UI 구현.</li><li>무거운 AI 연산 처리는 Python으로, 일반 API 로직은 Node.js로 분리하여 각 언어의 장점을 살린 폴리글랏(Polyglot) 아키텍처 설계.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "크리에이터를 위한 AI 분석 및 생성 자동화 도구 (Chrome Extension).<br><ul><li>LangChain과 FastAPI(Python)를 기반으로 영상의 오디오 추출(yt-dlp) 및 분석을 수행, 메타데이터(제목, 스크립트)를 자동 생성하는 AI 파이프라인 구축.</li><li>Manifest V3 환경에서 React + Vite를 활용해 유튜브 웹사이트 위에 오버레이되는 고성능 사이드 패널 UI 구현.</li><li>무거운 AI 연산 처리는 Python으로, 일반 API 로직은 Node.js로 분리하여 각 언어의 장점을 살린 폴리글랏(Polyglot) 아키텍처 설계.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -250,7 +269,7 @@
                     "end_date": { "year": "2024", "month": "04" },
                     "text": {
                         "headline": "Winning Resume: URL/파일 기반 AI 이력서 자동 생성 서비스",
-                        "text": "다양한 포맷의 커리어 데이터를 분석해 표준 이력서로 변환하는 웹 서비스.<br><ul><li>Playwright를 활용해 원티드, 노션 등 DOM 구조가 상이한 채용 사이트 및 PDF/Word 파일을 파싱하여 정형 데이터로 변환하는 전처리 파이프라인 구축.</li><li>OpenAI API를 연동하여 수집된 비정형 데이터를 분석, 직무별(개발, 사무 등) 핵심 역량을 추출하여 2장 분량의 최적화된 이력서로 자동 생성.</li><li>Next.js와 Draft.js를 활용해 브라우저상에서 실시간 PDF 미리보기 및 텍스트 편집이 가능한 위지윅(WYSIWYG) 환경 구현.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "다양한 포맷의 커리어 데이터를 분석해 표준 이력서로 변환하는 웹 서비스.<br><ul><li>Playwright를 활용해 원티드, 노션 등 DOM 구조가 상이한 채용 사이트 및 PDF/Word 파일을 파싱하여 정형 데이터로 변환하는 전처리 파이프라인 구축.</li><li>OpenAI API를 연동하여 수집된 비정형 데이터를 분석, 직무별(개발, 사무 등) 핵심 역량을 추출하여 2장 분량의 최적화된 이력서로 자동 생성.</li><li>Next.js와 Draft.js를 활용해 브라우저상에서 실시간 PDF 미리보기 및 텍스트 편집이 가능한 위지윅(WYSIWYG) 환경 구현.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -260,7 +279,7 @@
                     "end_date": { "year": "2023", "month": "12" },
                     "text": {
                         "headline": "AI Mock Interview: 직무 역량 기반 실시간 모의 면접 서비스",
-                        "text": "이력서 분석 기반의 개인화된 면접 질문 생성 및 실시간 영상 피드백 서비스.<br><ul><li>OpenAI API를 활용해 이력서의 프로젝트 경험을 분석하고, 직무 적합도에 따른 심층 질문(기술/인성/압박) 및 모범 답안을 자동 생성하는 로직 구현.</li><li>Web User Media API(navigator.mediaDevices)를 활용해 브라우저 환경에서 실시간 영상/음성 스트림을 캡처하고 녹화하는 프리뷰 시스템 구축.</li><li>MongoDB를 이용하여 사용자별 면접 세션과 수천 개의 구조화된 질문/답변 데이터셋을 효율적으로 관리하는 스키마 설계.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "이력서 분석 기반의 개인화된 면접 질문 생성 및 실시간 영상 피드백 서비스.<br><ul><li>OpenAI API를 활용해 이력서의 프로젝트 경험을 분석하고, 직무 적합도에 따른 심층 질문(기술/인성/압박) 및 모범 답안을 자동 생성하는 로직 구현.</li><li>Web User Media API(navigator.mediaDevices)를 활용해 브라우저 환경에서 실시간 영상/음성 스트림을 캡처하고 녹화하는 프리뷰 시스템 구축.</li><li>MongoDB를 이용하여 사용자별 면접 세션과 수천 개의 구조화된 질문/답변 데이터셋을 효율적으로 관리하는 스키마 설계.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -270,7 +289,7 @@
                     "end_date": { "year": "2024", "month": "10" },
                     "text": {
                         "headline": "HITS: 신약 개발 플랫폼(HyperLab) FE 개발",
-                        "text": "연구원을 위한 신약 개발 플랫폼의 프론트엔드를 전담하여 복잡한 분자 데이터 시각화 및 성능 최적화 주도.<br><ul><li>Next.js App Router 및 FSD(Feature-Sliced Design) 아키텍처를 도입해 코드 확장성과 유지보수성 확보.</li><li>TanStack Virtual/Table을 활용해 대규모 분자 리스트 및 데이터 병합 기능을 지연 없이 렌더링하도록 최적화.</li><li>OpenAPI Generator로 API 연동 자동화 및 Zustand/Jotai를 복합 사용하여 복잡한 비동기 상태 관리 효율화.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "연구원을 위한 신약 개발 플랫폼의 프론트엔드를 전담하여 복잡한 분자 데이터 시각화 및 성능 최적화 주도.<br><ul><li>Next.js App Router 및 FSD(Feature-Sliced Design) 아키텍처를 도입해 코드 확장성과 유지보수성 확보.</li><li>TanStack Virtual/Table을 활용해 대규모 분자 리스트 및 데이터 병합 기능을 지연 없이 렌더링하도록 최적화.</li><li>OpenAPI Generator로 API 연동 자동화 및 Zustand/Jotai를 복합 사용하여 복잡한 비동기 상태 관리 효율화.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Career"
                 },
@@ -280,7 +299,7 @@
                     "end_date": { "year": "2023", "month": "09" },
                     "text": {
                         "headline": "UXER: 디자이너 전용 3D 인터랙티브 포트폴리오",
-                        "text": "디자인 산출물의 시각적 가치를 극대화하는 포트폴리오 빌더.<br><ul><li>Three.js(WebGL)를 활용해 평면 디자인 시안을 3D 디바이스 목업(Mockup) 애니메이션으로 변환/렌더링하는 시각화 기술 구현.</li><li>디자인 수정 전/후를 비교하는 'Before & After' 슬라이더 및 이미지 툴팁 기능을 개발하여 디자이너의 작업 의도 전달력 강화.</li><li>Drag & Drop 및 다양한 커스텀이 가능한 웹 이력서 에디터(v2.0)를 구현하여 복잡한 DOM 조작 및 상태 관리 로직 최적화.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "디자인 산출물의 시각적 가치를 극대화하는 포트폴리오 빌더.<br><ul><li>Three.js(WebGL)를 활용해 평면 디자인 시안을 3D 디바이스 목업(Mockup) 애니메이션으로 변환/렌더링하는 시각화 기술 구현.</li><li>디자인 수정 전/후를 비교하는 'Before & After' 슬라이더 및 이미지 툴팁 기능을 개발하여 디자이너의 작업 의도 전달력 강화.</li><li>Drag & Drop 및 다양한 커스텀이 가능한 웹 이력서 에디터(v2.0)를 구현하여 복잡한 DOM 조작 및 상태 관리 로직 최적화.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -290,7 +309,7 @@
                     "end_date": { "year": "2023", "month": "03" },
                     "text": {
                         "headline": "Meissa: 스마트 건설 안전 관제 플랫폼 FE 개발",
-                        "text": "건설 현장 노무자 안전 관제 시스템의 프론트엔드를 담당, 위치 데이터 시각화 및 개발 환경 개선 주도.<br><ul><li>Leaflet.js와 React Query Polling을 활용해 노무자의 실시간 동선 및 위험 구역(Danger Zone) 인터랙션을 지도상에 시각화.</li><li>레거시 Webpack 빌드 시스템을 Vite로 마이그레이션하여 로컬 구동 및 빌드 속도를 개선, 팀 개발 효율성 증대.</li><li>대량의 건설 도면을 체계적으로 관리할 수 있는 계층형 폴더 구조 UI/UX 설계 및 구현.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "건설 현장 노무자 안전 관제 시스템의 프론트엔드를 담당, 위치 데이터 시각화 및 개발 환경 개선 주도.<br><ul><li>Leaflet.js와 React Query Polling을 활용해 노무자의 실시간 동선 및 위험 구역(Danger Zone) 인터랙션을 지도상에 시각화.</li><li>레거시 Webpack 빌드 시스템을 Vite로 마이그레이션하여 로컬 구동 및 빌드 속도를 개선, 팀 개발 효율성 증대.</li><li>대량의 건설 도면을 체계적으로 관리할 수 있는 계층형 폴더 구조 UI/UX 설계 및 구현.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Career"
                 },
@@ -300,7 +319,7 @@
                     "end_date": { "year": "2021", "month": "10" },
                     "text": {
                         "headline": "GitHub HR Profile Template: 개발자 기여도 시각화 위젯",
-                        "text": "GitHub 데이터를 분석해 README에 삽입 가능한 동적 차트(SVG)를 생성하는 오픈소스.<br><ul><li>브라우저가 없는 Node.js 환경에서 D3.js와 JSDOM을 활용해 가상 DOM을 생성하고, 데이터를 시각화 차트(Pie Chart)로 렌더링하여 SVG로 변환.</li><li>GitHub GraphQL API를 활용해 대량의 리포지토리 데이터 중 필요한 필드만 효율적으로 쿼리하여 API 응답 속도 및 리소스 최적화.</li><li>개발자 커뮤니티를 위한 도구로, URL 호출만으로 자신의 기술 스택과 기여도를 시각화해주는 위젯 서비스 배포.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "GitHub 데이터를 분석해 README에 삽입 가능한 동적 차트(SVG)를 생성하는 오픈소스.<br><ul><li>브라우저가 없는 Node.js 환경에서 D3.js와 JSDOM을 활용해 가상 DOM을 생성하고, 데이터를 시각화 차트(Pie Chart)로 렌더링하여 SVG로 변환.</li><li>GitHub GraphQL API를 활용해 대량의 리포지토리 데이터 중 필요한 필드만 효율적으로 쿼리하여 API 응답 속도 및 리소스 최적화.</li><li>개발자 커뮤니티를 위한 도구로, URL 호출만으로 자신의 기술 스택과 기여도를 시각화해주는 위젯 서비스 배포.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -310,7 +329,7 @@
                     "end_date": { "year": "2023", "month": "09" },
                     "text": {
                         "headline": "Real Developer: 개발자 특화 채용/이력서 플랫폼",
-                        "text": "구직자와 채용 담당자를 연결하는 올인원 커리어 플랫폼 개발.<br><ul><li>구직자(이력서 작성)와 리크루터(공고 관리/제안)의 양면 시장(Two-sided Market) 기능을 모두 지원하는 유저 시나리오 및 DB 스키마 설계.</li><li>이력서 방문자 추적(Tracking) 시스템 및 사용자 간 실시간 채팅 기능을 구현하여 채용 프로세스의 투명성 확보.</li><li>Google Sheets 데이터를 이력서로 자동 변환하는 기능을 개발하여 사용자 진입 장벽을 낮추고, WYSIWYG 에디터로 자유로운 편집 환경 제공.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "구직자와 채용 담당자를 연결하는 올인원 커리어 플랫폼 개발.<br><ul><li>구직자(이력서 작성)와 리크루터(공고 관리/제안)의 양면 시장(Two-sided Market) 기능을 모두 지원하는 유저 시나리오 및 DB 스키마 설계.</li><li>이력서 방문자 추적(Tracking) 시스템 및 사용자 간 실시간 채팅 기능을 구현하여 채용 프로세스의 투명성 확보.</li><li>Google Sheets 데이터를 이력서로 자동 변환하는 기능을 개발하여 사용자 진입 장벽을 낮추고, WYSIWYG 에디터로 자유로운 편집 환경 제공.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -320,7 +339,7 @@
                     "end_date": { "year": "2021", "month": "03" },
                     "text": {
                         "headline": "Purple Dog: 와인 정기 구독 커머스 플랫폼",
-                        "text": "와인 큐레이션 및 정기 구독을 위한 웹 서비스 및 운영 솔루션 개발.<br><ul><li>기존 회원의 구독 정보 및 결제 데이터를 분석하여 신규 DB 스키마로 매핑/이관하는 마이그레이션 작업을 수행하여 데이터 무결성 확보.</li><li>복잡한 와인 속성(지역, 바디감, 타닌 등)을 구조화하여 관리하고, 구독자 현황을 모니터링할 수 있는 관리자(Admin) 시스템 구축.</li><li>와인의 맛과 특성을 시각화(Radar Chart 등)하여 사용자에게 직관적인 정보를 제공하는 상세 페이지 UI 구현.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "와인 큐레이션 및 정기 구독을 위한 웹 서비스 및 운영 솔루션 개발.<br><ul><li>기존 회원의 구독 정보 및 결제 데이터를 분석하여 신규 DB 스키마로 매핑/이관하는 마이그레이션 작업을 수행하여 데이터 무결성 확보.</li><li>복잡한 와인 속성(지역, 바디감, 타닌 등)을 구조화하여 관리하고, 구독자 현황을 모니터링할 수 있는 관리자(Admin) 시스템 구축.</li><li>와인의 맛과 특성을 시각화(Radar Chart 등)하여 사용자에게 직관적인 정보를 제공하는 상세 페이지 UI 구현.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -330,7 +349,7 @@
                     "end_date": { "year": "2020", "month": "09" },
                     "text": {
                         "headline": "Ad Server Tutorial: 광고 시스템 아키텍처 구현 (Open Source)",
-                        "text": "애드테크(Ad Tech) 시스템의 핵심 원리를 분석하고 구현한 오픈소스 프로젝트.<br><ul><li>Google Ads 등 상용 광고 플랫폼의 프로세스(캠페인 생성 → 타겟팅 → 송출 → 트래킹)를 엔드투엔드(End-to-End)로 구현하여 광고 서버의 작동 원리 규명.</li><li>광고주(Advertiser), 매체사(Publisher), 캠페인 간의 다대다 관계 및 비즈니스 로직을 Mongoose 스키마로 정밀하게 모델링.</li><li>사용자 행동(Impression, Click) 로그를 수집하고 통계로 변환하는 트래킹 서버 및 관리자 대시보드(Admin) 구축.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "애드테크(Ad Tech) 시스템의 핵심 원리를 분석하고 구현한 오픈소스 프로젝트.<br><ul><li>Google Ads 등 상용 광고 플랫폼의 프로세스(캠페인 생성 → 타겟팅 → 송출 → 트래킹)를 엔드투엔드(End-to-End)로 구현하여 광고 서버의 작동 원리 규명.</li><li>광고주(Advertiser), 매체사(Publisher), 캠페인 간의 다대다 관계 및 비즈니스 로직을 Mongoose 스키마로 정밀하게 모델링.</li><li>사용자 행동(Impression, Click) 로그를 수집하고 통계로 변환하는 트래킹 서버 및 관리자 대시보드(Admin) 구축.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -340,7 +359,7 @@
                     "end_date": { "year": "2020", "month": "08" },
                     "text": {
                         "headline": "Shopify App: 온사이트 리타겟팅 마케팅 솔루션",
-                        "text": "이커머스 구매 전환율(CRO) 상승을 위한 Shopify 전용 마케팅 SaaS 개발.<br><ul><li>Shopify Admin API 및 OAuth 인증 흐름을 구현하여 플랫폼 규격에 맞는 SaaS 형태의 애플리케이션 구축.</li><li>Webpack을 활용해 외부 스토어 프론트엔드에 동적으로 스크립트를 주입(Injection)하고, 충돌 없이 UI를 렌더링하는 위젯 기술 구현.</li><li>방문자의 관심 상품 데이터를 실시간으로 분석해 재방문 및 이탈 시점에 최적의 상품을 노출하는 리타겟팅 로직 개발.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "이커머스 구매 전환율(CRO) 상승을 위한 Shopify 전용 마케팅 SaaS 개발.<br><ul><li>Shopify Admin API 및 OAuth 인증 흐름을 구현하여 플랫폼 규격에 맞는 SaaS 형태의 애플리케이션 구축.</li><li>Webpack을 활용해 외부 스토어 프론트엔드에 동적으로 스크립트를 주입(Injection)하고, 충돌 없이 UI를 렌더링하는 위젯 기술 구현.</li><li>방문자의 관심 상품 데이터를 실시간으로 분석해 재방문 및 이탈 시점에 최적의 상품을 노출하는 리타겟팅 로직 개발.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -350,7 +369,7 @@
                     "end_date": { "year": "2020", "month": "04" },
                     "text": {
                         "headline": "Super Social Proof: 이커머스 구매 심리 유도(CRO) 솔루션",
-                        "text": "구매 전환율 상승을 위한 올인원 소셜 프루프(Social Proof) SaaS 개발.<br><ul><li>'품절 임박(FOMO)', '실시간 구매 현황' 등 소비자의 구매 심리를 자극하는 6가지 마케팅 트리거를 React 컴포넌트로 모듈화하여 구현.</li><li>Shopify API를 활용해 변동되는 재고 수량 및 주문 데이터를 실시간으로 동기화하여 사용자에게 정확한 현황 정보를 제공.</li><li>Node.js 기반의 Koa 프레임워크를 도입해 미들웨어를 경량화하고, 다수의 쇼핑몰 트래픽을 효율적으로 처리하는 API 서버 구축.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "구매 전환율 상승을 위한 올인원 소셜 프루프(Social Proof) SaaS 개발.<br><ul><li>'품절 임박(FOMO)', '실시간 구매 현황' 등 소비자의 구매 심리를 자극하는 6가지 마케팅 트리거를 React 컴포넌트로 모듈화하여 구현.</li><li>Shopify API를 활용해 변동되는 재고 수량 및 주문 데이터를 실시간으로 동기화하여 사용자에게 정확한 현황 정보를 제공.</li><li>Node.js 기반의 Koa 프레임워크를 도입해 미들웨어를 경량화하고, 다수의 쇼핑몰 트래픽을 효율적으로 처리하는 API 서버 구축.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -360,7 +379,7 @@
                     "end_date": { "year": "2019", "month": "06" },
                     "text": {
                         "headline": "Double Up: Cafe24 상품 배너 오토메이션 솔루션",
-                        "text": "Cafe24 입점몰의 클릭률(CTR) 상승을 위한 이미지 오버레이 마케팅 툴.<br><ul><li>다양한 쇼핑몰 디자인 테마에 호환되도록, 상품 이미지의 DOM 위치를 동적으로 계산하여 배너를 오버레이하는 정교한 스크립트 로직 구현.</li><li>Cafe24 앱스토어 규격에 맞춰 OAuth 인증 및 스토어별 설정 데이터를 관리하는 백엔드(Node.js) 시스템 구축.</li><li>Webpack을 활용해 쇼핑몰에 삽입되는 써드파티 스크립트의 용량을 최적화하여 사이트 렌더링 성능 유지.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "Cafe24 입점몰의 클릭률(CTR) 상승을 위한 이미지 오버레이 마케팅 툴.<br><ul><li>다양한 쇼핑몰 디자인 테마에 호환되도록, 상품 이미지의 DOM 위치를 동적으로 계산하여 배너를 오버레이하는 정교한 스크립트 로직 구현.</li><li>Cafe24 앱스토어 규격에 맞춰 OAuth 인증 및 스토어별 설정 데이터를 관리하는 백엔드(Node.js) 시스템 구축.</li><li>Webpack을 활용해 쇼핑몰에 삽입되는 써드파티 스크립트의 용량을 최적화하여 사이트 렌더링 성능 유지.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Personal Project"
                 },
@@ -370,7 +389,7 @@
                     "end_date": { "year": "2018", "month": "10" },
                     "text": {
                         "headline": "ScrollAds: 경량화된 모바일 웹 광고 SDK",
-                        "text": "매체사 웹사이트에 탑재되는 고성능 광고 스크립트(SDK) 개발.<br><ul><li>React 등 프레임워크 없이 순수 JavaScript로 개발하여 SDK 용량을 경량화하고, 호스트 사이트와의 라이브러리 충돌 방지.</li><li>매체사마다 상이한 모바일 웹 환경(DOM 구조)을 분석해, 콘텐츠 흐름을 방해하지 않는 최적의 위치에 배너를 오버레이하는 렌더링 로직 구현.</li><li>Webpack을 통한 코드 번들링 및 난독화(Obfuscation) 적용으로 네트워크 리소스 최적화 및 보안성 강화.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "매체사 웹사이트에 탑재되는 고성능 광고 스크립트(SDK) 개발.<br><ul><li>React 등 프레임워크 없이 순수 JavaScript로 개발하여 SDK 용량을 경량화하고, 호스트 사이트와의 라이브러리 충돌 방지.</li><li>매체사마다 상이한 모바일 웹 환경(DOM 구조)을 분석해, 콘텐츠 흐름을 방해하지 않는 최적의 위치에 배너를 오버레이하는 렌더링 로직 구현.</li><li>Webpack을 통한 코드 번들링 및 난독화(Obfuscation) 적용으로 네트워크 리소스 최적화 및 보안성 강화.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Career"
                 },
@@ -380,7 +399,7 @@
                     "end_date": { "year": "2020", "month": "01" },
                     "text": {
                         "headline": "A0Paper: 모바일 웹 광고 SDK 개발",
-                        "text": "매체사 사이트에 삽입되는 경량화된 모바일 광고 SDK 개발 및 유지보수.<br><ul><li>프레임워크 의존성 없이 Vanilla JavaScript로 외부 삽입용 광고 스크립트를 개발하여 호스트 사이트와의 충돌 방지.</li><li>Webpack을 활용한 코드 난독화 및 번들링 최적화로 빠른 로딩 속도 구현.</li><li>다양한 모바일 브라우저 및 인앱 웹뷰 환경에서의 크로스 브라우징 이슈 해결.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><img src='./img/link.svg' alt='Link' style='width:20px;height:20px;margin-left:8px;margin-bottom:8px;vertical-align:middle;opacity:0.6;'>"
+                        "text": "매체사 사이트에 삽입되는 경량화된 모바일 광고 SDK 개발 및 유지보수.<br><ul><li>프레임워크 의존성 없이 Vanilla JavaScript로 외부 삽입용 광고 스크립트를 개발하여 호스트 사이트와의 충돌 방지.</li><li>Webpack을 활용한 코드 난독화 및 번들링 최적화로 빠른 로딩 속도 구현.</li><li>다양한 모바일 브라우저 및 인앱 웹뷰 환경에서의 크로스 브라우징 이슈 해결.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'><a href='#' class='project-link-icon' onclick='return false;'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a>"
                     },
                     "group": "Career"
                 }
