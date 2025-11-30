@@ -24,11 +24,15 @@ if (document) {
 
 function make_keydown_handler(timeline) {
     return function(event) {
+        console.log('!!!!! KEYDOWN EVENT RECEIVED !!!!!, key:', event.key);
+        console.log('Timeline config exists:', !!timeline.config);
+
         if (timeline.config) {
             var keyName = event.key;
 
             // Stop if key is being held down
             if (event.repeat) {
+                console.log('Key is being held down, ignoring');
                 return;
             }
 
@@ -46,6 +50,8 @@ function make_keydown_handler(timeline) {
 
             console.log('After - Current ID:', timeline.current_id);
             console.log('After - Current index:', timeline._getSlideIndex(timeline.current_id));
+        } else {
+            console.log('Timeline config not available yet!');
         }
     }
 }
@@ -187,8 +193,11 @@ class Timeline {
         // load font, theme
         this._loadStyles()
 
-
-        document.addEventListener("keydown", make_keydown_handler(this));
+        console.log('Timeline: Registering keyboard event handler');
+        var keydownHandler = make_keydown_handler(this);
+        console.log('Timeline: Handler created:', typeof keydownHandler);
+        document.addEventListener("keydown", keydownHandler);
+        console.log('Timeline: Keyboard handler registered');
         window.addEventListener("resize", function(e) {
             this.updateDisplay();
         }.bind(this));
