@@ -26,19 +26,16 @@ function make_keydown_handler(timeline) {
     return function(event) {
         if (timeline.config) {
             var keyName = event.key;
-            var currentSlide = timeline._getSlideIndex(self.current_id);
-            var _n = timeline.config.events.length - 1;
-            var lastSlide = timeline.config.title ? _n + 1 : _n;
-            var firstSlide = 0;
+
+            // Stop if key is being held down
+            if (event.repeat) {
+                return;
+            }
 
             if (keyName == 'ArrowLeft') {
-                if (currentSlide != firstSlide) {
-                    timeline.goToPrev();
-                }
+                timeline.goToNext();  // 타임라인 역순이므로 왼쪽=다음(과거)
             } else if (keyName == 'ArrowRight') {
-                if (currentSlide != lastSlide) {
-                    timeline.goToNext();
-                }
+                timeline.goToPrev();  // 타임라인 역순이므로 오른쪽=이전(최신)
             }
         }
     }
