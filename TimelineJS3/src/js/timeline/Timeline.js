@@ -24,34 +24,19 @@ if (document) {
 
 function make_keydown_handler(timeline) {
     return function(event) {
-        console.log('!!!!! KEYDOWN EVENT RECEIVED !!!!!, key:', event.key);
-        console.log('Timeline config exists:', !!timeline.config);
-
         if (timeline.config) {
             var keyName = event.key;
 
             // Stop if key is being held down
             if (event.repeat) {
-                console.log('Key is being held down, ignoring');
                 return;
             }
 
-            console.log('Key pressed:', keyName);
-            console.log('Current ID:', timeline.current_id);
-            console.log('Current index:', timeline._getSlideIndex(timeline.current_id));
-
             if (keyName == 'ArrowLeft') {
-                console.log('Going to NEXT (past)');
-                timeline.goToNext();
-            } else if (keyName == 'ArrowRight') {
-                console.log('Going to PREV (recent)');
                 timeline.goToPrev();
+            } else if (keyName == 'ArrowRight') {
+                timeline.goToNext();
             }
-
-            console.log('After - Current ID:', timeline.current_id);
-            console.log('After - Current index:', timeline._getSlideIndex(timeline.current_id));
-        } else {
-            console.log('Timeline config not available yet!');
         }
     }
 }
@@ -193,11 +178,7 @@ class Timeline {
         // load font, theme
         this._loadStyles()
 
-        console.log('Timeline: Registering keyboard event handler');
-        var keydownHandler = make_keydown_handler(this);
-        console.log('Timeline: Handler created:', typeof keydownHandler);
-        document.addEventListener("keydown", keydownHandler);
-        console.log('Timeline: Keyboard handler registered');
+        document.addEventListener("keydown", make_keydown_handler(this));
         window.addEventListener("resize", function(e) {
             this.updateDisplay();
         }.bind(this));
@@ -777,7 +758,11 @@ class Timeline {
             }
             for (var i = 0; i < this.config.events.length; i++) {
                 if (id == this.config.events[i].unique_id) {
-                    return this.config.title ? i + 1 : i;
+                    // [REVERSE CHRONOLOGICAL] events 배열에서의 위치를 논리적 슬라이드 번호로 변환
+                    // events[0] = 가장 오래된 = 마지막 슬라이드
+                    // events[15] = 가장 최신 = 첫 번째 이벤트 슬라이드
+                    var logicalIndex = this.config.events.length - i;
+                    return this.config.title ? logicalIndex : logicalIndex - 1;
                 }
             }
         }
@@ -878,13 +863,17 @@ class Timeline {
                 if (n === 0) {
                     this.goToId(this.config.title.unique_id);
                 } else {
-                    this.goToId(this.config.events[n - 1].unique_id);
+                    // [REVERSE CHRONOLOGICAL] _slides 배열이 역순이므로 events도 역순 인덱스로 접근
+                    var reverseIndex = this.config.events.length - n;
+                    this.goToId(this.config.events[reverseIndex].unique_id);
                 }
             } else {
-                this.goToId(this.config.events[n].unique_id);
+                // [REVERSE CHRONOLOGICAL] _slides 배열이 역순이므로 events도 역순 인덱스로 접근
+                var reverseIndex = this.config.events.length - 1 - n;
+                this.goToId(this.config.events[reverseIndex].unique_id);
             }
         } catch {
-            // because n is interpreted differently depending on 
+            // because n is interpreted differently depending on
             // whether there's a title slide, easier to use catch
             // to handle navigating beyond end instead of test before
             return
