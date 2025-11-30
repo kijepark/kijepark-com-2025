@@ -32,11 +32,20 @@ function make_keydown_handler(timeline) {
                 return;
             }
 
+            console.log('Key pressed:', keyName);
+            console.log('Current ID:', timeline.current_id);
+            console.log('Current index:', timeline._getSlideIndex(timeline.current_id));
+
             if (keyName == 'ArrowLeft') {
-                timeline.goToNext();  // 타임라인 역순이므로 왼쪽=다음(과거)
+                console.log('Going to NEXT (past)');
+                timeline.goToNext();
             } else if (keyName == 'ArrowRight') {
-                timeline.goToPrev();  // 타임라인 역순이므로 오른쪽=이전(최신)
+                console.log('Going to PREV (recent)');
+                timeline.goToPrev();
             }
+
+            console.log('After - Current ID:', timeline.current_id);
+            console.log('After - Current index:', timeline._getSlideIndex(timeline.current_id));
         }
     }
 }
