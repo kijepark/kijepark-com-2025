@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>박기제 개발 타임라인 (Portfolio)</title>
 
+    <!-- Pretendard Variable Font -->
+    <link rel="stylesheet" as="style" crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
     <!-- Preload critical resources -->
     <link rel="preload" href="./TimelineJS3/dist/js/timeline.js" as="script">
     <link rel="preload" href="./TimelineJS3/dist/css/timeline.css" as="style">
+    <link rel="preload" href="./TimelineJS3/dist/css/fonts/font.pt.css" as="style">
 
     <link title="timeline-styles" rel="stylesheet" href="./TimelineJS3/dist/css/timeline.css">
+    <link title="timeline-font" rel="stylesheet" href="./TimelineJS3/dist/css/fonts/font.pt.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
         body {
@@ -19,6 +28,84 @@
         #timeline-embed {
             width: 100%;
             height: 100vh;
+        }
+        /* Pretendard Variable 폰트 전체 적용 */
+        * {
+            font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+        }
+
+        .tl-timeline,
+        .tl-timeline * {
+            font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+        }
+
+        /* 아이콘 폰트 예외 */
+        [class^="tl-icon-"], [class*=" tl-icon-"],
+        [class^="tl-icon-"]:before, [class*=" tl-icon-"]:before,
+        [class^="tl-icon-"]:after, [class*=" tl-icon-"]:after {
+            font-family: 'tl-icons' !important;
+        }
+
+        /* 상단 슬라이드 배경색 */
+        .tl-storyslider {
+            background-color: #f8f9fa !important;
+        }
+        .tl-slide-scrollable-container {
+            background-color: #f8f9fa !important;
+        }
+
+        /* Tech Stack Chart Styles */
+        .tech-stack-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            background: white;
+            border-radius: 12px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .tech-stack-container h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 0 0 5px 0;
+            font-weight: 800;
+            font-size: 18px;
+        }
+        .tech-stack-container .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        .tech-stack-container .legend-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .tech-stack-container .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #555;
+            background: #f1f3f5;
+            padding: 3px 8px;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+        .tech-stack-container .legend-color {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .tech-stack-container .chart-wrapper {
+            position: relative;
+            height: 350px;
+            width: 100%;
         }
     </style>
 </head>
@@ -31,14 +118,9 @@
     <script>
         var timelineData = {
             "title": {
-                "media": {
-                    "url": "https://kijepark.com/assets/img/kijepark.png",
-                    "caption": "Product Maker",
-                    "credit": "Ki-je Park"
-                },
                 "text": {
-                    "headline": "박기제 (Ki-je Park)<br>Developer Portfolio",
-                    "text": "<p>Frontend, MERN Stack 개발자.<br>단순한 구현을 넘어 <strong>'비즈니스 임팩트'</strong>를 만드는 메이커입니다.<br>12개 이상의 상용 수준 프로젝트를 1인 개발/운영하며, 기획부터 배포까지 전 과정을 주도했습니다.</p>"
+                    "headline": "",
+                    "text": "<div id='tech-stack-chart-container'></div>"
                 }
             },
             "events": [
@@ -211,10 +293,212 @@
             scale_factor: 1,
             timenav_height_percentage: 30,
             start_at_slide: 0,
-            language: "ko"
+            language: "ko",
+            font: null  // CDN 폰트 로딩 방지 - HTML에서 직접 로드함
         };
 
         window.timeline = new TL.Timeline('timeline-embed', timelineData, options);
+
+        // Tech Stack Chart 렌더링
+        setTimeout(function() {
+            var container = document.getElementById('tech-stack-chart-container');
+            if (container) {
+                container.innerHTML = `
+                    <div class="tech-stack-container">
+                        <h2>Engineering Stack Timeline</h2>
+                        <p class="subtitle">Project-based Experience (2017.12 - Present)</p>
+                        <div class="legend-container">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #3498db;"></div>
+                                <span>Language</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #2ecc71;"></div>
+                                <span>Framework</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #9b59b6;"></div>
+                                <span>AI / Data</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #e67e22;"></div>
+                                <span>Specialized Lib</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #95a5a6;"></div>
+                                <span>Infra / Tool</span>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="techStackChart"></canvas>
+                        </div>
+                    </div>
+                `;
+
+                // Chart.js 데이터 및 렌더링
+                const NOW = 2025.2;
+                function getDate(year, month) {
+                    return year + ((month - 1) / 12);
+                }
+                function formatYearMonth(decimalYear) {
+                    if (decimalYear >= NOW) return 'Present';
+                    const year = Math.floor(decimalYear);
+                    const month = Math.round((decimalYear - year) * 12) + 1;
+                    return year + '.' + month.toString().padStart(2, '0');
+                }
+
+                const techStackData = [
+                    // Languages
+                    { name: 'JavaScript', start: getDate(2017, 12), end: NOW, category: 'Language' },
+                    { name: 'TypeScript', start: getDate(2022, 3), end: NOW, category: 'Language' },
+                    { name: 'Python', start: getDate(2024, 5), end: NOW, category: 'Language' },
+                    // Frameworks
+                    { name: 'Node.js', start: getDate(2019, 3), end: NOW, category: 'Framework' },
+                    { name: 'React', start: getDate(2019, 10), end: NOW, category: 'Framework' },
+                    { name: 'Next.js', start: getDate(2023, 3), end: NOW, category: 'Framework' },
+                    { name: 'Express', start: getDate(2019, 3), end: getDate(2024, 2), category: 'Framework' },
+                    { name: 'Koa', start: getDate(2019, 10), end: getDate(2020, 4), category: 'Framework' },
+                    { name: 'FastAPI', start: getDate(2024, 5), end: NOW, category: 'Framework' },
+                    // AI / Data
+                    { name: 'LangChain', start: getDate(2024, 5), end: NOW, category: 'AI / Data' },
+                    { name: 'OpenAI API', start: getDate(2023, 9), end: NOW, category: 'AI / Data' },
+                    { name: 'Playwright', start: getDate(2024, 1), end: getDate(2024, 4), category: 'AI / Data' },
+                    // Specialized Libs
+                    { name: 'Three.js', start: getDate(2022, 11), end: getDate(2023, 9), category: 'Specialized Lib' },
+                    { name: 'Leaflet.js', start: getDate(2022, 3), end: getDate(2023, 3), category: 'Specialized Lib' },
+                    { name: 'D3.js', start: getDate(2021, 9), end: getDate(2021, 10), category: 'Specialized Lib' },
+                    { name: 'Chrome Ext', start: getDate(2024, 5), end: NOW, category: 'Specialized Lib' },
+                    // Infra / Tools
+                    { name: 'MongoDB', start: getDate(2019, 3), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Webpack', start: getDate(2018, 5), end: getDate(2022, 3), category: 'Infra / Tool' },
+                    { name: 'Vite', start: getDate(2022, 3), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Docker', start: getDate(2023, 3), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Cursor', start: getDate(2024, 1), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Claude', start: getDate(2025, 1), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Gemini', start: getDate(2025, 1), end: NOW, category: 'Infra / Tool' },
+                ];
+
+                const categoryColors = {
+                    'Language': 'rgba(52, 152, 219, 0.85)',
+                    'Framework': 'rgba(46, 204, 113, 0.85)',
+                    'AI / Data': 'rgba(155, 89, 182, 0.85)',
+                    'Specialized Lib': 'rgba(230, 126, 34, 0.85)',
+                    'Infra / Tool': 'rgba(149, 165, 166, 0.85)'
+                };
+
+                const categoryOrder = ['Language', 'Framework', 'AI / Data', 'Specialized Lib', 'Infra / Tool'];
+                techStackData.sort(function(a, b) {
+                    var catDiff = categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
+                    if (catDiff !== 0) return catDiff;
+                    return a.start - b.start;
+                });
+
+                var labels = techStackData.map(function(item) { return item.name; });
+                var dataCoordinates = techStackData.map(function(item) { return [item.start, item.end]; });
+                var backgroundColors = techStackData.map(function(item) { return categoryColors[item.category]; });
+                var borderColors = techStackData.map(function(item) { return categoryColors[item.category].replace('0.85', '1'); });
+
+                var ctx = document.getElementById('techStackChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Tech Stack',
+                            data: dataCoordinates,
+                            backgroundColor: backgroundColors,
+                            borderColor: borderColors,
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            barPercentage: 0.8,
+                            categoryPercentage: 0.9
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                backgroundColor: 'rgba(33, 37, 41, 0.95)',
+                                titleFont: { family: 'Pretendard Variable', size: 12, weight: '700' },
+                                bodyFont: { family: 'Pretendard Variable', size: 11 },
+                                padding: 8,
+                                cornerRadius: 6,
+                                displayColors: true,
+                                boxWidth: 8,
+                                boxHeight: 8,
+                                callbacks: {
+                                    title: function(ctx) { return techStackData[ctx[0].dataIndex].name; },
+                                    label: function(ctx) {
+                                        var item = techStackData[ctx.dataIndex];
+                                        var startStr = formatYearMonth(item.start);
+                                        var endStr = formatYearMonth(item.end);
+                                        return startStr + ' - ' + endStr;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                type: 'linear',
+                                min: 2017,
+                                max: 2026,
+                                ticks: {
+                                    stepSize: 1,
+                                    font: { family: 'Pretendard Variable', size: 10 },
+                                    color: '#868e96',
+                                    callback: function(value) {
+                                        if (value >= 2026) return '';
+                                        return value.toString();
+                                    }
+                                },
+                                grid: {
+                                    color: '#f1f3f5',
+                                    borderDash: [3, 3]
+                                },
+                                position: 'top'
+                            },
+                            y: {
+                                ticks: {
+                                    font: { family: 'Pretendard Variable', weight: '400', size: 9 },
+                                    color: '#868e96',
+                                    autoSkip: false
+                                },
+                                grid: { display: false }
+                            }
+                        },
+                        animation: { duration: 0 }
+                    }
+                });
+            }
+        }, 500);
     </script>
+
+    <!-- 모든 CSS 로드 후 최종 폰트 강제 적용 -->
+    <style>
+        /* CDN font.default.css 오버라이드 - 최고 우선순위 */
+        * {
+            font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+        }
+
+        /* 아이콘 폰트는 반드시 예외 처리 - tl-icons 유지 */
+        [class^="tl-icon-"],
+        [class*=" tl-icon-"],
+        [class^="tl-icon-"]:before,
+        [class*=" tl-icon-"]:before,
+        [class^="tl-icon-"]:after,
+        [class*=" tl-icon-"]:after,
+        .tl-slidenav-icon,
+        .tl-slidenav-icon:before,
+        .tl-slidenav-icon:after,
+        .tl-slidenav-next:after,
+        .tl-slidenav-previous:after,
+        .tl-timemarker-content-container:before,
+        .tl-timemarker-content-container:after {
+            font-family: 'tl-icons' !important;
+        }
+    </style>
 </body>
 </html>
