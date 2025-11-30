@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; font-src 'self' cdn.jsdelivr.net; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
     <title>박기제 개발 타임라인 (Portfolio)</title>
 
-    <!-- Pretendard Variable 폰트 로드 -->
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <!-- Pretendard Variable Font -->
+    <link rel="stylesheet" as="style" crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 
     <!-- Preload critical resources -->
     <link rel="preload" href="./TimelineJS3/dist/js/timeline.js" as="script">
     <link rel="preload" href="./TimelineJS3/dist/css/timeline.css" as="style">
     <link rel="preload" href="./TimelineJS3/dist/css/fonts/font.pt.css" as="style">
 
-    <link title="timeline-styles" rel="stylesheet" href="./TimelineJS3/dist/css/timeline.css?v=nofontload">
-    <link title="timeline-font" rel="stylesheet" href="./TimelineJS3/dist/css/fonts/font.pt.css?v=nofontload">
+    <link title="timeline-styles" rel="stylesheet" href="./TimelineJS3/dist/css/timeline.css">
+    <link title="timeline-font" rel="stylesheet" href="./TimelineJS3/dist/css/fonts/font.pt.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
         body {
@@ -26,221 +29,445 @@
             width: 100%;
             height: 100vh;
         }
-
-        /* Pretendard Variable 폰트 전역 강제 적용 - 모든 TimelineJS 클래스 */
-        .tl-timeline,
-        .tl-timeline *,
-        .tl-timeline h1, .tl-timeline h2, .tl-timeline h3, .tl-timeline h4, .tl-timeline h5, .tl-timeline h6,
-        .tl-timeline p, .tl-timeline li, .tl-timeline ul, .tl-timeline ol, .tl-timeline div, .tl-timeline span, .tl-timeline a,
-        .tl-headline, .tl-headline-date, .tl-headline-title, .tl-headline-fadeout,
-        .tl-text, .tl-text-content, .tl-text-content-container, .tl-text-background, .tl-text-date, .tl-text-headline-container,
-        .tl-timenav, .tl-timenav-slider, .tl-timenav-line, .tl-timenav-container, .tl-timenav-container-mask, .tl-timenav-item-container, .tl-timenav-slider-background, .tl-timenav-slider-animate,
-        .tl-timeaxis, .tl-timeaxis-tick, .tl-timeaxis-tick-text, .tl-timeaxis-major, .tl-timeaxis-minor, .tl-timeaxis-background, .tl-timeaxis-content-container, .tl-timeaxis-tick-hidden, .tl-timeaxis-animate, .tl-timeaxis-animate-opacity,
-        .tl-timemarker, .tl-timemarker-text, .tl-timemarker-content, .tl-timemarker-content-container, .tl-timemarker-content-container-small, .tl-timemarker-content-container-long, .tl-timemarker-content-small,
-        .tl-timemarker-media, .tl-timemarker-media-container, .tl-timemarker-timespan, .tl-timemarker-timespan-content, .tl-timemarker-line-left, .tl-timemarker-line-right,
-        .tl-timemarker-active, .tl-timemarker-fast, .tl-timemarker-with-end,
-        .tl-timeera, .tl-timeera-background, .tl-timeera-content, .tl-timeera-content-container, .tl-timeera-text, .tl-timeera-fast,
-        .tl-timeera-color0, .tl-timeera-color1, .tl-timeera-color2, .tl-timeera-color3, .tl-timeera-color4, .tl-timeera-color5,
-        .tl-timegroup, .tl-timegroup-message, .tl-timegroup-hidden, .tl-timegroup-alternate,
-        .tl-slidenav-next, .tl-slidenav-previous, .tl-slidenav-title, .tl-slidenav-description, .tl-slidenav-icon, .tl-slidenav-content-container, .tl-slidenav-inverted,
-        .tl-slide, .tl-slide-content, .tl-slide-content-container, .tl-slide-background, .tl-slide-scrollable-container, .tl-slide-media-only, .tl-slide-text-only,
-        .tl-slider-background, .tl-slider-container, .tl-slider-container-mask, .tl-slider-item-container, .tl-slider-touch-mask,
-        .tl-storyslider,
-        .tl-caption, .tl-credit,
-        .tl-menubar, .tl-menubar-button,
-        .tl-message, .tl-message-full, .tl-message-container, .tl-message-content,
-        .tl-media, .tl-media-content, .tl-media-content-container, .tl-media-content-container-text, .tl-media-shadow, .tl-media-image, .tl-media-iframe,
-        .tl-media-blockquote, .tl-media-twitter, .tl-media-instagram, .tl-media-profile, .tl-media-website, .tl-media-website-description, .tl-media-website-icon,
-        .tl-media-wikipedia, .tl-media-loaderror,
-        .tl-wikipedia-title, .tl-wikipedia-source, .tl-wikipedia-pageimage,
-        .tl-button, .tl-button-calltoaction, .tl-button-calltoaction-text,
-        .tl-note,
-        .tl-date,
-        .tl-attribution,
-        .tl-knightlab-logo,
-        .tl-sizebar, .tl-sizebar-button, .tl-sizebar-inverted,
-        .tl-loading-icon,
-        .tl-makelink,
-        .tl-dragging,
-        .tl-animate, .tl-animate-opacity,
-        .tl-full-color-background, .tl-full-image-background,
-        .tl-layout-portrait, .tl-layout-landscape,
-        .tl-timeline-embed, .tl-timeline-full-embed,
-        .tl-skinny, .tl-medium, .tl-mobile, .tl-rtl,
-        .vcard, .vcard .fn, .vcard .nickname, .vcard .author, .vcard .avatar, .vcard .twitter-date,
-        blockquote, blockquote p, blockquote cite {
-            font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+        /* Pretendard Variable 폰트 전체 적용 */
+        * {
+            font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+            letter-spacing: -0.03rem;
         }
 
-        /* 아이콘 폰트는 제외 */
+        /* ================================================= */
+        /* 상단 vs 하단 헤드라인 굵기 분리 설정              */
+        /* ================================================= */
+
+        /* 상단 (슬라이드 설명 영역) - 굵게 유지 */
+        .tl-storyslider .tl-headline,
+        .tl-slide .tl-headline {
+            font-weight: 700 !important;
+        }
+
+        /* 하단 (타임라인 네비게이션) - 500으로 변경 */
+        .tl-timenav .tl-headline,
+        .tl-timenav h2,
+        .tl-timemarker .tl-headline {
+            font-weight: 500 !important;
+        }
+
+        /* ================================================= */
+
+        .tl-text .tl-text-content p {
+            font-weight: 700 !important;
+        }
+        .tl-timeline,
+        .tl-timeline * {
+            font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+        }
+
+        /* 아이콘 폰트 예외 */
         [class^="tl-icon-"], [class*=" tl-icon-"],
         [class^="tl-icon-"]:before, [class*=" tl-icon-"]:before,
         [class^="tl-icon-"]:after, [class*=" tl-icon-"]:after {
             font-family: 'tl-icons' !important;
         }
+
+        /* 상단 슬라이드 배경색 */
+        .tl-storyslider {
+            background-color: #f8f9fa !important;
+        }
+        .tl-slide-scrollable-container {
+            background-color: #f8f9fa !important;
+        }
+
+        /* Tech Stack Chart Styles */
+        .tech-stack-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            background: white;
+            border-radius: 12px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .tech-stack-container h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 0 0 5px 0;
+            font-weight: 800;
+            font-size: 18px;
+        }
+        .tech-stack-container .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        .tech-stack-container .legend-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .tech-stack-container .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #555;
+            background: #f1f3f5;
+            padding: 3px 8px;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+        .tech-stack-container .legend-color {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .tech-stack-container .chart-wrapper {
+            position: relative;
+            height: 350px;
+            width: 100%;
+        }
+
+        /* 스켈레톤 UI 스타일 */
+        #skeleton-loader {
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            font-family: 'Pretendard Variable', sans-serif;
+            overflow: hidden;
+        }
+
+        /* 스켈레톤 내부 요소 */
+        .sk-nav { width: 100%; height: 100px; margin-bottom: 40px; border-radius: 4px; }
+        .sk-content { display: flex; gap: 40px; height: calc(100vh - 200px); }
+        .sk-media { flex: 1; height: 100%; border-radius: 6px; }
+        .sk-text-group { flex: 1; display: flex; flex-direction: column; gap: 15px; padding-top: 20px; }
+        .sk-headline { height: 40px; width: 60%; border-radius: 4px; margin-bottom: 10px; }
+        .sk-line { height: 16px; border-radius: 3px; }
+
+        /* 쉬머 애니메이션 */
+        .shimmer {
+            background: #f6f7f8;
+            background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 1000px 100%;
+            animation: shimmer 1.5s infinite linear forwards;
+        }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        /* 로딩 메시지 박스 */
+        #loading-msg-container {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 25px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+            border: 1px solid #eee;
+            z-index: 100;
+        }
+        #loading-spinner { animation: spin 2s infinite linear; display: inline-block; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Badge Selection Area */
+        #badge-selection {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            max-width: 400px;
+        }
+        #badge-selection h3 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        #badge-selection .badge-option {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        #badge-selection .badge-option img {
+            transform: scale(0.85);
+            transform-origin: left center;
+        }
+        #badge-selection .badge-option:hover {
+            border-color: #3498db;
+            background-color: #f8f9fa;
+        }
+        #badge-selection .badge-label {
+            display: block;
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        #badge-selection .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #95a5a6;
+            padding: 5px 10px;
+        }
+        #badge-selection .close-btn:hover {
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
 
-    <div id="timeline-embed"></div>
+    <!-- Badge Selection Area -->
+    <div id="badge-selection">
+        <button class="close-btn" onclick="document.getElementById('badge-selection').style.display='none'">✕</button>
+        <h3>🌿 100% Organic Code Badge</h3>
 
-    <script src="./TimelineJS3/dist/js/timeline.js?v=nofontload"></script>
+        <div class="badge-option" onclick="copyBadgeCode(1)">
+            <span class="badge-label">1. 유기농 스타일 (가장 추천)</span>
+            <img src="https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white" alt="100% Organic Code">
+        </div>
+
+        <div class="badge-option" onclick="copyBadgeCode(2)">
+            <span class="badge-label">2. 장인 정신 스타일 (깔끔/심플)</span>
+            <img src="https://img.shields.io/badge/Code-100%25_Organic-0984e3?style=flat-square" alt="100% Organic Code">
+        </div>
+
+        <div class="badge-option" onclick="copyBadgeCode(3)">
+            <span class="badge-label">3. 뇌 + 코드 스타일 (직관적)</span>
+            <img src="https://img.shields.io/badge/Handcrafted_Code-Brain_Powered-6c5ce7?style=for-the-badge&logo=brain&logoColor=white" alt="Handcrafted Code">
+        </div>
+    </div>
+
+    <script>
+        function copyBadgeCode(type) {
+            const codes = {
+                1: '<img src="https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white" alt="100% Organic Code">',
+                2: '<img src="https://img.shields.io/badge/Code-100%25_Organic-0984e3?style=flat-square" alt="100% Organic Code">',
+                3: '<img src="https://img.shields.io/badge/Handcrafted_Code-Brain_Powered-6c5ce7?style=for-the-badge&logo=brain&logoColor=white" alt="Handcrafted Code">'
+            };
+
+            navigator.clipboard.writeText(codes[type]).then(() => {
+                alert('뱃지 코드가 클립보드에 복사되었습니다!\n\n' + codes[type]);
+            });
+        }
+    </script>
+
+    <div id="skeleton-loader">
+        <div class="sk-nav shimmer"></div>
+        <div class="sk-content">
+            <div class="sk-media shimmer"></div>
+            <div class="sk-text-group">
+                <div class="sk-headline shimmer"></div>
+                <div class="sk-line shimmer" style="width: 90%"></div>
+                <div class="sk-line shimmer" style="width: 70%"></div>
+                <div class="sk-line shimmer" style="width: 80%"></div>
+            </div>
+        </div>
+        <div id="loading-msg-container">
+            <span id="loading-spinner">⏳</span>
+            <span id="loading-text">타임라인 데이터를 불러오는 중...</span>
+        </div>
+    </div>
+
+    <div id="timeline-embed" style="width: 100%; height: 100vh; display: none;"></div>
+
+    <script src="./TimelineJS3/dist/js/timeline.js"></script>
 
     <script>
         var timelineData = {
             "title": {
-                "media": {
-                    "url": "https://kijepark.com/assets/img/kijepark.png",
-                    "caption": "Product Maker",
-                    "credit": "Ki-je Park"
-                },
                 "text": {
-                    "headline": "박기제 (Ki-je Park)<br>Developer Portfolio",
-                    "text": "<p>Frontend, MERN Stack 개발자.<br>단순한 구현을 넘어 <strong>'비즈니스 임팩트'</strong>를 만드는 메이커입니다.<br>12개 이상의 상용 수준 프로젝트를 1인 개발/운영하며, 기획부터 배포까지 전 과정을 주도했습니다.</p>"
+                    "headline": "",
+                    "text": "<div id='tech-stack-chart-container'></div>"
                 }
             },
             "events": [
+                // #1 - 2024-10 (최신)
                 {
                     "start_date": { "year": "2024", "month": "10" },
                     "end_date": { "year": "2025", "month": "6" },
                     "text": {
                         "headline": "YouTube Creator Fan Community (Stealth Mode)",
-                        "text": "크리에이터와 팬덤의 지속 가능한 소통을 위한 버티컬 플랫폼 개발.<br><ul><li><strong>Status:</strong> 시장 검증을 위한 핵심 기능 중심의 MVP(Minimum Viable Product) 개발 및 비공개 테스트 준비 중.</li><li><strong>Role:</strong> 1인 개발 (Product Engineering). 서비스 기획부터 배포 파이프라인 구축까지 전 과정 주도.</li><li><strong>Focus:</strong> 팬덤 유입 시의 트래픽 급증(Spike Traffic)을 고려한 확장성 있는 서버 아키텍처 설계.</li></ul>"
+                        "text": "크리에이터와 팬덤의 지속 가능한 소통을 위한 버티컬 플랫폼 개발.<br><ul><li>시장 검증을 위한 핵심 기능 중심의 MVP 개발 및 비공개 테스트 준비 중.</li><li>1인 개발 (Product Engineering). 서비스 기획부터 배포 파이프라인 구축까지 전 과정 주도.</li><li>AI 페어 프로그래밍 및 리팩토링 프로세스를 도입, 1인 개발 효율을 높이고 기술 부채 없는 견고한 로직 추구.</li></ul>"
                     },
                     "group": "Personal Project"
                 },
+                // #2 - 2024-05
                 {
                     "start_date": { "year": "2024", "month": "05" },
                     "end_date": { "year": "2024", "month": "10" },
                     "text": {
                         "headline": "YouTube Sherpa: AI 기반 유튜브 콘텐츠 최적화 솔루션",
-                        "text": "크리에이터를 위한 AI 분석 및 생성 자동화 도구 (Chrome Extension).<br><ul><li><strong>GenAI Pipeline:</strong> LangChain과 FastAPI(Python)를 기반으로 영상의 오디오 추출(yt-dlp) 및 분석을 수행, 메타데이터(제목, 스크립트)를 자동 생성하는 AI 파이프라인 구축.</li><li><strong>Extension Engineering:</strong> Manifest V3 환경에서 React + Vite를 활용해 유튜브 웹사이트 위에 오버레이되는 고성능 사이드 패널 UI 구현.</li><li><strong>Hybrid Architecture:</strong> 무거운 AI 연산 처리는 Python으로, 일반 API 로직은 Node.js로 분리하여 각 언어의 장점을 살린 폴리글랏(Polyglot) 아키텍처 설계.</li></ul>"
+                        "text": "크리에이터를 위한 AI 분석 및 생성 자동화 도구 (Chrome Extension).<br><ul><li>LangChain과 FastAPI(Python)를 기반으로 영상의 오디오 추출(yt-dlp) 및 분석을 수행, 메타데이터(제목, 스크립트)를 자동 생성하는 AI 파이프라인 구축.</li><li>Manifest V3 환경에서 React + Vite를 활용해 유튜브 웹사이트 위에 오버레이되는 고성능 사이드 패널 UI 구현.</li><li>무거운 AI 연산 처리는 Python으로, 일반 API 로직은 Node.js로 분리하여 각 언어의 장점을 살린 폴리글랏(Polyglot) 아키텍처 설계.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #3 - 2024-01
                 {
                     "start_date": { "year": "2024", "month": "01" },
                     "end_date": { "year": "2024", "month": "04" },
                     "text": {
                         "headline": "Winning Resume: URL/파일 기반 AI 이력서 자동 생성 서비스",
-                        "text": "다양한 포맷의 커리어 데이터를 분석해 표준 이력서로 변환하는 웹 서비스.<br><ul><li><strong>Universal Data Parsing:</strong> Playwright를 활용해 원티드, 노션 등 DOM 구조가 상이한 채용 사이트 및 PDF/Word 파일을 파싱하여 정형 데이터로 변환하는 전처리 파이프라인 구축.</li><li><strong>GenAI Integration:</strong> OpenAI API를 연동하여 수집된 비정형 데이터를 분석, 직무별(개발, 사무 등) 핵심 역량을 추출하여 2장 분량의 최적화된 이력서로 자동 생성.</li><li><strong>Interactive Editor:</strong> Next.js와 Draft.js를 활용해 브라우저상에서 실시간 PDF 미리보기 및 텍스트 편집이 가능한 위지윅(WYSIWYG) 환경 구현.</li></ul>"
+                        "text": "다양한 포맷의 커리어 데이터를 분석해 표준 이력서로 변환하는 웹 서비스.<br><ul><li>Playwright를 활용해 원티드, 노션 등 DOM 구조가 상이한 채용 사이트 및 PDF/Word 파일을 파싱하여 정형 데이터로 변환하는 전처리 파이프라인 구축.</li><li>OpenAI API를 연동하여 수집된 비정형 데이터를 분석, 직무별(개발, 사무 등) 핵심 역량을 추출하여 2장 분량의 최적화된 이력서로 자동 생성.</li><li>Next.js와 Draft.js를 활용해 브라우저상에서 실시간 PDF 미리보기 및 텍스트 편집이 가능한 위지윅(WYSIWYG) 환경 구현.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #4 - 2023-09
                 {
                     "start_date": { "year": "2023", "month": "09" },
                     "end_date": { "year": "2023", "month": "12" },
                     "text": {
                         "headline": "AI Mock Interview: 직무 역량 기반 실시간 모의 면접 서비스",
-                        "text": "이력서 분석 기반의 개인화된 면접 질문 생성 및 실시간 영상 피드백 서비스.<br><ul><li><strong>Prompt Engineering:</strong> OpenAI API를 활용해 이력서의 프로젝트 경험을 분석하고, 직무 적합도에 따른 심층 질문(기술/인성/압박) 및 모범 답안을 자동 생성하는 로직 구현.</li><li><strong>Real-time Media Processing:</strong> Web User Media API(navigator.mediaDevices)를 활용해 브라우저 환경에서 실시간 영상/음성 스트림을 캡처하고 녹화하는 프리뷰 시스템 구축.</li><li><strong>Data Structure:</strong> MongoDB를 이용하여 사용자별 면접 세션과 수천 개의 구조화된 질문/답변 데이터셋을 효율적으로 관리하는 스키마 설계.</li></ul>"
+                        "text": "이력서 분석 기반의 개인화된 면접 질문 생성 및 실시간 영상 피드백 서비스.<br><ul><li>OpenAI API를 활용해 이력서의 프로젝트 경험을 분석하고, 직무 적합도에 따른 심층 질문(기술/인성/압박) 및 모범 답안을 자동 생성하는 로직 구현.</li><li>Web User Media API(navigator.mediaDevices)를 활용해 브라우저 환경에서 실시간 영상/음성 스트림을 캡처하고 녹화하는 프리뷰 시스템 구축.</li><li>MongoDB를 이용하여 사용자별 면접 세션과 수천 개의 구조화된 질문/답변 데이터셋을 효율적으로 관리하는 스키마 설계.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #5 - 2023-03
                 {
                     "start_date": { "year": "2023", "month": "03" },
                     "end_date": { "year": "2024", "month": "10" },
                     "text": {
                         "headline": "HITS: 신약 개발 플랫폼(HyperLab) FE 개발",
-                        "text": "연구원을 위한 신약 개발 플랫폼의 프론트엔드를 전담하여 복잡한 분자 데이터 시각화 및 성능 최적화 주도.<br><ul><li><strong>Architecture:</strong> Next.js App Router 및 FSD(Feature-Sliced Design) 아키텍처를 도입해 코드 확장성과 유지보수성 확보.</li><li><strong>Performance:</strong> TanStack Virtual/Table을 활용해 대규모 분자 리스트 및 데이터 병합 기능을 지연 없이 렌더링하도록 최적화.</li><li><strong>Efficiency:</strong> OpenAPI Generator로 API 연동 자동화 및 Zustand/Jotai를 복합 사용하여 복잡한 비동기 상태 관리 효율화.</li></ul>"
+                        "text": "연구원을 위한 신약 개발 플랫폼의 프론트엔드를 전담하여 복잡한 분자 데이터 시각화 및 성능 최적화 주도.<br><ul><li>Next.js App Router 및 FSD(Feature-Sliced Design) 아키텍처를 도입해 코드 확장성과 유지보수성 확보.</li><li>TanStack Virtual/Table을 활용해 대규모 분자 리스트 및 데이터 병합 기능을 지연 없이 렌더링하도록 최적화.</li><li>OpenAPI Generator로 API 연동 자동화 및 Zustand/Jotai를 복합 사용하여 복잡한 비동기 상태 관리 효율화.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Career"
                 },
+                // #6 - 2022-11
                 {
                     "start_date": { "year": "2022", "month": "11" },
                     "end_date": { "year": "2023", "month": "09" },
                     "text": {
                         "headline": "UXER: 디자이너 전용 3D 인터랙티브 포트폴리오",
-                        "text": "디자인 산출물의 시각적 가치를 극대화하는 포트폴리오 빌더.<br><ul><li><strong>3D Web Graphics:</strong> Three.js(WebGL)를 활용해 평면 디자인 시안을 3D 디바이스 목업(Mockup) 애니메이션으로 변환/렌더링하는 시각화 기술 구현.</li><li><strong>Interactive UI:</strong> 디자인 수정 전/후를 비교하는 'Before & After' 슬라이더 및 이미지 툴팁 기능을 개발하여 디자이너의 작업 의도 전달력 강화.</li><li><strong>Editor Engine:</strong> Drag & Drop 및 다양한 커스텀이 가능한 웹 이력서 에디터(v2.0)를 구현하여 복잡한 DOM 조작 및 상태 관리 로직 최적화.</li></ul>"
+                        "text": "디자인 산출물의 시각적 가치를 극대화하는 포트폴리오 빌더.<br><ul><li>Three.js(WebGL)를 활용해 평면 디자인 시안을 3D 디바이스 목업(Mockup) 애니메이션으로 변환/렌더링하는 시각화 기술 구현.</li><li>디자인 수정 전/후를 비교하는 'Before & After' 슬라이더 및 이미지 툴팁 기능을 개발하여 디자이너의 작업 의도 전달력 강화.</li><li>Drag & Drop 및 다양한 커스텀이 가능한 웹 이력서 에디터(v2.0)를 구현하여 복잡한 DOM 조작 및 상태 관리 로직 최적화.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #7 - 2022-03
                 {
                     "start_date": { "year": "2022", "month": "03" },
                     "end_date": { "year": "2023", "month": "03" },
                     "text": {
                         "headline": "Meissa: 스마트 건설 안전 관제 플랫폼 FE 개발",
-                        "text": "건설 현장 노무자 안전 관제 시스템의 프론트엔드를 담당, 위치 데이터 시각화 및 개발 환경 개선 주도.<br><ul><li><strong>GIS Visualization:</strong> Leaflet.js와 React Query Polling을 활용해 노무자의 실시간 동선 및 위험 구역(Danger Zone) 인터랙션을 지도상에 시각화.</li><li><strong>DX Engineering:</strong> 레거시 Webpack 빌드 시스템을 Vite로 마이그레이션하여 로컬 구동 및 빌드 속도를 개선, 팀 개발 효율성 증대.</li><li><strong>Feature Implementation:</strong> 대량의 건설 도면을 체계적으로 관리할 수 있는 계층형 폴더 구조 UI/UX 설계 및 구현.</li></ul>"
+                        "text": "건설 현장 노무자 안전 관제 시스템의 프론트엔드를 담당, 위치 데이터 시각화 및 개발 환경 개선 주도.<br><ul><li>Leaflet.js와 React Query Polling을 활용해 노무자의 실시간 동선 및 위험 구역(Danger Zone) 인터랙션을 지도상에 시각화.</li><li>레거시 Webpack 빌드 시스템을 Vite로 마이그레이션하여 로컬 구동 및 빌드 속도를 개선, 팀 개발 효율성 증대.</li><li>대량의 건설 도면을 체계적으로 관리할 수 있는 계층형 폴더 구조 UI/UX 설계 및 구현.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Career"
                 },
+                // #8 - 2021-09
                 {
                     "start_date": { "year": "2021", "month": "09" },
                     "end_date": { "year": "2021", "month": "10" },
                     "text": {
                         "headline": "GitHub HR Profile Template: 개발자 기여도 시각화 위젯",
-                        "text": "GitHub 데이터를 분석해 README에 삽입 가능한 동적 차트(SVG)를 생성하는 오픈소스.<br><ul><li><strong>Server-side Visualization:</strong> 브라우저가 없는 Node.js 환경에서 <strong>D3.js</strong>와 <strong>JSDOM</strong>을 활용해 가상 DOM을 생성하고, 데이터를 시각화 차트(Pie Chart)로 렌더링하여 SVG로 변환.</li><li><strong>GraphQL Optimization:</strong> <strong>GitHub GraphQL API</strong>를 활용해 대량의 리포지토리 데이터 중 필요한 필드만 효율적으로 쿼리하여 API 응답 속도 및 리소스 최적화.</li><li><strong>Open Source Contribution:</strong> 개발자 커뮤니티를 위한 도구로, URL 호출만으로 자신의 기술 스택과 기여도를 시각화해주는 위젯 서비스 배포.</li></ul>"
+                        "text": "GitHub 데이터를 분석해 README에 삽입 가능한 동적 차트(SVG)를 생성하는 오픈소스.<br><ul><li>브라우저가 없는 Node.js 환경에서 D3.js와 JSDOM을 활용해 가상 DOM을 생성하고, 데이터를 시각화 차트(Pie Chart)로 렌더링하여 SVG로 변환.</li><li>GitHub GraphQL API를 활용해 대량의 리포지토리 데이터 중 필요한 필드만 효율적으로 쿼리하여 API 응답 속도 및 리소스 최적화.</li><li>개발자 커뮤니티를 위한 도구로, URL 호출만으로 자신의 기술 스택과 기여도를 시각화해주는 위젯 서비스 배포.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #9 - 2021-04
                 {
                     "start_date": { "year": "2021", "month": "04" },
                     "end_date": { "year": "2023", "month": "09" },
                     "text": {
                         "headline": "Real Developer: 개발자 특화 채용/이력서 플랫폼",
-                        "text": "구직자와 채용 담당자를 연결하는 올인원 커리어 플랫폼 개발.<br><ul><li><strong>Platform Engineering:</strong> 구직자(이력서 작성)와 리크루터(공고 관리/제안)의 양면 시장(Two-sided Market) 기능을 모두 지원하는 유저 시나리오 및 DB 스키마 설계.</li><li><strong>Interactive Features:</strong> 이력서 방문자 추적(Tracking) 시스템 및 사용자 간 실시간 채팅 기능을 구현하여 채용 프로세스의 투명성 확보.</li><li><strong>Utility:</strong> Google Sheets 데이터를 이력서로 자동 변환하는 기능을 개발하여 사용자 진입 장벽을 낮추고, WYSIWYG 에디터로 자유로운 편집 환경 제공.</li></ul>"
+                        "text": "구직자와 채용 담당자를 연결하는 올인원 커리어 플랫폼 개발.<br><ul><li>구직자(이력서 작성)와 리크루터(공고 관리/제안)의 양면 시장(Two-sided Market) 기능을 모두 지원하는 유저 시나리오 및 DB 스키마 설계.</li><li>이력서 방문자 추적(Tracking) 시스템 및 사용자 간 실시간 채팅 기능을 구현하여 채용 프로세스의 투명성 확보.</li><li>Google Sheets 데이터를 이력서로 자동 변환하는 기능을 개발하여 사용자 진입 장벽을 낮추고, WYSIWYG 에디터로 자유로운 편집 환경 제공.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #10 - 2020-10
                 {
                     "start_date": { "year": "2020", "month": "10" },
                     "end_date": { "year": "2021", "month": "03" },
                     "text": {
                         "headline": "Purple Dog: 와인 정기 구독 커머스 플랫폼",
-                        "text": "와인 큐레이션 및 정기 구독을 위한 웹 서비스 및 운영 솔루션 개발.<br><ul><li><strong>Legacy Migration:</strong> 기존 회원의 구독 정보 및 결제 데이터를 분석하여 신규 DB 스키마로 매핑/이관하는 마이그레이션 작업을 수행하여 데이터 무결성 확보.</li><li><strong>Back-office Engineering:</strong> 복잡한 와인 속성(지역, 바디감, 타닌 등)을 구조화하여 관리하고, 구독자 현황을 모니터링할 수 있는 관리자(Admin) 시스템 구축.</li><li><strong>Structured Data UI:</strong> 와인의 맛과 특성을 시각화(Radar Chart 등)하여 사용자에게 직관적인 정보를 제공하는 상세 페이지 UI 구현.</li></ul>"
+                        "text": "와인 큐레이션 및 정기 구독을 위한 웹 서비스 및 운영 솔루션 개발.<br><ul><li>기존 회원의 구독 정보 및 결제 데이터를 분석하여 신규 DB 스키마로 매핑/이관하는 마이그레이션 작업을 수행하여 데이터 무결성 확보.</li><li>복잡한 와인 속성(지역, 바디감, 타닌 등)을 구조화하여 관리하고, 구독자 현황을 모니터링할 수 있는 관리자(Admin) 시스템 구축.</li><li>와인의 맛과 특성을 시각화(Radar Chart 등)하여 사용자에게 직관적인 정보를 제공하는 상세 페이지 UI 구현.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #11 - 2020-08
                 {
                     "start_date": { "year": "2020", "month": "08" },
                     "end_date": { "year": "2020", "month": "09" },
                     "text": {
                         "headline": "Ad Server Tutorial: 광고 시스템 아키텍처 구현 (Open Source)",
-                        "text": "애드테크(Ad Tech) 시스템의 핵심 원리를 분석하고 구현한 오픈소스 프로젝트.<br><ul><li><strong>System Architecture:</strong> Google Ads 등 상용 광고 플랫폼의 프로세스(캠페인 생성 → 타겟팅 → 송출 → 트래킹)를 엔드투엔드(End-to-End)로 구현하여 광고 서버의 작동 원리 규명.</li><li><strong>Domain Modeling:</strong> 광고주(Advertiser), 매체사(Publisher), 캠페인 간의 다대다 관계 및 비즈니스 로직을 Mongoose 스키마로 정밀하게 모델링.</li><li><strong>Tracking Logic:</strong> 사용자 행동(Impression, Click) 로그를 수집하고 통계로 변환하는 트래킹 서버 및 관리자 대시보드(Admin) 구축.</li></ul>"
+                        "text": "애드테크(Ad Tech) 시스템의 핵심 원리를 분석하고 구현한 오픈소스 프로젝트.<br><ul><li>Google Ads 등 상용 광고 플랫폼의 프로세스(캠페인 생성 → 타겟팅 → 송출 → 트래킹)를 엔드투엔드(End-to-End)로 구현하여 광고 서버의 작동 원리 규명.</li><li>광고주(Advertiser), 매체사(Publisher), 캠페인 간의 다대다 관계 및 비즈니스 로직을 Mongoose 스키마로 정밀하게 모델링.</li><li>사용자 행동(Impression, Click) 로그를 수집하고 통계로 변환하는 트래킹 서버 및 관리자 대시보드(Admin) 구축.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #12 - 2020-04
                 {
                     "start_date": { "year": "2020", "month": "04" },
                     "end_date": { "year": "2020", "month": "08" },
                     "text": {
                         "headline": "Shopify App: 온사이트 리타겟팅 마케팅 솔루션",
-                        "text": "이커머스 구매 전환율(CRO) 상승을 위한 Shopify 전용 마케팅 SaaS 개발.<br><ul><li><strong>Ecosystem Integration:</strong> Shopify Admin API 및 OAuth 인증 흐름을 구현하여 플랫폼 규격에 맞는 SaaS 형태의 애플리케이션 구축.</li><li><strong>Script Injection Engine:</strong> Webpack을 활용해 외부 스토어 프론트엔드에 동적으로 스크립트를 주입(Injection)하고, 충돌 없이 UI를 렌더링하는 위젯 기술 구현.</li><li><strong>Behavioral Targeting:</strong> 방문자의 관심 상품 데이터를 실시간으로 분석해 재방문 및 이탈 시점에 최적의 상품을 노출하는 리타겟팅 로직 개발.</li></ul>"
+                        "text": "이커머스 구매 전환율(CRO) 상승을 위한 Shopify 전용 마케팅 SaaS 개발.<br><ul><li>Shopify Admin API 및 OAuth 인증 흐름을 구현하여 플랫폼 규격에 맞는 SaaS 형태의 애플리케이션 구축.</li><li>Webpack을 활용해 외부 스토어 프론트엔드에 동적으로 스크립트를 주입(Injection)하고, 충돌 없이 UI를 렌더링하는 위젯 기술 구현.</li><li>방문자의 관심 상품 데이터를 실시간으로 분석해 재방문 및 이탈 시점에 최적의 상품을 노출하는 리타겟팅 로직 개발.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #13 - 2019-10
                 {
                     "start_date": { "year": "2019", "month": "10" },
                     "end_date": { "year": "2020", "month": "04" },
                     "text": {
                         "headline": "Super Social Proof: 이커머스 구매 심리 유도(CRO) 솔루션",
-                        "text": "구매 전환율 상승을 위한 올인원 소셜 프루프(Social Proof) SaaS 개발.<br><ul><li><strong>Growth Hacking Logic:</strong> '품절 임박(FOMO)', '실시간 구매 현황' 등 소비자의 구매 심리를 자극하는 6가지 마케팅 트리거를 React 컴포넌트로 모듈화하여 구현.</li><li><strong>Real-time Data Sync:</strong> Shopify API를 활용해 변동되는 재고 수량 및 주문 데이터를 실시간으로 동기화하여 사용자에게 정확한 현황 정보를 제공.</li><li><strong>Architecture:</strong> Node.js 기반의 <strong>Koa</strong> 프레임워크를 도입해 미들웨어를 경량화하고, 다수의 쇼핑몰 트래픽을 효율적으로 처리하는 API 서버 구축.</li></ul>"
+                        "text": "구매 전환율 상승을 위한 올인원 소셜 프루프(Social Proof) SaaS 개발.<br><ul><li>'품절 임박(FOMO)', '실시간 구매 현황' 등 소비자의 구매 심리를 자극하는 6가지 마케팅 트리거를 React 컴포넌트로 모듈화하여 구현.</li><li>Shopify API를 활용해 변동되는 재고 수량 및 주문 데이터를 실시간으로 동기화하여 사용자에게 정확한 현황 정보를 제공.</li><li>Node.js 기반의 Koa 프레임워크를 도입해 미들웨어를 경량화하고, 다수의 쇼핑몰 트래픽을 효율적으로 처리하는 API 서버 구축.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #14 - 2019-03
                 {
                     "start_date": { "year": "2019", "month": "03" },
                     "end_date": { "year": "2019", "month": "06" },
                     "text": {
                         "headline": "Double Up: Cafe24 상품 배너 오토메이션 솔루션",
-                        "text": "Cafe24 입점몰의 클릭률(CTR) 상승을 위한 이미지 오버레이 마케팅 툴.<br><ul><li><strong>Dynamic DOM Manipulation:</strong> 다양한 쇼핑몰 디자인 테마에 호환되도록, 상품 이미지의 DOM 위치를 동적으로 계산하여 배너를 오버레이하는 정교한 스크립트 로직 구현.</li><li><strong>Platform Integration:</strong> Cafe24 앱스토어 규격에 맞춰 OAuth 인증 및 스토어별 설정 데이터를 관리하는 백엔드(Node.js) 시스템 구축.</li><li><strong>Performance:</strong> Webpack을 활용해 쇼핑몰에 삽입되는 써드파티 스크립트의 용량을 최적화하여 사이트 렌더링 성능 유지.</li></ul>"
+                        "text": "Cafe24 입점몰의 클릭률(CTR) 상승을 위한 이미지 오버레이 마케팅 툴.<br><ul><li>다양한 쇼핑몰 디자인 테마에 호환되도록, 상품 이미지의 DOM 위치를 동적으로 계산하여 배너를 오버레이하는 정교한 스크립트 로직 구현.</li><li>Cafe24 앱스토어 규격에 맞춰 OAuth 인증 및 스토어별 설정 데이터를 관리하는 백엔드(Node.js) 시스템 구축.</li><li>Webpack을 활용해 쇼핑몰에 삽입되는 써드파티 스크립트의 용량을 최적화하여 사이트 렌더링 성능 유지.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
+                // #15 - 2018-05
                 {
                     "start_date": { "year": "2018", "month": "05" },
                     "end_date": { "year": "2018", "month": "10" },
                     "text": {
                         "headline": "ScrollAds: 경량화된 모바일 웹 광고 SDK",
-                        "text": "매체사 웹사이트에 탑재되는 고성능 광고 스크립트(SDK) 개발.<br><ul><li><strong>Vanilla JS Engineering:</strong> React 등 프레임워크 없이 순수 JavaScript로 개발하여 SDK 용량을 경량화하고, 호스트 사이트와의 라이브러리 충돌 방지.</li><li><strong>Dynamic Overlay:</strong> 매체사마다 상이한 모바일 웹 환경(DOM 구조)을 분석해, 콘텐츠 흐름을 방해하지 않는 최적의 위치에 배너를 오버레이하는 렌더링 로직 구현.</li><li><strong>Build Optimization:</strong> Webpack을 통한 코드 번들링 및 난독화(Obfuscation) 적용으로 네트워크 리소스 최적화 및 보안성 강화.</li></ul>"
+                        "text": "매체사 웹사이트에 탑재되는 고성능 광고 스크립트(SDK) 개발.<br><ul><li>React 등 프레임워크 없이 순수 JavaScript로 개발하여 SDK 용량을 경량화하고, 호스트 사이트와의 라이브러리 충돌 방지.</li><li>매체사마다 상이한 모바일 웹 환경(DOM 구조)을 분석해, 콘텐츠 흐름을 방해하지 않는 최적의 위치에 배너를 오버레이하는 렌더링 로직 구현.</li><li>Webpack을 통한 코드 번들링 및 난독화(Obfuscation) 적용으로 네트워크 리소스 최적화 및 보안성 강화.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Career"
                 },
+                // #16 - 2017-12 (가장 오래됨)
                 {
                     "start_date": { "year": "2017", "month": "12" },
                     "end_date": { "year": "2020", "month": "01" },
                     "text": {
                         "headline": "A0Paper: 모바일 웹 광고 SDK 개발",
-                        "text": "매체사 사이트에 삽입되는 경량화된 모바일 광고 SDK 개발 및 유지보수.<br><ul><li><strong>SDK Engineering:</strong> 프레임워크 의존성 없이 Vanilla JavaScript로 외부 삽입용 광고 스크립트를 개발하여 호스트 사이트와의 충돌 방지.</li><li><strong>Optimization:</strong> Webpack을 활용한 코드 난독화 및 번들링 최적화로 빠른 로딩 속도 구현.</li><li><strong>Compatibility:</strong> 다양한 모바일 브라우저 및 인앱 웹뷰 환경에서의 크로스 브라우징 이슈 해결.</li></ul>"
+                        "text": "매체사 사이트에 삽입되는 경량화된 모바일 광고 SDK 개발 및 유지보수.<br><ul><li>프레임워크 의존성 없이 Vanilla JavaScript로 외부 삽입용 광고 스크립트를 개발하여 호스트 사이트와의 충돌 방지.</li><li>Webpack을 활용한 코드 난독화 및 번들링 최적화로 빠른 로딩 속도 구현.</li><li>다양한 모바일 브라우저 및 인앱 웹뷰 환경에서의 크로스 브라우징 이슈 해결.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Career"
                 }
@@ -254,11 +481,238 @@
             timenav_height_percentage: 30,
             start_at_slide: 0,
             language: "ko",
-            font: "./TimelineJS3/dist/css/fonts/font.pt.css",  // 로컬 Pretendard CSS 직접 지정
-            script_path: "./TimelineJS3/dist/js/"
+            font: null  // CDN 폰트 로딩 방지 - HTML에서 직접 로드함
         };
 
+        // 로딩 메시지 애니메이션
+        const loadingMessages = [
+            "개발자의 지난 밤샘 기록을 발굴 중입니다... ⛏️",
+            "GitHub 커밋 로그를 분석하고 있습니다... 📊",
+            "카페인을 코드로 변환 중... ☕",
+            "과거와 미래를 연결하는 중... 🚀"
+        ];
+        let msgIndex = 0;
+        const msgElement = document.getElementById('loading-text');
+        const msgInterval = setInterval(() => {
+            msgIndex = (msgIndex + 1) % loadingMessages.length;
+            if(msgElement) msgElement.innerText = loadingMessages[msgIndex];
+        }, 800);
+
+        // Tech Stack Chart 렌더링 함수
+        function renderTechStackChart() {
+            var container = document.getElementById('tech-stack-chart-container');
+
+            if (!container) {
+                console.warn("차트 컨테이너를 찾을 수 없습니다.");
+                return;
+            }
+
+            console.log("차트 렌더링 시작...");
+
+            // 기존 차트 HTML 구조
+            if (container) {
+                container.innerHTML = `
+                    <div class="tech-stack-container">
+                        <h2>Engineering Stack Timeline</h2>
+                        <p class="subtitle">Project-based Experience (2017.12 - Present)</p>
+                        <div class="legend-container">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #3498db;"></div>
+                                <span>Language</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #2ecc71;"></div>
+                                <span>Framework</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #9b59b6;"></div>
+                                <span>AI / Data</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #e67e22;"></div>
+                                <span>Specialized Lib</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #95a5a6;"></div>
+                                <span>Infra / Tool</span>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="techStackChart"></canvas>
+                        </div>
+                    </div>
+                `;
+
+                // Chart.js 데이터 및 렌더링
+                const NOW = 2025.2;
+                function getDate(year, month) {
+                    return year + ((month - 1) / 12);
+                }
+                function formatYearMonth(decimalYear) {
+                    if (decimalYear >= NOW) return 'Present';
+                    const year = Math.floor(decimalYear);
+                    const month = Math.round((decimalYear - year) * 12) + 1;
+                    return year + '.' + month.toString().padStart(2, '0');
+                }
+
+                const techStackData = [
+                    // Languages
+                    { name: 'JavaScript', start: getDate(2017, 12), end: NOW, category: 'Language' },
+                    { name: 'TypeScript', start: getDate(2022, 3), end: NOW, category: 'Language' },
+                    { name: 'Python', start: getDate(2024, 5), end: NOW, category: 'Language' },
+                    // Frameworks
+                    { name: 'Node.js', start: getDate(2019, 3), end: NOW, category: 'Framework' },
+                    { name: 'React', start: getDate(2019, 10), end: NOW, category: 'Framework' },
+                    { name: 'Next.js', start: getDate(2023, 3), end: NOW, category: 'Framework' },
+                    { name: 'Express', start: getDate(2019, 3), end: getDate(2024, 2), category: 'Framework' },
+                    { name: 'Koa', start: getDate(2019, 10), end: getDate(2020, 4), category: 'Framework' },
+                    { name: 'FastAPI', start: getDate(2024, 5), end: NOW, category: 'Framework' },
+                    // AI / Data
+                    { name: 'LangChain', start: getDate(2024, 5), end: NOW, category: 'AI / Data' },
+                    { name: 'OpenAI API', start: getDate(2023, 9), end: NOW, category: 'AI / Data' },
+                    { name: 'Playwright', start: getDate(2024, 1), end: getDate(2024, 4), category: 'AI / Data' },
+                    // Specialized Libs
+                    { name: 'Three.js', start: getDate(2022, 11), end: getDate(2023, 9), category: 'Specialized Lib' },
+                    { name: 'Leaflet.js', start: getDate(2022, 3), end: getDate(2023, 3), category: 'Specialized Lib' },
+                    { name: 'D3.js', start: getDate(2021, 9), end: getDate(2021, 10), category: 'Specialized Lib' },
+                    { name: 'Chrome Ext', start: getDate(2024, 5), end: NOW, category: 'Specialized Lib' },
+                    // Infra / Tools
+                    { name: 'MongoDB', start: getDate(2019, 3), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Webpack', start: getDate(2018, 5), end: getDate(2022, 3), category: 'Infra / Tool' },
+                    { name: 'Vite', start: getDate(2022, 3), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Docker', start: getDate(2023, 3), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Cursor', start: getDate(2024, 1), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Claude', start: getDate(2025, 1), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Gemini', start: getDate(2025, 1), end: NOW, category: 'Infra / Tool' },
+                ];
+
+                const categoryColors = {
+                    'Language': 'rgba(52, 152, 219, 0.85)',
+                    'Framework': 'rgba(46, 204, 113, 0.85)',
+                    'AI / Data': 'rgba(155, 89, 182, 0.85)',
+                    'Specialized Lib': 'rgba(230, 126, 34, 0.85)',
+                    'Infra / Tool': 'rgba(149, 165, 166, 0.85)'
+                };
+
+                const categoryOrder = ['Language', 'Framework', 'AI / Data', 'Specialized Lib', 'Infra / Tool'];
+                techStackData.sort(function(a, b) {
+                    var catDiff = categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
+                    if (catDiff !== 0) return catDiff;
+                    return a.start - b.start;
+                });
+
+                var labels = techStackData.map(function(item) { return item.name; });
+                var dataCoordinates = techStackData.map(function(item) { return [item.start, item.end]; });
+                var backgroundColors = techStackData.map(function(item) { return categoryColors[item.category]; });
+                var borderColors = techStackData.map(function(item) { return categoryColors[item.category].replace('0.85', '1'); });
+
+                var ctx = document.getElementById('techStackChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Tech Stack',
+                            data: dataCoordinates,
+                            backgroundColor: backgroundColors,
+                            borderColor: borderColors,
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            barPercentage: 0.8,
+                            categoryPercentage: 0.9
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                backgroundColor: 'rgba(33, 37, 41, 0.95)',
+                                titleFont: { family: 'Pretendard Variable', size: 12, weight: '700' },
+                                bodyFont: { family: 'Pretendard Variable', size: 11 },
+                                padding: 8,
+                                cornerRadius: 6,
+                                displayColors: true,
+                                boxWidth: 8,
+                                boxHeight: 8,
+                                callbacks: {
+                                    title: function(ctx) { return techStackData[ctx[0].dataIndex].name; },
+                                    label: function(ctx) {
+                                        var item = techStackData[ctx.dataIndex];
+                                        var startStr = formatYearMonth(item.start);
+                                        var endStr = formatYearMonth(item.end);
+                                        return startStr + ' - ' + endStr;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                type: 'linear',
+                                min: 2017,
+                                max: 2026,
+                                ticks: {
+                                    stepSize: 1,
+                                    font: { family: 'Pretendard Variable', size: 10 },
+                                    color: '#868e96',
+                                    callback: function(value) {
+                                        if (value >= 2026) return '';
+                                        return value.toString();
+                                    }
+                                },
+                                grid: {
+                                    color: '#f1f3f5',
+                                    borderDash: [3, 3]
+                                },
+                                position: 'top'
+                            },
+                            y: {
+                                ticks: {
+                                    font: { family: 'Pretendard Variable', weight: '400', size: 9 },
+                                    color: '#868e96',
+                                    autoSkip: false
+                                },
+                                grid: { display: false }
+                            }
+                        },
+                        animation: { duration: 0 }
+                    }
+                });
+            }
+
+            console.log("차트 렌더링 완료!");
+        }
+
+        // TimelineJS 초기화
         window.timeline = new TL.Timeline('timeline-embed', timelineData, options);
+
+        // Loaded 이벤트 핸들러
+        window.timeline.on('loaded', function() {
+            console.log("TimelineJS 'loaded' 이벤트 발생");
+
+            // 메시지 롤링 중단
+            clearInterval(msgInterval);
+
+            // 스켈레톤 페이드 아웃
+            const skeleton = document.getElementById('skeleton-loader');
+            const realTimeline = document.getElementById('timeline-embed');
+
+            if (skeleton && realTimeline) {
+                skeleton.style.transition = 'opacity 0.5s ease';
+                skeleton.style.opacity = '0';
+
+                // 0.5초 뒤 스켈레톤 제거 및 타임라인 표시
+                setTimeout(() => {
+                    skeleton.style.display = 'none';
+                    realTimeline.style.display = 'block';
+
+                    // 차트 렌더링
+                    renderTechStackChart();
+                }, 500);
+            }
+        });
     </script>
 
     <!-- 모든 CSS 로드 후 최종 폰트 강제 적용 -->
@@ -268,10 +722,20 @@
             font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
         }
 
-        /* 아이콘 폰트만 예외 */
-        [class^="tl-icon-"], [class*=" tl-icon-"],
-        [class^="tl-icon-"]:before, [class*=" tl-icon-"]:before,
-        [class^="tl-icon-"]:after, [class*=" tl-icon-"]:after {
+        /* 아이콘 폰트는 반드시 예외 처리 - tl-icons 유지 */
+        [class^="tl-icon-"],
+        [class*=" tl-icon-"],
+        [class^="tl-icon-"]:before,
+        [class*=" tl-icon-"]:before,
+        [class^="tl-icon-"]:after,
+        [class*=" tl-icon-"]:after,
+        .tl-slidenav-icon,
+        .tl-slidenav-icon:before,
+        .tl-slidenav-icon:after,
+        .tl-slidenav-next:after,
+        .tl-slidenav-previous:after,
+        .tl-timemarker-content-container:before,
+        .tl-timemarker-content-container:after {
             font-family: 'tl-icons' !important;
         }
     </style>
