@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Stack Timeline (Compact)</title>
+
+    <link rel="stylesheet" as="style" crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 20px; /* 패딩 축소 */
+            font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 20px 30px; /* 내부 패딩 축소 */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 0 0 5px 0;
+            font-weight: 800;
+            font-size: 20px; /* 제목 크기 축소 */
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 20px; /* 간격 축소 */
+            font-size: 0.9rem; /* 부제목 크기 축소 */
+        }
+        
+        .chart-container {
+            position: relative;
+            /* [핵심] 높이를 750px -> 380px로 50% 축소 */
+            height: 380px; 
+            width: 100%;
+        }
+
+        /* 범례 스타일 Compact */
+        .legend-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* 간격 축소 */
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px; /* 폰트 축소 */
+            font-weight: 600;
+            color: #555;
+            background: #f1f3f5;
+            padding: 4px 10px; /* 패딩 축소 */
+            border-radius: 15px;
+            border: 1px solid #e9ecef;
+        }
+        .legend-color {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>기술 스택 타임라인</h1>
+    <p class="subtitle">Project-based Experience (2017.12 - Present)</p>
+
+    <div class="legend-container">
+        <div class="legend-item">
+            <div class="legend-color" style="background: #3498db;"></div>
+            <span>Language</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #2ecc71;"></div>
+            <span>Framework</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #9b59b6;"></div>
+            <span>AI / Data</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #e67e22;"></div>
+            <span>Specialized Lib</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #95a5a6;"></div>
+            <span>Infra / Tool</span>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="techStackChart"></canvas>
+    </div>
+</div>
+
+<script>
+    // ==========================================
+    //  데이터 설정 (기존 데이터 유지)
+    // ==========================================
+    const NOW = 2025.2; 
+
+    function getDate(year, month) {
+        return year + ((month - 1) / 12);
+    }
+
+    function formatYearMonth(decimalYear) {
+        if (decimalYear >= NOW) return 'Present';
+        const year = Math.floor(decimalYear);
+        const month = Math.round((decimalYear - year) * 12) + 1;
+        return `${year}.${month.toString().padStart(2, '0')}`; 
+    }
+
+    const techStackData = [
+        // 1. Languages
+        { name: 'JavaScript', start: getDate(2017, 12), end: NOW, category: 'Language' },
+        { name: 'TypeScript', start: getDate(2022, 3), end: NOW, category: 'Language' },
+        { name: 'Python', start: getDate(2024, 5), end: NOW, category: 'Language' },
+
+        // 2. Frameworks
+        { name: 'Node.js', start: getDate(2019, 3), end: NOW, category: 'Framework' },
+        { name: 'React', start: getDate(2019, 10), end: NOW, category: 'Framework' },
+        { name: 'Next.js', start: getDate(2023, 3), end: NOW, category: 'Framework' },
+        { name: 'Express', start: getDate(2019, 3), end: getDate(2024, 2), category: 'Framework' },
+        { name: 'Koa', start: getDate(2019, 10), end: getDate(2020, 4), category: 'Framework' },
+        { name: 'FastAPI', start: getDate(2024, 5), end: NOW, category: 'Framework' },
+
+        // 3. AI / Data
+        { name: 'LangChain', start: getDate(2024, 5), end: NOW, category: 'AI / Data' },
+        { name: 'OpenAI API', start: getDate(2023, 9), end: NOW, category: 'AI / Data' },
+        { name: 'Playwright', start: getDate(2024, 1), end: getDate(2024, 4), category: 'AI / Data' },
+
+        // 4. Specialized Libs
+        { name: 'Three.js', start: getDate(2022, 11), end: getDate(2023, 9), category: 'Specialized Lib' },
+        { name: 'Leaflet.js', start: getDate(2022, 3), end: getDate(2023, 3), category: 'Specialized Lib' },
+        { name: 'D3.js', start: getDate(2021, 9), end: getDate(2021, 10), category: 'Specialized Lib' },
+        { name: 'Chrome Ext', start: getDate(2024, 5), end: NOW, category: 'Specialized Lib' },
+
+        // 5. Infra / Tools
+        { name: 'MongoDB', start: getDate(2019, 3), end: NOW, category: 'Infra / Tool' },
+        { name: 'Webpack', start: getDate(2018, 5), end: getDate(2022, 3), category: 'Infra / Tool' },
+        { name: 'Vite', start: getDate(2022, 3), end: NOW, category: 'Infra / Tool' },
+        { name: 'Docker', start: getDate(2023, 3), end: NOW, category: 'Infra / Tool' },
+        { name: 'Cursor', start: getDate(2024, 1), end: NOW, category: 'Infra / Tool' }, 
+        { name: 'Claude', start: getDate(2025, 1), end: NOW, category: 'Infra / Tool' }, 
+        { name: 'Gemini', start: getDate(2025, 1), end: NOW, category: 'Infra / Tool' }, 
+    ];
+
+    const categoryColors = {
+        'Language': 'rgba(52, 152, 219, 0.85)',
+        'Framework': 'rgba(46, 204, 113, 0.85)',
+        'AI / Data': 'rgba(155, 89, 182, 0.85)', 
+        'Specialized Lib': 'rgba(230, 126, 34, 0.85)',
+        'Infra / Tool': 'rgba(149, 165, 166, 0.85)'
+    };
+
+    const categoryOrder = ['Language', 'Framework', 'AI / Data', 'Specialized Lib', 'Infra / Tool'];
+    techStackData.sort((a, b) => {
+        const catDiff = categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
+        if (catDiff !== 0) return catDiff;
+        return a.start - b.start;
+    });
+
+    const labels = techStackData.map(item => item.name);
+    const dataCoordinates = techStackData.map(item => [item.start, item.end]);
+    const backgroundColors = techStackData.map(item => categoryColors[item.category]);
+    const borderColors = techStackData.map(item => categoryColors[item.category].replace('0.85', '1'));
+
+    // 차트 그리기
+    const ctx = document.getElementById('techStackChart').getContext('2d');
+    
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Tech Stack',
+                data: dataCoordinates,
+                backgroundColor: backgroundColors,
+                borderColor: borderColors,
+                borderWidth: 1,
+                borderRadius: 4,     // 둥글기 축소
+                
+                // [핵심 수정] 높이가 줄어들었으므로 막대 비율을 조정하여 
+                // 너무 얇지 않게, 하지만 간격은 좁아 보이게 설정
+                barPercentage: 0.8,  
+                categoryPercentage: 0.9 
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    backgroundColor: 'rgba(33, 37, 41, 0.95)',
+                    titleFont: { family: 'Pretendard Variable', size: 12, weight: '700' }, // 폰트 축소
+                    bodyFont: { family: 'Pretendard Variable', size: 11 }, // 폰트 축소
+                    padding: 8, // 패딩 축소
+                    cornerRadius: 6,
+                    displayColors: true,
+                    boxWidth: 8,
+                    boxHeight: 8,
+                    callbacks: {
+                        title: (ctx) => `${techStackData[ctx[0].dataIndex].name}`,
+                        label: (ctx) => {
+                            const item = techStackData[ctx.dataIndex];
+                            const startStr = formatYearMonth(item.start);
+                            const endStr = formatYearMonth(item.end);
+                            return `${startStr} - ${endStr}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    type: 'linear',
+                    min: 2017,
+                    max: 2026,
+                    ticks: {
+                        stepSize: 1,
+                        font: { family: 'Pretendard Variable', size: 10 }, // 폰트 축소
+                        color: '#868e96',
+                        callback: function(value) {
+                            if (value >= 2026) return '';
+                            return value.toString();
+                        }
+                    },
+                    grid: {
+                        color: '#f1f3f5',
+                        borderDash: [3, 3]
+                    },
+                    position: 'top'
+                },
+                y: {
+                    ticks: {
+                        font: { family: 'Pretendard Variable', weight: '600', size: 11 }, // 폰트 축소 (중요)
+                        color: '#343a40',
+                        autoSkip: false
+                    },
+                    grid: { display: false }
+                }
+            },
+            animation: {
+                duration: 0 // 사이즈가 작으므로 애니메이션 없이 즉시 로드 (선택사항)
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
