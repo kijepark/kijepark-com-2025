@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; font-src 'self' cdn.jsdelivr.net; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
     <title>박기제 개발 타임라인 (Portfolio)</title>
+
+    <!-- Pretendard Variable 폰트 로드 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 
     <!-- Preload critical resources -->
     <link rel="preload" href="./TimelineJS3/dist/js/timeline.js" as="script">
     <link rel="preload" href="./TimelineJS3/dist/css/timeline.css" as="style">
+    <link rel="preload" href="./TimelineJS3/dist/css/fonts/font.pt.css" as="style">
 
-    <link title="timeline-styles" rel="stylesheet" href="./TimelineJS3/dist/css/timeline.css">
+    <link title="timeline-styles" rel="stylesheet" href="./TimelineJS3/dist/css/timeline.css?v=nofontload">
+    <link title="timeline-font" rel="stylesheet" href="./TimelineJS3/dist/css/fonts/font.pt.css?v=nofontload">
 
     <style>
         body {
@@ -20,13 +26,65 @@
             width: 100%;
             height: 100vh;
         }
+
+        /* Pretendard Variable 폰트 전역 강제 적용 - 모든 TimelineJS 클래스 */
+        .tl-timeline,
+        .tl-timeline *,
+        .tl-timeline h1, .tl-timeline h2, .tl-timeline h3, .tl-timeline h4, .tl-timeline h5, .tl-timeline h6,
+        .tl-timeline p, .tl-timeline li, .tl-timeline ul, .tl-timeline ol, .tl-timeline div, .tl-timeline span, .tl-timeline a,
+        .tl-headline, .tl-headline-date, .tl-headline-title, .tl-headline-fadeout,
+        .tl-text, .tl-text-content, .tl-text-content-container, .tl-text-background, .tl-text-date, .tl-text-headline-container,
+        .tl-timenav, .tl-timenav-slider, .tl-timenav-line, .tl-timenav-container, .tl-timenav-container-mask, .tl-timenav-item-container, .tl-timenav-slider-background, .tl-timenav-slider-animate,
+        .tl-timeaxis, .tl-timeaxis-tick, .tl-timeaxis-tick-text, .tl-timeaxis-major, .tl-timeaxis-minor, .tl-timeaxis-background, .tl-timeaxis-content-container, .tl-timeaxis-tick-hidden, .tl-timeaxis-animate, .tl-timeaxis-animate-opacity,
+        .tl-timemarker, .tl-timemarker-text, .tl-timemarker-content, .tl-timemarker-content-container, .tl-timemarker-content-container-small, .tl-timemarker-content-container-long, .tl-timemarker-content-small,
+        .tl-timemarker-media, .tl-timemarker-media-container, .tl-timemarker-timespan, .tl-timemarker-timespan-content, .tl-timemarker-line-left, .tl-timemarker-line-right,
+        .tl-timemarker-active, .tl-timemarker-fast, .tl-timemarker-with-end,
+        .tl-timeera, .tl-timeera-background, .tl-timeera-content, .tl-timeera-content-container, .tl-timeera-text, .tl-timeera-fast,
+        .tl-timeera-color0, .tl-timeera-color1, .tl-timeera-color2, .tl-timeera-color3, .tl-timeera-color4, .tl-timeera-color5,
+        .tl-timegroup, .tl-timegroup-message, .tl-timegroup-hidden, .tl-timegroup-alternate,
+        .tl-slidenav-next, .tl-slidenav-previous, .tl-slidenav-title, .tl-slidenav-description, .tl-slidenav-icon, .tl-slidenav-content-container, .tl-slidenav-inverted,
+        .tl-slide, .tl-slide-content, .tl-slide-content-container, .tl-slide-background, .tl-slide-scrollable-container, .tl-slide-media-only, .tl-slide-text-only,
+        .tl-slider-background, .tl-slider-container, .tl-slider-container-mask, .tl-slider-item-container, .tl-slider-touch-mask,
+        .tl-storyslider,
+        .tl-caption, .tl-credit,
+        .tl-menubar, .tl-menubar-button,
+        .tl-message, .tl-message-full, .tl-message-container, .tl-message-content,
+        .tl-media, .tl-media-content, .tl-media-content-container, .tl-media-content-container-text, .tl-media-shadow, .tl-media-image, .tl-media-iframe,
+        .tl-media-blockquote, .tl-media-twitter, .tl-media-instagram, .tl-media-profile, .tl-media-website, .tl-media-website-description, .tl-media-website-icon,
+        .tl-media-wikipedia, .tl-media-loaderror,
+        .tl-wikipedia-title, .tl-wikipedia-source, .tl-wikipedia-pageimage,
+        .tl-button, .tl-button-calltoaction, .tl-button-calltoaction-text,
+        .tl-note,
+        .tl-date,
+        .tl-attribution,
+        .tl-knightlab-logo,
+        .tl-sizebar, .tl-sizebar-button, .tl-sizebar-inverted,
+        .tl-loading-icon,
+        .tl-makelink,
+        .tl-dragging,
+        .tl-animate, .tl-animate-opacity,
+        .tl-full-color-background, .tl-full-image-background,
+        .tl-layout-portrait, .tl-layout-landscape,
+        .tl-timeline-embed, .tl-timeline-full-embed,
+        .tl-skinny, .tl-medium, .tl-mobile, .tl-rtl,
+        .vcard, .vcard .fn, .vcard .nickname, .vcard .author, .vcard .avatar, .vcard .twitter-date,
+        blockquote, blockquote p, blockquote cite {
+            font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+        }
+
+        /* 아이콘 폰트는 제외 */
+        [class^="tl-icon-"], [class*=" tl-icon-"],
+        [class^="tl-icon-"]:before, [class*=" tl-icon-"]:before,
+        [class^="tl-icon-"]:after, [class*=" tl-icon-"]:after {
+            font-family: 'tl-icons' !important;
+        }
     </style>
 </head>
 <body>
 
     <div id="timeline-embed"></div>
 
-    <script src="./TimelineJS3/dist/js/timeline.js"></script>
+    <script src="./TimelineJS3/dist/js/timeline.js?v=nofontload"></script>
 
     <script>
         var timelineData = {
@@ -42,7 +100,6 @@
                 }
             },
             "events": [
-                // #1 - 2024-10 (최신)
                 {
                     "start_date": { "year": "2024", "month": "10" },
                     "end_date": { "year": "2025", "month": "6" },
@@ -52,7 +109,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #2 - 2024-05
                 {
                     "start_date": { "year": "2024", "month": "05" },
                     "end_date": { "year": "2024", "month": "10" },
@@ -62,7 +118,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #3 - 2024-01
                 {
                     "start_date": { "year": "2024", "month": "01" },
                     "end_date": { "year": "2024", "month": "04" },
@@ -72,7 +127,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #4 - 2023-09
                 {
                     "start_date": { "year": "2023", "month": "09" },
                     "end_date": { "year": "2023", "month": "12" },
@@ -82,7 +136,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #5 - 2023-03
                 {
                     "start_date": { "year": "2023", "month": "03" },
                     "end_date": { "year": "2024", "month": "10" },
@@ -92,7 +145,6 @@
                     },
                     "group": "Career"
                 },
-                // #6 - 2022-11
                 {
                     "start_date": { "year": "2022", "month": "11" },
                     "end_date": { "year": "2023", "month": "09" },
@@ -102,7 +154,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #7 - 2022-03
                 {
                     "start_date": { "year": "2022", "month": "03" },
                     "end_date": { "year": "2023", "month": "03" },
@@ -112,7 +163,6 @@
                     },
                     "group": "Career"
                 },
-                // #8 - 2021-09
                 {
                     "start_date": { "year": "2021", "month": "09" },
                     "end_date": { "year": "2021", "month": "10" },
@@ -122,7 +172,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #9 - 2021-04
                 {
                     "start_date": { "year": "2021", "month": "04" },
                     "end_date": { "year": "2023", "month": "09" },
@@ -132,7 +181,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #10 - 2020-10
                 {
                     "start_date": { "year": "2020", "month": "10" },
                     "end_date": { "year": "2021", "month": "03" },
@@ -142,7 +190,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #11 - 2020-08
                 {
                     "start_date": { "year": "2020", "month": "08" },
                     "end_date": { "year": "2020", "month": "09" },
@@ -152,7 +199,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #12 - 2020-04
                 {
                     "start_date": { "year": "2020", "month": "04" },
                     "end_date": { "year": "2020", "month": "08" },
@@ -162,7 +208,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #13 - 2019-10
                 {
                     "start_date": { "year": "2019", "month": "10" },
                     "end_date": { "year": "2020", "month": "04" },
@@ -172,7 +217,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #14 - 2019-03
                 {
                     "start_date": { "year": "2019", "month": "03" },
                     "end_date": { "year": "2019", "month": "06" },
@@ -182,7 +226,6 @@
                     },
                     "group": "Personal Project"
                 },
-                // #15 - 2018-05
                 {
                     "start_date": { "year": "2018", "month": "05" },
                     "end_date": { "year": "2018", "month": "10" },
@@ -192,7 +235,6 @@
                     },
                     "group": "Career"
                 },
-                // #16 - 2017-12 (가장 오래됨)
                 {
                     "start_date": { "year": "2017", "month": "12" },
                     "end_date": { "year": "2020", "month": "01" },
@@ -211,10 +253,27 @@
             scale_factor: 1,
             timenav_height_percentage: 30,
             start_at_slide: 0,
-            language: "ko"
+            language: "ko",
+            font: "./TimelineJS3/dist/css/fonts/font.pt.css",  // 로컬 Pretendard CSS 직접 지정
+            script_path: "./TimelineJS3/dist/js/"
         };
 
         window.timeline = new TL.Timeline('timeline-embed', timelineData, options);
     </script>
+
+    <!-- 모든 CSS 로드 후 최종 폰트 강제 적용 -->
+    <style>
+        /* CDN font.default.css 오버라이드 - 최고 우선순위 */
+        * {
+            font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+        }
+
+        /* 아이콘 폰트만 예외 */
+        [class^="tl-icon-"], [class*=" tl-icon-"],
+        [class^="tl-icon-"]:before, [class*=" tl-icon-"]:before,
+        [class^="tl-icon-"]:after, [class*=" tl-icon-"]:after {
+            font-family: 'tl-icons' !important;
+        }
+    </style>
 </body>
 </html>
