@@ -34,9 +34,26 @@
             font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
             letter-spacing: -0.03rem;
         }
-        .tl-headline {
-            font-weight: 800 !important;
+
+        /* ================================================= */
+        /* 상단 vs 하단 헤드라인 굵기 분리 설정              */
+        /* ================================================= */
+
+        /* 상단 (슬라이드 설명 영역) - 굵게 유지 */
+        .tl-storyslider .tl-headline,
+        .tl-slide .tl-headline {
+            font-weight: 700 !important;
         }
+
+        /* 하단 (타임라인 네비게이션) - 500으로 변경 */
+        .tl-timenav .tl-headline,
+        .tl-timenav h2,
+        .tl-timemarker .tl-headline {
+            font-weight: 500 !important;
+        }
+
+        /* ================================================= */
+
         .tl-text .tl-text-content p {
             font-weight: 700 !important;
         }
