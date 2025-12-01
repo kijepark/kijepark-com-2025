@@ -100,7 +100,7 @@ export class SlideNav {
 
         // Date
         const date = unlinkify(this.data.date);
-        this._el.description.innerHTML = date;
+        // this._el.description.innerHTML = date;
 
         // Alternative text
         this._el.container.setAttribute('aria-label', `${this.options.direction}, ${title}, ${date}`)
@@ -112,7 +112,7 @@ export class SlideNav {
 		this._el.content_container			= DOM.create("div", "tl-slidenav-content-container", this._el.container);
 		this._el.icon						= DOM.create("div", "tl-slidenav-icon", this._el.content_container);
 		this._el.title = DOM.create("div", "tl-slidenav-title", this._el.content_container);
-		this._el.description = DOM.create("div", "tl-slidenav-description", this._el.content_container);
+		// this._el.description = DOM.create("div", "tl-slidenav-description", this._el.content_container);
 		
 		// this._el.icon.innerHTML				= "&nbsp;"
 		
