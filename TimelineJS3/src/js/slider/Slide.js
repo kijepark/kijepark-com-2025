@@ -226,14 +226,13 @@ export class Slide {
             if (this.data.end_date) {
                 var end_date_display = this.data.end_date.getDisplayDate(this.getLanguage());
 
-                // 같은 년도인 경우 끝 날짜에서 년도 제거 (한국어)
-                if (this.data.start_date &&
-                    this.data.start_date.data.date_obj &&
-                    this.data.end_date.data.date_obj) {
-                    var start_year = this.data.start_date.data.date_obj.getFullYear();
-                    var end_year = this.data.end_date.data.date_obj.getFullYear();
+                // 같은 년도인 경우 끝 날짜에서 년도 제거 (한국어 날짜 형식 감지)
+                if (this.data.start_date) {
+                    var start_year = this.data.start_date.data.year;
+                    var end_year = this.data.end_date.data.year;
 
-                    if (start_year === end_year && this.getLanguage().name === 'ko') {
+                    // 한국어 날짜 형식("년")이 포함되어 있고 같은 년도인 경우
+                    if (start_year === end_year && end_date_display.indexOf('년') > -1) {
                         // "2024년 10월"에서 "10월"만 추출
                         end_date_display = end_date_display.replace(/^\d{4}년\s*/, '');
                     }
