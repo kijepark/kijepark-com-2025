@@ -224,7 +224,22 @@ export class Slide {
 
         if (!this.has.title) {
             if (this.data.end_date) {
-                date_text = " &mdash; " + this.data.end_date.getDisplayDate(this.getLanguage());
+                var end_date_display = this.data.end_date.getDisplayDate(this.getLanguage());
+
+                // 같은 년도인 경우 끝 날짜에서 년도 제거 (한국어)
+                if (this.data.start_date &&
+                    this.data.start_date.data.date_obj &&
+                    this.data.end_date.data.date_obj) {
+                    var start_year = this.data.start_date.data.date_obj.getFullYear();
+                    var end_year = this.data.end_date.data.date_obj.getFullYear();
+
+                    if (start_year === end_year && this.getLanguage().name === 'ko') {
+                        // "2024년 10월"에서 "10월"만 추출
+                        end_date_display = end_date_display.replace(/^\d{4}년\s*/, '');
+                    }
+                }
+
+                date_text = " ~ " + end_date_display;
             }
             if (this.data.start_date) {
                 date_text = this.data.start_date.getDisplayDate(this.getLanguage()) + date_text;
