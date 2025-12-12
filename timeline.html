@@ -249,47 +249,57 @@
                 }
             },
             "events": [
-                // #1 - 2024-10 (최신)
+                // #1 YouTube Creator Fan Community (Stealth Mode)
                 {
                     "start_date": { "year": "2024", "month": "10" },
                     "end_date": { "year": "2025", "month": "6" },
                     "text": {
                         "headline": "YouTube Creator Fan Community (Stealth Mode)",
-                        "text": "크리에이터와 팬덤의 지속 가능한 소통을 위한 버티컬 플랫폼 개발.<br><ul><li>시장 검증을 위한 핵심 기능 중심의 MVP 개발 및 비공개 테스트 준비 중.</li><li>1인 개발 (Product Engineering). 서비스 기획부터 배포 파이프라인 구축까지 전 과정 주도.</li><li>AI 페어 프로그래밍 및 리팩토링 프로세스를 도입, 1인 개발 효율을 높이고 기술 부채 없는 견고한 로직 추구.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/AI--Accelerated-A27EFD?style=for-the-badge&logoColor=white' alt='AI-Accelerated' style='transform:scale(0.85);'></div>"
+                        "text": "크리에이터와 팬덤의 지속 가능한 소통을 위한 버티컬 플랫폼 개발.<br><ul><li>시장 검증을 위한 핵심 기능 중심의 MVP 개발 및 비공개 테스트 준비 중.</li><li>1인 개발 (Product Engineering). 서비스 기획부터 배포 파이프라인 구축까지 전 과정 주도.</li><li>AI 페어 프로그래밍 및 리팩토링 프로세스를 도입, 1인 개발 효율을 높이고 기술 부채 없는 견고한 로직 추구 중.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/AI--Accelerated-A27EFD?style=for-the-badge&logoColor=white' alt='AI-Accelerated' style='transform:scale(0.85);'></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #2 - 2024-05
+                // #2 AI로 효과적인 유튜브 콘텐츠(썸네일/제목/설명/대본)를 만드는 크롬 확장 프로그램
                 {
                     "start_date": { "year": "2024", "month": "05" },
                     "end_date": { "year": "2024", "month": "10" },
                     "text": {
-                        "headline": "YouTube Sherpa: AI 기반 유튜브 콘텐츠 최적화 솔루션",
-                        "text": "크리에이터를 위한 AI 분석 및 생성 자동화 도구 (Chrome Extension).<br><ul><li>LangChain과 FastAPI(Python)를 기반으로 영상의 오디오 추출(yt-dlp) 및 분석을 수행, 메타데이터(제목, 스크립트)를 자동 생성하는 AI 파이프라인 구축.</li><li>Manifest V3 환경에서 React + Vite를 활용해 유튜브 웹사이트 위에 오버레이되는 고성능 사이드 패널 UI 구현.</li><li>무거운 AI 연산 처리는 Python으로, 일반 API 로직은 Node.js로 분리하여 각 언어의 장점을 살린 폴리글랏(Polyglot) 아키텍처 설계.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_sherpa.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "AI로 효과적인 유튜브 콘텐츠(썸네일/제목/설명/대본)를 만드는 크롬 확장 프로그램",
+                        "text": "크리에이터를 위한 AI 분석 및 콘텐츠 생성 자동화 도구 (Chrome Extension).<br><ul><li>React+TS(Vite)·Chrome Ext(MV3)로 유튜브 오버레이/패널 UI 구현 → 권한·성능·상태관리 학습 </li><li>FastAPI·LangChain·yt-dlp·Pydub로 오디오 기반 생성 파이프라인 구축 → 비동기·에러복구 학습 </li><li>Node.js+TS·MongoDB(Mongoose)·AWS로 운영형 API/데이터 설계 → 레이트리밋·로그·배포 안정성 학습 </li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_sherpa.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #3 - 2024-01
+                // #3 URL,파일만 넣으면 즉시 이력서가 생성되고 편집·요약·출력까지 한 번에 되는 AI 이력서
                 {
                     "start_date": { "year": "2024", "month": "01" },
                     "end_date": { "year": "2024", "month": "04" },
                     "text": {
-                        "headline": "Winning Resume: URL/파일 기반 AI 이력서 자동 생성 서비스",
-                        "text": "다양한 포맷의 커리어 데이터를 분석해 표준 이력서로 변환하는 웹 서비스.<br><ul><li>Playwright를 활용해 원티드, 노션 등 DOM 구조가 상이한 채용 사이트 및 PDF/Word 파일을 파싱하여 정형 데이터로 변환하는 전처리 파이프라인 구축.</li><li>OpenAI API를 연동하여 수집된 비정형 데이터를 분석, 직무별(개발, 사무 등) 핵심 역량을 추출하여 2장 분량의 최적화된 이력서로 자동 생성.</li><li>Next.js와 Draft.js를 활용해 브라우저상에서 실시간 PDF 미리보기 및 텍스트 편집이 가능한 위지윅(WYSIWYG) 환경 구현.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_winningresume.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "URL,파일만 넣으면 즉시 이력서가 생성되고 편집·요약·출력까지 한 번에 되는 AI 이력서",
+                        "text": "원티드/프로그래머스/랠릿/로켓펀치/노션/서핏 등 입력 소스 확장 + 업로드(PDF/DOCX/HTML/Text) 지원 + 2페이지 요약 + 실시간 편집/뷰어까지 (1인 개발)<br><ul><li>JavaScript·Node.js(Express)·Next.js로 생성/편집/출력 플로우 구현 → 성능·안정성 개선</li><li>Playwright로 URL 크롤링 자동화 및 파서/에러처리 구축 → 다양한 사이트 구조 대응 </li><li>OpenAI API + Draft.js + PDF 뷰어/에디터 + Google/Gmail 연동 → 요약(2p)·문서 처리·인증 경험 강화 </li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_winningresume.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #4 - 2023-09
+                // #4 채용 담당자가 원하는 규칙(ATS)을 지키면서, 개발 실력을 가장 잘 보이게 만드는 IT 전문직 이력서 서비스
+                {
+                    "start_date": { "year": "2023", "month": "06" },
+                    "end_date": { "year": "2024", "month": "02" },
+                    "text": {
+                        "headline": "채용 담당자가 원하는 규칙(ATS)을 지키면서 역량을 가장 잘 보이게 만드는 IT 전문직 이력서 서비스",
+                        "text": "회사별 맞춤(Web/PDF) 생성 + 2~3페이지 요약 + PDF 편집 + 열람 트래킹 + 12개 언어 지원 (1인 개발)<br><ul><li>Next.js + Draft.js + OpenAI API로 작성/요약 에디터 구현 → 생성형 UX 학습</li><li>Node.js(Express) + MongoDB로 템플릿/섹션 규칙화 → 데이터 모델링 학습</li><li>PDF 뷰어/에디터 + Web/PDF 동기화 + Google/Gmail 연동/트래킹 → 문서·인증·운영 학습</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_winningresume.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                    },
+                    "group": "Personal Project"
+                },
+                // #5 AI 면접관이 질문하고 사용자는 영상으로 답하며, 셀프 리뷰가 가능한 모의 면접 서비스
                 {
                     "start_date": { "year": "2023", "month": "09" },
                     "end_date": { "year": "2023", "month": "12" },
                     "text": {
-                        "headline": "AI Mock Interview: 직무 역량 기반 실시간 모의 면접 서비스",
-                        "text": "이력서 분석 기반의 개인화된 면접 질문 생성 및 실시간 영상 피드백 서비스.<br><ul><li>OpenAI API를 활용해 이력서의 프로젝트 경험을 분석하고, 직무 적합도에 따른 심층 질문(기술/인성/압박) 및 모범 답안을 자동 생성하는 로직 구현.</li><li>Web User Media API(navigator.mediaDevices)를 활용해 브라우저 환경에서 실시간 영상/음성 스트림을 캡처하고 녹화하는 프리뷰 시스템 구축.</li><li>MongoDB를 이용하여 사용자별 면접 세션과 수천 개의 구조화된 질문/답변 데이터셋을 효율적으로 관리하는 스키마 설계.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_mockinterview.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "AI 면접관이 질문하고 사용자는 영상으로 답하며, 셀프 리뷰가 가능한 모의 면접 서비스",
+                        "text": "이력서 기반 맞춤 질문/답변 생성 + 실시간 녹화 + 힌트(키워드) + 영상 리뷰/다운로드까지 한 번에 제공 (1인 개발)<br><ul><li>React + Web User Media API로 카메라/마이크 기반 실시간 인터뷰 UI와 녹화 흐름 구현 → 미디어 권한·스트리밍 UX 학습</li><li>Node.js(Express) + OpenAI API로 질문/답변 생성 파이프라인 구성 → 프롬프트·품질 제어 학습</li><li>MongoDB(Mongoose)로 세션/질문/답변/영상 메타데이터 저장 및 리뷰 기능 구현 → 데이터 모델링·운영 설계 학습</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_mockinterview.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #5 - 2023-03
+                // #6 - 2023-03
                 {
                     "start_date": { "year": "2023", "month": "03" },
                     "end_date": { "year": "2024", "month": "10" },
@@ -299,107 +309,107 @@
                     },
                     "group": "Career"
                 },
-                // #6 - 2022-11
+                // #7 디자이너 산출물을 효과적으로 구성하고 공유할 수 있는 디자이너 이력서·포트폴리오 서비스
                 {
                     "start_date": { "year": "2022", "month": "11" },
                     "end_date": { "year": "2023", "month": "09" },
                     "text": {
-                        "headline": "UXER: 디자이너 전용 3D 인터랙티브 포트폴리오",
-                        "text": "디자인 산출물의 시각적 가치를 극대화하는 포트폴리오 빌더.<br><ul><li>Three.js(WebGL)를 활용해 평면 디자인 시안을 3D 디바이스 목업(Mockup) 애니메이션으로 변환/렌더링하는 시각화 기술 구현.</li><li>디자인 수정 전/후를 비교하는 'Before & After' 슬라이더 및 이미지 툴팁 기능을 개발하여 디자이너의 작업 의도 전달력 강화.</li><li>Drag & Drop 및 다양한 커스텀이 가능한 웹 이력서 에디터(v2.0)를 구현하여 복잡한 DOM 조작 및 상태 관리 로직 최적화.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_uxer.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "디자이너 산출물을 효과적으로 구성하고 공유할 수 있는 디자이너 이력서·포트폴리오 서비스",
+                        "text": "PDF/웹 이력서 + 회사별 맞춤 + SNS + 에디터 2.0 + 3D(Three.js)·비포/애프터·툴팁 이미지로 포트폴리오 전달력을 극대화 (1인 개발)<br><ul><li>React(React Router) + Bootstrap으로 포트폴리오 중심 UI/에디터 2.0 구현 → 콘텐츠 중심 UX 설계 학습</li><li>Node.js(Express) + MongoDB(Mongoose)로 이력서/포트폴리오/피드(SNS) 데이터와 API 구축 → 확장 가능한 서비스 구조 학습</li><li>Three.js로 3D 목업 애니메이션 + 비포/애프터 + 툴팁 이미지 인터랙션 구현 → 인터랙티브 프레젠테이션 구현 역량 강화</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_uxer.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #7 - 2022-03
+                // #8 Meissa: 건설 현장 노무자 위치를 시간축(타임라인)으로 재생하며 지도에서 실시간처럼 확인하는 기능
                 {
                     "start_date": { "year": "2022", "month": "03" },
                     "end_date": { "year": "2023", "month": "03" },
                     "text": {
-                        "headline": "Meissa: 스마트 건설 안전 관제 플랫폼 FE 개발",
-                        "text": "건설 현장 노무자 안전 관제 시스템의 프론트엔드를 담당, 위치 데이터 시각화 및 개발 환경 개선 주도.<br><ul><li>Leaflet.js와 React Query Polling을 활용해 노무자의 실시간 동선 및 위험 구역(Danger Zone) 인터랙션을 지도상에 시각화.</li><li>레거시 Webpack 빌드 시스템을 Vite로 마이그레이션하여 로컬 구동 및 빌드 속도를 개선, 팀 개발 효율성 증대.</li><li>대량의 건설 도면을 체계적으로 관리할 수 있는 계층형 폴더 구조 UI/UX 설계 및 구현.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='https://www.meissa.ai/kr' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "Meissa: 건설 현장 노무자 위치를 시간축(타임라인)으로 재생하며 지도에서 실시간처럼 확인하는 기능",
+                        "text": "동영상 플레이어 같은 슬라이더 UI로 과거 동선을 재생/탐색하고, 위험구역 진입 시 푸시 알림까지 연결해 안전 관제를 지원<br><ul><li>React + TypeScript + styled-components로 지도/타임라인 UI를 동영상 플레이어 UX로 구현 → 복잡한 인터랙션 상태 설계 학습</li><li>React Query Polling으로 시간대별 위치 데이터를 주기적으로 수집·시각화 → 실시간성/네트워크 부하 균형 학습</li><li>1시간 단위 비동기 요청으로 타임라인 데이터 크기를 최적화하고, 위험구역 진입 이벤트를 알림으로 연결 → 데이터 분할·성능 최적화·운영 관점 학습</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='https://www.meissa.ai/kr' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Career"
                 },
-                // #8 - 2021-09
+                // #9 GitHub 프로필 README에서 개발 실력을 “위젯”으로 보여주는 SVG 기반 템플릿
                 {
                     "start_date": { "year": "2021", "month": "09" },
                     "end_date": { "year": "2021", "month": "10" },
                     "text": {
-                        "headline": "GitHub HR Profile Template: 개발자 기여도 시각화 위젯",
-                        "text": "GitHub 데이터를 분석해 README에 삽입 가능한 동적 차트(SVG)를 생성하는 오픈소스.<br><ul><li>브라우저가 없는 Node.js 환경에서 D3.js와 JSDOM을 활용해 가상 DOM을 생성하고, 데이터를 시각화 차트(Pie Chart)로 렌더링하여 SVG로 변환.</li><li>GitHub GraphQL API를 활용해 대량의 리포지토리 데이터 중 필요한 필드만 효율적으로 쿼리하여 API 응답 속도 및 리소스 최적화.</li><li>개발자 커뮤니티를 위한 도구로, URL 호출만으로 자신의 기술 스택과 기여도를 시각화해주는 위젯 서비스 배포.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_github_hr_profile.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "GitHub 프로필 README에서 개발 실력을 “위젯”으로 보여주는 SVG 기반 템플릿",
+                        "text": "파라미터로 GitHub 데이터를 받아 SVG를 렌더링하고, 스택 아이콘/태그/레포 카드/파이차트 위젯을 프로필에 바로 붙여넣을 수 있게 구성 (1인 개발)<br><ul><li>Octokit(GraphQL)로 GitHub Repository 데이터를 수집하고 위젯 입력값으로 표준화 → API 설계·데이터 모델링 학습</li><li>D3 + JSDOM으로 서버 사이드 SVG(파이차트/아이콘) 렌더링 파이프라인 구현 → 렌더링/시각화 아키텍처 학습</li><li>Vercel Functions로 파라미터 기반 위젯 엔드포인트를 배포해 프로필에서 즉시 호출 가능하게 구성 → 배포/운영 관점 학습</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_github_hr_profile.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #9 - 2021-04
+                // #10 이력서 작성이 약한 개발자를 위해 “작성→공유→매칭→커뮤니케이션”까지 이어주는 이력서 플랫폼
                 {
                     "start_date": { "year": "2021", "month": "04" },
                     "end_date": { "year": "2023", "month": "09" },
                     "text": {
-                        "headline": "Real Developer: 개발자 특화 채용/이력서 플랫폼",
-                        "text": "구직자와 채용 담당자를 연결하는 올인원 커리어 플랫폼 개발.<br><ul><li>구직자(이력서 작성)와 리크루터(공고 관리/제안)의 양면 시장(Two-sided Market) 기능을 모두 지원하는 유저 시나리오 및 DB 스키마 설계.</li><li>이력서 방문자 추적(Tracking) 시스템 및 사용자 간 실시간 채팅 기능을 구현하여 채용 프로세스의 투명성 확보.</li><li>Google Sheets 데이터를 이력서로 자동 변환하는 기능을 개발하여 사용자 진입 장벽을 낮추고, WYSIWYG 에디터로 자유로운 편집 환경 제공.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_realdeveloper.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "이력서 작성이 약한 개발자를 위해 “작성→공유→매칭→커뮤니케이션”까지 이어주는 이력서 플랫폼",
+                        "text": "회사별 이력서 + WYSIWYG 편집 + 방문자 트래킹 + 리크루터/공고/매칭 + 실시간 채팅 + 구글시트 Import까지 한 번에 제공 (1인 개발)<br><ul><li>React(React Router) + Bootstrap으로 이력서/공고/매칭/채팅까지 다중 화면 UX 구현 → 복잡한 사용자 플로우 설계 학습</li><li>Node.js(Express) + MongoDB(Mongoose)로 이력서/리크루터/공고/매칭 데이터 모델과 API 구축 → 서비스 구조화 학습</li><li>방문자 트래킹 + 고유 링크 공유 + Kakao Login 연동으로 성장/운영 기능까지 통합 → 인증·분석·운영 감각 강화</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_realdeveloper.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #10 - 2020-10
+                // #11 Purple Dog: 와인 구독 고객을 위한 와인 정보 조회와 회원/운영을 함께 제공하는 구독 서비스
                 {
                     "start_date": { "year": "2020", "month": "10" },
                     "end_date": { "year": "2021", "month": "03" },
                     "text": {
-                        "headline": "Purple Dog: 와인 정기 구독 커머스 플랫폼",
-                        "text": "와인 큐레이션 및 정기 구독을 위한 웹 서비스 및 운영 솔루션 개발.<br><ul><li>기존 회원의 구독 정보 및 결제 데이터를 분석하여 신규 DB 스키마로 매핑/이관하는 마이그레이션 작업을 수행하여 데이터 무결성 확보.</li><li>복잡한 와인 속성(지역, 바디감, 타닌 등)을 구조화하여 관리하고, 구독자 현황을 모니터링할 수 있는 관리자(Admin) 시스템 구축.</li><li>와인의 맛과 특성을 시각화(Radar Chart 등)하여 사용자에게 직관적인 정보를 제공하는 상세 페이지 UI 구현.</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
+                        "headline": "Purple Dog: 와인 구독 고객을 위한 와인 정보 조회와 회원/운영을 함께 제공하는 구독 서비스",
+                        "text": "와인 지역·맛·빈티지 등 상세 정보 화면을 제공하고, 기존 회원 마이그레이션과 관리자(Admin) 화면까지 포함한 운영형 웹 서비스로 구축<br><ul><li>React + JavaScript로 와인 상세/리스트 UI와 관리자 화면을 구현 → 사용자/운영자 관점의 화면 설계 학습</li><li>Node.js(Express)로 회원·구독·와인 데이터 조회/관리 API를 구성 → CRUD 설계·에러처리 학습</li><li>회원 마이그레이션 작업(데이터 정리/이관/검증)을 수행하며 운영 데이터 품질과 안정적인 전환 절차를 경험 → 데이터 검증·롤백 관점 학습</li></ul><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);margin-bottom:8px;'>"
                     },
                     "group": "Personal Project"
                 },
-                // #11 - 2020-08
+                // #12 Ad Server Tutorial: 광고 캠페인 생성부터 송출·트래킹·통계까지 광고 서버의 핵심 흐름을 이해하기 쉽게 구현한 오픈소스 튜토리얼
                 {
                     "start_date": { "year": "2020", "month": "08" },
                     "end_date": { "year": "2020", "month": "09" },
                     "text": {
-                        "headline": "Ad Server Tutorial: 광고 시스템 아키텍처 구현 (Open Source)",
-                        "text": "애드테크(Ad Tech) 시스템의 핵심 원리를 분석하고 구현한 오픈소스 프로젝트.<br><ul><li>Google Ads 등 상용 광고 플랫폼의 프로세스(캠페인 생성 → 타겟팅 → 송출 → 트래킹)를 엔드투엔드(End-to-End)로 구현하여 광고 서버의 작동 원리 규명.</li><li>광고주(Advertiser), 매체사(Publisher), 캠페인 간의 다대다 관계 및 비즈니스 로직을 Mongoose 스키마로 정밀하게 모델링.</li><li>사용자 행동(Impression, Click) 로그를 수집하고 통계로 변환하는 트래킹 서버 및 관리자 대시보드(Admin) 구축.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_adserver.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "Ad Server Tutorial: 광고 캠페인 생성부터 송출·트래킹·통계까지 광고 서버의 핵심 흐름을 이해하기 쉽게 구현한 오픈소스 튜토리얼",
+                        "text": "Google Ads/OpenX 같은 광고 서버의 기본 구조(광고주/매체/캠페인/소재)와 이벤트 트래킹·리포팅·관리자 화면을 “작동하는 코드”로 정리 (1인 개발)<br><ul><li>Node.js(Express) + MongoDB(Mongoose)로 광고주/매체사/캠페인/소재 스키마와 송출 API를 구현 → 도메인 모델링 학습</li><li>Handlebars로 관리자/리포트 화면을 구성하고, jQuery로 서버 API 연동 → 서버 렌더링 기반 UI 구성 경험 학습</li><li>행동 트래킹 이벤트를 수집해 통계로 집계하는 기본 파이프라인을 구현 → 로그/집계/리포팅의 데이터 흐름 이해 강화</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_adserver.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #12 - 2020-04
+                // #13 Shopify 스토어 안에서 리타겟팅을 실행해 구매 전환을 높이는 인스토어 마케팅 앱
                 {
                     "start_date": { "year": "2020", "month": "04" },
                     "end_date": { "year": "2020", "month": "08" },
                     "text": {
-                        "headline": "Shopify App: 온사이트 리타겟팅 마케팅 솔루션",
-                        "text": "이커머스 구매 전환율(CRO) 상승을 위한 Shopify 전용 마케팅 SaaS 개발.<br><ul><li>Shopify Admin API 및 OAuth 인증 흐름을 구현하여 플랫폼 규격에 맞는 SaaS 형태의 애플리케이션 구축.</li><li>Webpack을 활용해 외부 스토어 프론트엔드에 동적으로 스크립트를 주입(Injection)하고, 충돌 없이 UI를 렌더링하는 위젯 기술 구현.</li><li>방문자의 관심 상품 데이터를 실시간으로 분석해 재방문 및 이탈 시점에 최적의 상품을 노출하는 리타겟팅 로직 개발.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_retargeting_in_store.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "Shopify 스토어 안에서 리타겟팅을 실행해 구매 전환을 높이는 인스토어 마케팅 앱",
+                        "text": "관심 상품을 자동 분석해 실시간 추천 위젯을 노출하고, 카피/애니메이션을 스토어별로 설정할 수 있게 만든 Shopify App (1인 개발)<br><ul><li>Node.js + Shopify API로 스토어/상품/행동 이벤트를 연동하고 리타겟팅 추천 로직을 구성 → 플랫폼 연동 설계 학습</li><li>MongoDB(Mongoose)로 스토어별 설정(카피/애니메이션)과 추천 데이터 저장 구조를 설계 → 멀티테넌트 운영 감각 학습</li><li>Webpack + (Liquid/Handlebars)로 스토어 삽입 스크립트와 위젯 UI를 구현해 스크롤 애니메이션/카피 노출까지 완성 → 임베디드 프론트엔드 최적화 학습</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_retargeting_in_store.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #13 - 2019-10
+                // #14 상품 페이지 위에 이커머스 구매 심리 유도(CRO)형 소셜프루프 위젯 앱
                 {
                     "start_date": { "year": "2019", "month": "10" },
                     "end_date": { "year": "2020", "month": "04" },
                     "text": {
-                        "headline": "Super Social Proof: 이커머스 구매 심리 유도(CRO) 솔루션",
-                        "text": "구매 전환율 상승을 위한 올인원 소셜 프루프(Social Proof) SaaS 개발.<br><ul><li>'품절 임박(FOMO)', '실시간 구매 현황' 등 소비자의 구매 심리를 자극하는 6가지 마케팅 트리거를 React 컴포넌트로 모듈화하여 구현.</li><li>Shopify API를 활용해 변동되는 재고 수량 및 주문 데이터를 실시간으로 동기화하여 사용자에게 정확한 현황 정보를 제공.</li><li>Node.js 기반의 Koa 프레임워크를 도입해 미들웨어를 경량화하고, 다수의 쇼핑몰 트래픽을 효율적으로 처리하는 API 서버 구축.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_super_social_proof.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "상품 페이지 위에 이커머스 구매 심리 유도(CRO)형 소셜프루프 위젯 앱",
+                        "text": "Best sellers/New arrival/후기(Testimonials)/재고(FOMO)/구매 활동(Recent)/YouTube까지 6가지 콘텐츠를 상품 영역에 자동 노출하는 Shopify App (1인 개발)<br><ul><li>Node.js(Koa) + Shopify API로 상품/주문/재고/콘텐츠 데이터를 연동해 위젯 노출 로직을 구성 → 커머스 도메인 연동 학습</li><li>MongoDB(Mongoose)로 스토어별 위젯 설정과 콘텐츠 소스를 관리하는 구조를 설계 → 멀티테넌트 운영 감각 학습</li><li>React + React Router + Sass로 상품 페이지 위에 자연스럽게 붙는 UI를 구현 → 임베디드 UI/스타일 충돌 대응 학습</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_super_social_proof.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #14 - 2019-03
+                // #15 상품 목록 이미지 위에 배너를 오버레이로 노출해 클릭/전환을 높이는 Cafe24 스크롤 광고 앱
                 {
                     "start_date": { "year": "2019", "month": "03" },
                     "end_date": { "year": "2019", "month": "06" },
                     "text": {
-                        "headline": "Double Up: Cafe24 상품 배너 오토메이션 솔루션",
-                        "text": "Cafe24 입점몰의 클릭률(CTR) 상승을 위한 이미지 오버레이 마케팅 툴.<br><ul><li>다양한 쇼핑몰 디자인 테마에 호환되도록, 상품 이미지의 DOM 위치를 동적으로 계산하여 배너를 오버레이하는 정교한 스크립트 로직 구현.</li><li>Cafe24 앱스토어 규격에 맞춰 OAuth 인증 및 스토어별 설정 데이터를 관리하는 백엔드(Node.js) 시스템 구축.</li><li>Webpack을 활용해 쇼핑몰에 삽입되는 써드파티 스크립트의 용량을 최적화하여 사이트 렌더링 성능 유지.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_doubleup.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "상품 목록 이미지 위에 배너를 오버레이로 노출해 클릭/전환을 높이는 Cafe24 스크롤 광고 앱",
+                        "text": "상품 리스트 페이지에서 각 상품 카드 위에 미리 설정한 배너를 자동으로 덮어씌워, 운영자가 쉽게 캠페인을 실행할 수 있게 만든 Cafe24 App (1인 개발)<br><ul><li>Node.js(Express)로 앱 백엔드/API를 구성하고, 배너/캠페인 설정 흐름을 구현 → 기본 서비스 설계 학습</li><li>MongoDB(Mongoose)로 스토어별 설정과 배너 메타데이터를 관리 → 멀티스토어 데이터 구조 학습</li><li>프론트 삽입 스크립트로 상품 목록 이미지 위 배너 오버레이를 안정적으로 렌더링 → DOM 주입/호환성 대응 학습</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_doubleup.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Personal Project"
                 },
-                // #15 - 2018-05
+                // #16 모바일 웹/블로그에 애니메이션 오버레이 배너를 삽입해 추가 콘텐츠형 광고를 노출하는 JavaScript SDK
                 {
                     "start_date": { "year": "2018", "month": "05" },
                     "end_date": { "year": "2018", "month": "10" },
                     "text": {
-                        "headline": "ScrollAds: 경량화된 모바일 웹 광고 SDK",
-                        "text": "매체사 웹사이트에 탑재되는 고성능 광고 스크립트(SDK) 개발.<br><ul><li>React 등 프레임워크 없이 순수 JavaScript로 개발하여 SDK 용량을 경량화하고, 호스트 사이트와의 라이브러리 충돌 방지.</li><li>매체사마다 상이한 모바일 웹 환경(DOM 구조)을 분석해, 콘텐츠 흐름을 방해하지 않는 최적의 위치에 배너를 오버레이하는 렌더링 로직 구현.</li><li>Webpack을 통한 코드 번들링 및 난독화(Obfuscation) 적용으로 네트워크 리소스 최적화 및 보안성 강화.</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_scrollads.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                        "headline": "모바일 웹/블로그에 애니메이션 오버레이 배너를 삽입해 추가 콘텐츠형 광고를 노출하는 JavaScript SDK",
+                        "text": "매체사 페이지의 특정 UI 영역에 동적으로 배너를 주입하고, 스크롤/애니메이션 기반 인터랙션으로 광고 경험을 강화하는 모바일 광고 SDK<br><ul><li>JavaScript로 페이지 내 특정 영역에 오버레이 배너를 안정적으로 렌더링하는 SDK 구현 → DOM 주입/충돌 대응 학습</li><li>Webpack으로 SDK 번들링/배포 구조를 만들고, 다양한 매체사 환경에서 로딩/호환성을 맞춤 → 번들 최적화·호환성 학습</li><li>애니메이션 기반 노출 방식으로 사용자 경험을 해치지 않으면서 주목도를 확보 → 인터랙션 설계 감각 강화</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_scrollads.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
                     },
                     "group": "Career"
                 },
-                // #16 - 2017-12 (가장 오래됨)
+                // #17 - 2017-12 (가장 오래됨)
                 {
                     "start_date": { "year": "2017", "month": "12" },
                     "end_date": { "year": "2020", "month": "01" },
