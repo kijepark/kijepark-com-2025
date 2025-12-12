@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>박기제 Tech Stack Evolution</title>
+    <title>박기제 Tech Stack Evolution - 프론트엔드 개발자 타임라인</title>
+    <meta name="description" content="박기제 Kije Park - 2017년부터 현재까지의 기술 스택 변화와 프로젝트 타임라인입니다. JavaScript, TypeScript, React, Next.js, Node.js 등 프론트엔드 개발 여정을 확인하세요." />
+    <meta name="keywords" content="박기제, Kije Park, 프론트엔드 개발자, Tech Stack, 타임라인, JavaScript, TypeScript, React, Next.js, Node.js, 개발자 포트폴리오" />
+    <meta name="author" content="Kije Park" />
+    <meta name="theme-color" content="#f8f9fa" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://kijepark.com/timeline.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="박기제 Tech Stack Evolution - 프론트엔드 개발자 타임라인" />
+    <meta property="og:description" content="2017년부터 현재까지의 기술 스택 변화와 프로젝트 타임라인. JavaScript, TypeScript, React, Next.js, Node.js 등 프론트엔드 개발 여정." />
+    <meta property="og:image" content="https://kijepark.com/assets/img/kijepark.png" />
+    <meta property="og:url" content="https://kijepark.com/timeline.html" />
+    <meta property="og:site_name" content="Kije Park Portfolio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="박기제 Tech Stack Evolution - 프론트엔드 개발자 타임라인" />
+    <meta name="twitter:description" content="2017년부터 현재까지의 기술 스택 변화와 프로젝트 타임라인." />
+    <meta name="twitter:image" content="https://kijepark.com/assets/img/kijepark.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
@@ -46,6 +66,7 @@
         .tl-storyslider .tl-headline,
         .tl-slide .tl-headline {
             font-weight: 700 !important;
+            line-height: 36px !important;
         }
 
         /* 하단 (타임라인 네비게이션) - 500으로 변경 */
@@ -59,6 +80,9 @@
 
         .tl-text .tl-text-content p {
             font-weight: 700 !important;
+        }
+        .tl-text .tl-text-content li {
+            margin-bottom: 7px !important;
         }
         .tl-timeline,
         .tl-timeline * {
@@ -279,17 +303,7 @@
                     },
                     "group": "Personal Project"
                 },
-                // #4 채용 담당자가 원하는 규칙(ATS)을 지키면서, 개발 실력을 가장 잘 보이게 만드는 IT 전문직 이력서 서비스
-                {
-                    "start_date": { "year": "2023", "month": "06" },
-                    "end_date": { "year": "2024", "month": "02" },
-                    "text": {
-                        "headline": "채용 담당자가 원하는 규칙(ATS)을 지키면서 역량을 가장 잘 보이게 만드는 IT 전문직 이력서 서비스",
-                        "text": "회사별 맞춤(Web/PDF) 생성 + 2~3페이지 요약 + PDF 편집 + 열람 트래킹 + 12개 언어 지원 (1인 개발)<br><ul><li>Next.js + Draft.js + OpenAI API로 작성/요약 에디터 구현 → 생성형 UX 학습</li><li>Node.js(Express) + MongoDB로 템플릿/섹션 규칙화 → 데이터 모델링 학습</li><li>PDF 뷰어/에디터 + Web/PDF 동기화 + Google/Gmail 연동/트래킹 → 문서·인증·운영 학습</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_winningresume.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
-                    },
-                    "group": "Personal Project"
-                },
-                // #5 AI 면접관이 질문하고 사용자는 영상으로 답하며, 셀프 리뷰가 가능한 모의 면접 서비스
+                // #4 AI 면접관이 질문하고 사용자는 영상으로 답하며, 셀프 리뷰가 가능한 모의 면접 서비스
                 {
                     "start_date": { "year": "2023", "month": "09" },
                     "end_date": { "year": "2023", "month": "12" },
@@ -299,7 +313,17 @@
                     },
                     "group": "Personal Project"
                 },
-                // #6 - 2023-03
+                // #5 채용 담당자가 원하는 규칙(ATS)을 지키면서, 개발 실력을 가장 잘 보이게 만드는 IT 전문직 이력서 서비스
+                {
+                    "start_date": { "year": "2023", "month": "06" },
+                    "end_date": { "year": "2024", "month": "02" },
+                    "text": {
+                        "headline": "채용 담당자가 원하는 규칙(ATS)을 지키면서 역량을 가장 잘 보이게 만드는 IT 전문직 이력서 서비스",
+                        "text": "회사별 맞춤(Web/PDF) 생성 + 2~3페이지 요약 + PDF 편집 + 열람 트래킹 + 12개 언어 지원 (1인 개발)<br><ul><li>Next.js + Draft.js + OpenAI API로 작성/요약 에디터 구현 → 생성형 UX 학습</li><li>Node.js(Express) + MongoDB로 템플릿/섹션 규칙화 → 데이터 모델링 학습</li><li>PDF 뷰어/에디터 + Web/PDF 동기화 + Google/Gmail 연동/트래킹 → 문서·인증·운영 학습</li></ul><div class='project-badges'><img src='https://img.shields.io/badge/100%25_Organic_Code-27F535?style=for-the-badge&logo=leaf&logoColor=white' alt='100% Organic Code' style='transform:scale(0.85);'><a href='./portfolio_winningresume.html' class='project-link-icon' target='_blank' rel='noopener'><img src='./assets/img/link.svg' alt='Link' style='width:100%;height:100%;'></a></div>"
+                    },
+                    "group": "Personal Project"
+                },
+                // #6 HITS: 신약 개발 플랫폼(HyperLab) FE 개발
                 {
                     "start_date": { "year": "2023", "month": "03" },
                     "end_date": { "year": "2024", "month": "10" },
