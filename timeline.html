@@ -76,6 +76,19 @@
             font-weight: 500 !important;
         }
 
+        /* 타임마커 헤드라인 최대 2줄 제한 */
+        .tl-timemarker .tl-timemarker-content-container .tl-timemarker-content .tl-timemarker-text h2.tl-headline,
+        .tl-timemarker .tl-timemarker-content-container .tl-timemarker-content .tl-timemarker-text h2.tl-headline p {
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
+            box-orient: vertical !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            line-height: 1.4 !important;
+        }
+
         /* ================================================= */
 
         .tl-text .tl-text-content p {
@@ -97,8 +110,28 @@
         }
 
         /* 활성화된 타임마커 배경색 (연두색) */
-        .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container .tl-timemarker-content.tl-timemarker-content-small {
-            background-color: #90EE90 !important;
+        .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container .tl-timemarker-content {
+            background-color: #6ef141a6 !important;
+        }
+
+        /* 활성화된 타임마커 timespan 및 라인 색상 */
+        .tl-timemarker.tl-timemarker-with-end.tl-timemarker-active .tl-timemarker-timespan:after {
+            background-color: #01ff0866 !important;
+        }
+        .tl-timemarker.tl-timemarker-with-end.tl-timemarker-active .tl-timemarker-line-left:after,
+        .tl-timemarker.tl-timemarker-with-end.tl-timemarker-active .tl-timemarker-line-right:after {
+            background-color: #01ff0866 !important;
+        }
+
+        /* Career 그룹 활성화된 타임마커 배경색 (보라색) */
+        .tl-timenav .tl-timemarker.tl-timemarker-career.tl-timemarker-active .tl-timemarker-content-container .tl-timemarker-content {
+            background-color: #982fe7 !important;
+        }
+
+        /* Career 그룹 헤드라인 색상 (보라색) */
+        .tl-timeline .tl-timemarker.tl-timemarker-career h2.tl-headline,
+        .tl-timeline .tl-slide.tl-slide-career h2.tl-headline {
+            color: #982fe7 !important;
         }
 
         /* 상단 슬라이드 배경색 */
@@ -134,6 +167,10 @@
             border-radius: 12px;
             padding: 20px 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            letter-spacing: 0 !important;
+        }
+        .tech-stack-container * {
+            letter-spacing: 0 !important;
         }
         .tech-stack-container h2 {
             text-align: center;
@@ -506,7 +543,7 @@
                 container.innerHTML = `
                     <div class="tech-stack-container">
                         <h2>Tech Stack Evolution</h2>
-                        <p class="subtitle">Project-based Experience (2017.12 - Present)</p>
+                        <p class="subtitle">Production Experience (2017.12 - Present)</p>
                         <div class="legend-container">
                             <div class="legend-item">
                                 <div class="legend-color" style="background: #3498db;"></div>
@@ -519,10 +556,6 @@
                             <div class="legend-item">
                                 <div class="legend-color" style="background: #9b59b6;"></div>
                                 <span>AI / Data</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color" style="background: #e67e22;"></div>
-                                <span>Specialized Lib</span>
                             </div>
                             <div class="legend-item">
                                 <div class="legend-color" style="background: #95a5a6;"></div>
@@ -557,36 +590,26 @@
                     { name: 'React', start: getDate(2019, 10), end: NOW, category: 'Framework' },
                     { name: 'Next.js', start: getDate(2023, 3), end: NOW, category: 'Framework' },
                     { name: 'Express', start: getDate(2019, 3), end: getDate(2024, 2), category: 'Framework' },
-                    { name: 'Koa', start: getDate(2019, 10), end: getDate(2020, 4), category: 'Framework' },
                     { name: 'FastAPI', start: getDate(2024, 5), end: NOW, category: 'Framework' },
                     // AI / Data
                     { name: 'LangChain', start: getDate(2024, 5), end: NOW, category: 'AI / Data' },
                     { name: 'OpenAI API', start: getDate(2023, 9), end: NOW, category: 'AI / Data' },
-                    { name: 'Playwright', start: getDate(2024, 1), end: getDate(2024, 4), category: 'AI / Data' },
-                    // Specialized Libs
-                    { name: 'Three.js', start: getDate(2022, 11), end: getDate(2023, 9), category: 'Specialized Lib' },
-                    { name: 'Leaflet.js', start: getDate(2022, 3), end: getDate(2023, 3), category: 'Specialized Lib' },
-                    { name: 'D3.js', start: getDate(2021, 9), end: getDate(2021, 10), category: 'Specialized Lib' },
-                    { name: 'Chrome Ext', start: getDate(2024, 5), end: NOW, category: 'Specialized Lib' },
                     // Infra / Tools
                     { name: 'MongoDB', start: getDate(2019, 3), end: NOW, category: 'Infra / Tool' },
-                    { name: 'Webpack', start: getDate(2018, 5), end: getDate(2022, 3), category: 'Infra / Tool' },
+                    { name: 'Supabase', start: getDate(2024, 10), end: NOW, category: 'Infra / Tool' },
                     { name: 'Vite', start: getDate(2022, 3), end: NOW, category: 'Infra / Tool' },
                     { name: 'Docker', start: getDate(2023, 3), end: NOW, category: 'Infra / Tool' },
-                    { name: 'Cursor', start: getDate(2024, 1), end: NOW, category: 'Infra / Tool' },
-                    { name: 'Claude', start: getDate(2025, 1), end: NOW, category: 'Infra / Tool' },
-                    { name: 'Gemini', start: getDate(2025, 1), end: NOW, category: 'Infra / Tool' },
+                    { name: 'Cloudflare', start: getDate(2024, 10), end: NOW, category: 'Infra / Tool' },
                 ];
 
                 const categoryColors = {
                     'Language': 'rgba(52, 152, 219, 0.85)',
                     'Framework': 'rgba(46, 204, 113, 0.85)',
                     'AI / Data': 'rgba(155, 89, 182, 0.85)',
-                    'Specialized Lib': 'rgba(230, 126, 34, 0.85)',
                     'Infra / Tool': 'rgba(149, 165, 166, 0.85)'
                 };
 
-                const categoryOrder = ['Language', 'Framework', 'AI / Data', 'Specialized Lib', 'Infra / Tool'];
+                const categoryOrder = ['Language', 'Framework', 'AI / Data', 'Infra / Tool'];
                 techStackData.sort(function(a, b) {
                     var catDiff = categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
                     if (catDiff !== 0) return catDiff;
@@ -704,6 +727,36 @@
                     renderTechStackChart();
                 }, 500);
             }
+        });
+
+        // Career 그룹 타임마커 및 슬라이드 헤드라인에 스타일 적용
+        window.timeline.on('loaded', function() {
+            setTimeout(() => {
+                const careerHeadlines = [];
+                timelineData.events.forEach((event) => {
+                    if (event.group === "Career") {
+                        careerHeadlines.push(event.text.headline);
+                    }
+                });
+
+                // 타임마커에 클래스 추가
+                const markers = document.querySelectorAll('.tl-timemarker');
+                markers.forEach((marker) => {
+                    const headline = marker.querySelector('.tl-headline');
+                    if (headline && careerHeadlines.some(h => headline.textContent.includes(h.substring(0, 20)))) {
+                        marker.classList.add('tl-timemarker-career');
+                    }
+                });
+
+                // 슬라이드에 career 클래스 추가
+                const slides = document.querySelectorAll('.tl-slide');
+                slides.forEach((slide) => {
+                    const headline = slide.querySelector('.tl-headline');
+                    if (headline && careerHeadlines.some(h => headline.textContent.includes(h.substring(0, 20)))) {
+                        slide.classList.add('tl-slide-career');
+                    }
+                });
+            }, 500);
         });
     </script>
 
