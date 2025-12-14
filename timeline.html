@@ -102,6 +102,21 @@
         }
         .tl-slide-scrollable-container {
             background-color: #f8f9fa !important;
+            position: relative;
+        }
+        .tl-slide-scrollable-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('./assets/img/pattern.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity: 0.3;
+            pointer-events: none;
         }
 
         /* Tech Stack Chart Styles */
