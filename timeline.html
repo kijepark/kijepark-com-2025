@@ -28,6 +28,26 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Kije Park",
+        "alternateName": "박기제",
+        "url": "https://kijepark.com/",
+        "image": "https://kijepark.com/assets/img/kijepark.png",
+        "jobTitle": "Frontend Developer",
+        "knowsAbout": ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "FastAPI", "LangChain"]
+      },
+      "name": "박기제 Tech Stack Evolution",
+      "description": "2017년부터 현재까지의 기술 스택 변화와 프로젝트 타임라인",
+      "url": "https://kijepark.com/timeline.html"
+    }
+    </script>
+
     <!-- Pretendard Variable Font -->
     <link rel="stylesheet" as="style" crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
@@ -546,19 +566,19 @@
                         <p class="subtitle">Production Experience (2017.12 - Present)</p>
                         <div class="legend-container">
                             <div class="legend-item">
-                                <div class="legend-color" style="background: #3498db;"></div>
+                                <div class="legend-color" style="background: rgba(0, 235, 207, 0.6);"></div>
                                 <span>Language</span>
                             </div>
                             <div class="legend-item">
-                                <div class="legend-color" style="background: #2ecc71;"></div>
+                                <div class="legend-color" style="background: rgba(0, 235, 27, 0.6);"></div>
                                 <span>Framework</span>
                             </div>
                             <div class="legend-item">
-                                <div class="legend-color" style="background: #9b59b6;"></div>
+                                <div class="legend-color" style="background: rgba(140, 30, 250, 0.6);"></div>
                                 <span>AI / Data</span>
                             </div>
                             <div class="legend-item">
-                                <div class="legend-color" style="background: #95a5a6;"></div>
+                                <div class="legend-color" style="background: rgba(149, 165, 166, 0.35);"></div>
                                 <span>Infra / Tool</span>
                             </div>
                         </div>
@@ -603,10 +623,10 @@
                 ];
 
                 const categoryColors = {
-                    'Language': 'rgba(52, 152, 219, 0.85)',
-                    'Framework': 'rgba(46, 204, 113, 0.85)',
-                    'AI / Data': 'rgba(155, 89, 182, 0.85)',
-                    'Infra / Tool': 'rgba(149, 165, 166, 0.85)'
+                    'Language': 'rgba(0, 235, 207, 0.6)',
+                    'Framework': 'rgba(0, 235, 27, 0.6)',
+                    'AI / Data': 'rgba(140, 30, 250, 0.6)',
+                    'Infra / Tool': 'rgba(149, 165, 166, 0.35)'
                 };
 
                 const categoryOrder = ['Language', 'Framework', 'AI / Data', 'Infra / Tool'];
