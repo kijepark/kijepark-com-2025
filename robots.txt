@@ -1,3 +1,13 @@
 User-agent: *
 Allow: /
+
+# Block vendor/library directories from indexing
+Disallow: /assets/vendor/
+Disallow: /TimelineJS3/node_modules/
+Disallow: /TimelineJS3/src/
+Disallow: /TimelineJS3/dist/
+Disallow: /TimelineJS3/contrib/
+Disallow: /TimelineJS3/website/
+Disallow: /php/
+
 Sitemap: https://kijepark.com/sitemap.xml
